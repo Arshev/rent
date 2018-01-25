@@ -1,4 +1,4 @@
-class CarController < ApplicationController
+class CarsController < ApplicationController
   before_action :set_car, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
   def index
@@ -11,7 +11,7 @@ class CarController < ApplicationController
 
   def create
     @car = current_user.cars.build(car_params)
-    if @car.save
+    if @car.save!
       redirect_to listing_car_path(@car), notice: "Сохранено"
     else
       render :new, notice: "Что то пошло не так!"
@@ -51,6 +51,6 @@ class CarController < ApplicationController
     end
 
     def car_params
-      params.require(:car).permit(:car_name, :year, :color, :transmission, :is_air, :engine_capacity, :is_electropackage, :car_class, :car_type, :price_1, :price_2, :price_3, :price_4, :price_main, :deposit, :description, :active)
+      params.require(:car).permit(:car_name, :year, :color, :transmission, :is_air, :engine_capacity, :is_electropackage, :car_class, :car_type, :price_1, :price_2, :price_3, :price_4, :price_main, :deposit, :description, :fuel, :number_doors, :active)
     end
 end

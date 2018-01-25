@@ -1,0 +1,29 @@
+<ul class="sidebar-list">
+  <li class="sidebar-item">
+    <%= link_to "Listing", listing_car_path, class: "sidebar-link active" %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "Цены", pricing_car_path, class: "sidebar-link active" %>
+    <% if !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "Описание", description_car_path, class: "sidebar-link active" %>
+    <% if !@car.car_name.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "Photos", photo_upload_car_path, class: "sidebar-link active" %>
+    <% if !@car %>
+      <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "Amenities", amenities_car_path, class: "sidebar-link active" %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
+</ul>
+<hr/>

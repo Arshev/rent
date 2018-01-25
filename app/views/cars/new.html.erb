@@ -1,0 +1,97 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Создаем машину
+  </div>
+  <div class="panel-body">
+    <div class="container">
+
+      <%= form_for @car do |f| %>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Марка и модель автомобиля</label>
+          <%= f.text_field :car_name, placeholder: "Марка и модель авто?", class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Цвет автомобиля</label>
+          <%= f.text_field :color, placeholder: "Цвет авто?", class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Год выпуска автомобиля</label>
+          <%= f.text_field :year, placeholder: "Год выпуска авто?", class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label>Объём двигателя</label>
+          <%= f.text_field :engine_capacity, placeholder: "Объём двигателя?", class: "form-control", required: true %>
+        </div>
+      </div>
+
+      <hr>
+
+        <div class="row">
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Тип кузова</label>
+              <%= f.select :car_type, [["Седан", "Седан"], ["Хэтчбек", "Хэтчбек"], ["Универсал", "Универсал"], ["Купе", "Купе"], ["Пикап", "Пикап"]],
+                            id: "car_type", prompt: "Выберите тип кузова...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Класс автомобиля</label>
+              <%= f.select :car_class, [["Эконом", "Эконом"], ["Средний", "Средний"], ["Бизнес", "Бизнес"]],
+                            id: "car_class", prompt: "Выбери класс авто...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Коробка передач</label>
+              <%= f.select :transmission, [["Автомат", "Автомат"], ["Механика", "Механика"], ["Вариатор", "Вариатор"], ["Робот", "Робот"]],
+                            id: "transmission", prompt: "Выбери коробку...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Количество дверей</label>
+              <%= f.select :number_doors, [["2", 2], ["3", 3], ["4", 4], ["5", 5]],
+                            id: "number_doors", prompt: "Выбери кол-во дверей...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Топливо</label>
+              <%= f.select :fuel, [["Бензин", "Бензин"], ["Дизель", "Дизель"]],
+                            id: "fuel", prompt: "Выбери топливо...", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row form-group">
+          <div class="col-md-6">
+            <%= f.check_box :is_air %> Есть кондиционер?
+          </div>
+          <div class="col-md-6">
+            <%= f.check_box :is_electropackage %> Есть электропакет?
+          </div>
+        </div>
+
+        <div><%= f.submit "Создать машину", class: "btn btn-normal" %></div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

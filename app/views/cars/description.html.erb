@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'car_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        Описание
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @car do |f| %>
+
+            <div class="row">
+              <div class="form-group">
+                <label>Описание</label>
+                <%= f.text_area :description, rows: 8, placeholder: "Описание авто", class: "form-control", required: true %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit "Сохранить", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
