@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_name: MyString
+  year: 1
+  color: MyString
+  transmission: MyString
+  is_air: false
+  engine_capacity: MyString
+  is_electropackage: false
+  car_class: MyString
+  car_type: MyString
+  price_1: 1
+  price_2: 1
+  price_3: 1
+  price_4: 1
+  price_main: MyString
+  deposit: 1
+  description: MyText
+  user: one
+
+two:
+  car_name: MyString
+  year: 1
+  color: MyString
+  transmission: MyString
+  is_air: false
+  engine_capacity: MyString
+  is_electropackage: false
+  car_class: MyString
+  car_type: MyString
+  price_1: 1
+  price_2: 1
+  price_3: 1
+  price_4: 1
+  price_main: MyString
+  deposit: 1
+  description: MyText
+  user: two

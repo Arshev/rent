@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124145818) do
+ActiveRecord::Schema.define(version: 20180125114937) do
+
+  create_table "cars", force: :cascade do |t|
+    t.string "car_name"
+    t.integer "year"
+    t.string "color"
+    t.string "transmission"
+    t.boolean "is_air"
+    t.string "engine_capacity"
+    t.boolean "is_electropackage"
+    t.string "car_class"
+    t.string "car_type"
+    t.integer "price_1"
+    t.integer "price_2"
+    t.integer "price_3"
+    t.integer "price_4"
+    t.string "price_main"
+    t.integer "deposit"
+    t.text "description"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cars_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,6 +50,10 @@ ActiveRecord::Schema.define(version: 20180124145818) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "lastname"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
