@@ -1,6 +1,8 @@
 class CarsController < ApplicationController
   before_action :set_car, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :update]
+
   def index
     @cars = current_user.cars
   end
@@ -31,13 +33,17 @@ class CarsController < ApplicationController
   end
 
   def photo_upload
+    @photos = @car.photos
   end
 
   def amenities
   end
 
   def update
-    if @car.update(car_params)
+    new_params = car_params
+    new_params = car_params.merge(active: true) if is_ready_car
+
+    if @car.update(new_params)
       flash[:notice] = "Сохранено"
     else
       flash[:notice] = "Что то не так!"
@@ -48,6 +54,14 @@ class CarsController < ApplicationController
   private
     def set_car
       @car = Car.find(params[:id])
+    end
+
+    def is_authorised
+      redirect_to root_path, alert: "У вас нет прав на просмотр данной страницы!" unless current_user.id == @car.user_id
+    end
+
+    def is_ready_car
+      !@car.active && !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? && !@car.car_name.blank? && !@car.photos.blank?
     end
 
     def car_params

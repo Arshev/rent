@@ -17,7 +17,7 @@
   </li>
   <li class="sidebar-item">
     <%= link_to "Photos", photo_upload_car_path, class: "sidebar-link active" %>
-    <% if !@car %>
+    <% if !@car.photos.blank? %>
       <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
@@ -27,3 +27,9 @@
   </li>
 </ul>
 <hr/>
+<% is_ready = !@car.active && !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? && !@car.car_name.blank? && !@car.photos.blank?  %>
+
+<%= form_for @car do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <%= f.submit "Опубликовать", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>

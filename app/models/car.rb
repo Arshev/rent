@@ -1,5 +1,6 @@
 class Car < ApplicationRecord
   belongs_to :user
+  has_many :photos
 
   validates :car_name, presence: true
   validates :year, presence: true

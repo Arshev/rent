@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180125161217) do
+ActiveRecord::Schema.define(version: 20180126120803) do
 
   create_table "cars", force: :cascade do |t|
     t.string "car_name"
@@ -34,7 +34,19 @@ ActiveRecord::Schema.define(version: 20180125161217) do
     t.datetime "updated_at", null: false
     t.string "fuel"
     t.integer "number_doors"
+    t.boolean "active"
     t.index ["user_id"], name: "index_cars_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["car_id"], name: "index_photos_on_car_id"
   end
 
   create_table "users", force: :cascade do |t|
