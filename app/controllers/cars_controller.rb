@@ -2,6 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :update]
+  before_action :set_photos, only: [:photo_upload, :show]
 
   def index
     @cars = current_user.cars
@@ -33,7 +34,6 @@ class CarsController < ApplicationController
   end
 
   def photo_upload
-    @photos = @car.photos
   end
 
   def amenities
@@ -62,6 +62,10 @@ class CarsController < ApplicationController
 
     def is_ready_car
       !@car.active && !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? && !@car.car_name.blank? && !@car.photos.blank?
+    end
+
+    def set_photos
+      @photos = @car.photos
     end
 
     def car_params
