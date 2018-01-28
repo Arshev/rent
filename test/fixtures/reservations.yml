@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car: one
+  start_date: 2018-01-27 11:37:50
+  end_date: MyString
+  datetime: MyString
+  price: 1
+  total: 1
+
+two:
+  car: two
+  start_date: 2018-01-27 11:37:50
+  end_date: MyString
+  datetime: MyString
+  price: 1
+  total: 1
