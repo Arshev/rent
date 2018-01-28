@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'description'
       get 'photo_upload'
       get 'amenities'
+      get 'preload'
     end
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]

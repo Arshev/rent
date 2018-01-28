@@ -9,11 +9,11 @@
       <div class="row">
         <div class="col-md-6">
           <label>Начало</label>
-          <%= f.text_field :start_date, readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
+          <%= f.text_field :start_date, readonly: true, placeholder: "Дата начала", class: "form-control datepicker" %>
         </div>
         <div class="col-md-6">
           <label>Окончание</label>
-          <%= f.text_field :end_date, readonly: true, placeholder: "End Date", class: "form-control datepicker", disabled: true %>
+          <%= f.text_field :end_date, readonly: true, placeholder: "Дата конца", class: "form-control datepicker", disabled: true %>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
           <tbody>
             <tr>
               <td>Цена</td>
-              <td class="text-right">$<%= @car.price_1 %></td>
+              <td class="text-right"><span id="reservation_price"></span></td>
             </tr>
             <tr>
               <td>Кол-во суток</td>
@@ -31,28 +31,63 @@
             </tr>
             <tr>
               <td class="total">Итого</td>
-              <td class="text-right">$<span id="reservation_total"></span></td>
+              <td class="text-right"><span id="reservation_total"></span> руб</td>
             </tr>
             <tr>
               <td class="deposit">Залог</td>
-              <td class="text-right">$<span id="reservation_deposit"></span></td>
+              <td class="text-right"><span id="reservation_deposit"><%= @car.deposit %> руб</span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <br/>
-      <%= f.submit "Book Now", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
+      <%= f.submit "Отправить заявку", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
     <% end %>
   </div>
 </div>
 
 <script>
-  $(function() {
-    $('#reservation_start_date').datepicker({
-      dateFormat: 'dd-mm-yy'
-    });
-    $('#reservation_end_date').datepicker({
-      dateFormat: 'dd-mm-yy'
-    });
-  })
+
+  $('#reservation_start_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#reservation_end_date').datepicker("option", "minDate", selected);
+      $('#reservation_end_date').attr("disabled", false);
+
+    }
+  });
+
+  $('#reservation_end_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#reservation_start_date').datepicker("option", "maxDate", selected);
+      $('#btn_book').attr("disabled", false);
+
+      var start_date = $('#reservation_start_date').datepicker('getDate');
+      var end_date = $('#reservation_end_date').datepicker('getDate');
+      var nights = (end_date - start_date)/1000/60/60/24;
+
+      var price;
+      if (nights > 3 && nights <= 7) {
+        price  = <%= @car.price_2 %>;
+      } else if (nights > 7 && nights <= 14) {
+        price  = <%= @car.price_3 %>;
+      } else if (nights > 14) {
+        price  = <%= @car.price_4 %>;
+      } else {
+        price  = <%= @car.price_1 %>;
+      }
+
+      var total = nights * price;
+      $('#reservation_price').text(price);
+      $('#reservation_nights').text(nights);
+      $('#reservation_total').text(total);
+
+      $('#preview').show();
+    }
+  });
 </script>
