@@ -1,0 +1,268 @@
+.contactForm{
+	.input-group{
+		border-bottom: 1px solid;
+		margin-bottom: 15px;
+	}
+	.form-control{
+		border-radius: 0;
+		border: none;
+		background: none;
+		resize: none;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 15px 0 0;
+		font-family: $font;
+		&:focus{
+			box-shadow: none;
+		}
+	}
+	textarea.form-control{
+		height: 70px;
+	}
+	.input-group-addon{
+		border-radius: 0;
+		border: none;
+		background: none;
+		padding: 0 15px 0 0;
+		line-height: 30px;
+		vertical-align: top;
+	}
+	
+	.contact-checkbox{
+		& + label{
+			margin-top: 10px;
+			margin-bottom: 35px;
+			line-height: 1;
+			font-family: $font;
+			font-weight: normal;
+			&:before{
+				content: "\f371";
+				float: left;
+				width: 20px;
+				font-family: "Ionicons";
+			}
+		}
+		&:checked + label:before{
+			content: "\f374";
+		}
+	}
+	
+	.btn{
+		width: 100%;
+		font-weight: 700;
+		margin-bottom: 13px;
+	}
+}
+
+.foot-contct-form{	
+	.foot-msg{
+		font-style: italic;
+		font-family: $font;
+	}
+}
+
+.contct-form{
+	
+	.input-group{
+		margin-bottom: 17px;
+	}
+	
+	.input-group-addon{
+		font-size: 18px;
+	}
+	
+	.textarea-label{
+		font-family: $font;
+		line-height: 1;
+		margin: 0 0 5px;
+		font-weight: normal;
+		i{
+			float: right;
+			font-size: 18px;
+		}
+	}
+	
+	.contact-checkbox{
+		& + label{
+			margin-bottom: 35px;
+			margin-top: 15px;
+			&:before{
+				content: "\f372";
+			}
+		}
+		&:checked + label:before{
+			content: "\f373";
+		}
+	}
+	
+	textarea.form-control{
+		height: 100px;
+		border: 1px solid;
+		margin-bottom: 30px;
+	}
+}
+
+.contact-form-info{
+	position: relative;
+	.error{
+		font-weight: normal;
+		font-family: $font;
+		font-size: 12px;
+	}
+}
+
+#success,#error{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	span{
+		position: absolute;
+		top: 40%;
+		display: block;
+		width: 100%;
+	}
+}
+
+.wrapper-contact{
+	padding: 80px 0;
+}
+
+.contact-map{
+	position: relative;
+	.google-map{
+		height: 539px;
+		margin: 0;		
+		@media (max-width: 767px){
+			max-height: 400px;
+		}
+	}
+}
+
+.contact-form-area{
+	position: absolute;
+	top: 0;
+	bottom: 0;	
+	@media (max-width: 767px){
+		position: relative;
+		bottom: auto;
+		height: 539px;
+	}
+}
+
+.form-area{
+	position: relative;
+	height: 100%;
+	.this-inner{
+		border: 1px solid;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		bottom: 10px;
+		right: 10px;
+		padding: 0 35px;
+		@media (max-width: 479px){
+			padding: 0 15px;
+		}
+	}
+	
+	.this-title{
+		font-family: $font2;
+		font-weight: 800;
+		line-height: 1;
+		margin-top: 25px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+}
+
+
+.contact-addresses{
+	padding: 40px 0;
+	@media (max-width: 767px){
+		max-width: 270px;
+		margin: 0 auto;
+	}
+	.media-left{
+		padding: 0;
+		.img-holder{
+			position: relative;
+			width: 270px;
+			display: block;
+			@media (max-width: 991px){
+				width: 100%;
+				img{
+					width: 100%;
+				}
+			}
+		}
+		img{
+			max-width: 100%;
+			position: relative;
+			z-index: 0;
+		}
+		.hover-box{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			opacity: 0;
+			@include transition;
+		}
+		.social-nav{
+			position: absolute;
+			top: calc(50% - 20px);
+			left: 50%;
+			transform: translateX(-50%);
+			display: table;
+			@media (max-width: 1199px){
+				top: calc(50% - 17px);
+			}
+		}
+	}
+	&:hover,&:focus{
+		.media-left .hover-box{
+			opacity: 1;
+		}
+	}
+	
+	.media-body{
+		background: url(../images/contact-pattern.png) repeat scroll 0 0;
+		padding-right: 40px;
+		@media (max-width: 1199px){
+			padding-right: 0;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		@media (max-width: 767px){
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.address-portion{
+		padding: 0 30px;
+		@media (max-width: 991px){
+			padding: 15px 30px;
+		}
+		@media (max-width: 767px){
+			padding: 15px 20px;
+		}
+	}
+	
+	.this-title{
+		font-family: $font2;
+		font-weight: 800;
+		text-transform: uppercase;
+		line-height: 32px;
+		margin-top: -5px;
+		@media (max-width: 1199px){
+			line-height: 24px;
+			font-size: 16px;
+		}
+	}
+}

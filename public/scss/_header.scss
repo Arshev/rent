@@ -1,0 +1,158 @@
+.top-bar{}
+
+.welcome-texts{
+	float: left;
+	font: bold 12px/1 $font;
+	padding: 14px 0;
+	.welcome-text{
+		font-family: $font3;
+		font-size: 24px;
+		letter-spacing: 0.1px;
+		line-height: 17px;
+		padding: 0;
+		color: #fff;
+		font-weight: 100;
+		margin-right: 7px;
+	}
+}
+
+.social-lists-wSearch{
+	float: right;
+	padding: 15.5px 0;
+	.search-pop{		
+		margin-right: 20px;
+	}
+	
+	li{
+		&:first-child{
+			border-right: 1px solid;
+		}
+		& + li{
+			margin-left: 20px;
+		}
+		a{
+			padding: 0;
+			line-height: 1;
+			i{}
+		}
+	}
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+.info-bar{
+	
+}
+
+.logo-box{
+	padding-top: 27px;
+	padding-bottom: 21px;
+}
+
+.logo{
+	float: left;
+	max-width: 270px;
+	img{
+		width: 100%;
+	}
+}
+
+.header-informations{
+	width: calc(100% - 85px);
+	float: left;
+	padding: 33px 0 27px;
+	margin-right: 25px;
+	@media (max-width: 1199px){
+		margin-right: 0;
+	}
+	@media (max-width: 991px){
+		padding-bottom: 10px;
+	}
+}
+
+.info-media{
+	padding: 0 28px;
+	display: inline-table;
+	@media (max-width: 1199px){
+		padding: 0 5px;
+	}
+	@media (max-width: 991px){
+		padding-bottom: 15px;
+	}
+	& + .info-media{
+		margin-top: 0;
+	}
+	.media-left{
+		font-size: 24px;		
+		line-height: 1;
+		@media (max-width: 1199px){
+			font-size: 18px;
+			padding-right: 5px;
+		}
+		.ion-ios-telephone{
+			font-size: 28px;
+			@media (max-width: 1199px){
+				font-size: 18px;
+			}
+		}
+	}
+	.media-body{
+		width: auto;
+	}
+	h5{
+		font-family: $font;
+		margin: 0;
+	}
+	.this-top{
+		font-weight: bold;
+		margin-bottom: 6px;
+	}
+	.this-bottom{}
+}
+
+.cart-nav{
+	float: right;
+	padding-top: 34px;
+	
+	.search-pop{
+		float: left;
+		margin-right: 18px;
+		font-size: 16px;
+		line-height: 34px;
+	}
+}
+
+.cart-count{
+	position: relative;	
+	float: left;
+	margin-right: 20px;
+	i{
+		font-size: 24px;
+		line-height: 1;
+	}
+	.badge{
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		padding: 0;
+		line-height: 18px;
+		text-align: center;
+		font-family: $font2;
+		font-size: 9px;
+		font-weight: bold;
+		border-radius: 100%;
+		bottom: -6px;
+		right: -7px;
+	}
+}
+
+.nav-hider{
+	font-size: 24px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	border: none;
+	&[aria-expanded="false"]{}
+	&[aria-expanded="true"]{
+	}
+}

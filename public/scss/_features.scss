@@ -1,0 +1,62 @@
+.features{
+	padding: 88px 0;
+}
+.feature{	
+	.media{
+		padding-top: 27px;
+		padding-bottom: 27px;
+		& + .media {
+			margin: 0;
+		}
+	
+		&:hover,&:focus{
+			.media-left{
+				padding-right: 15px;				
+				span{
+					animation: rotateShake 1s linear 0s infinite alternate;
+				}
+			}
+		}
+	}
+	.media-left{
+		padding-right: 15px;
+		span{
+			display: block;
+			text-align: center;
+			width: 60px;
+			padding-right: 10px;
+			@include transition;
+		}
+	}
+	.media-body{}
+	.this-title{
+		margin: 0 0 20px;
+		font: 900 16px/1.15 $font2;
+	}
+	p{
+		margin: 0;
+		font-family: $font;
+		line-height: 24px;
+	}
+	@media (max-width: 991px){
+		margin: 0 auto;
+		max-width: 630px;
+	}
+}
+@keyframes rotateShake {
+	0%{
+		transform: rotate(-15deg);
+		padding-left: 10px;
+		padding-right: 0;
+	}
+	50%{
+		transform: rotate(15deg);
+		padding-left: 10px;
+		padding-right: 0;
+	}
+	100%{
+		transform: rotate(0);
+		padding-left: 0;
+		padding-right: 10px;
+	}
+}

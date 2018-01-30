@@ -1,0 +1,55 @@
+.page-cover{
+	background: url(../images/page-cover.jpg) no-repeat scroll center center;	
+	.breadcrumb{
+		padding: 0;
+		display: table;
+		margin: 0 auto 65px;
+		background: none;
+		text-transform: capitalize;
+		@media (max-width: 767px){
+			margin-bottom: 40px;
+		}
+		li{
+			font-family: $font;
+			font-size: 16px;
+			line-height: 1;
+			& + li{
+				&:before{
+					content: "\f101";
+					font-family: "FontAwesome";
+					padding: 0 15px;
+				}
+			}
+			a{
+				padding: 0;
+			}
+		}
+	}
+}
+
+.page-title{
+	margin: 118px 0 78px;
+	font-family: $font2;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: center;
+	span{
+		text-transform: capitalize;
+	}
+	@media (max-width: 767px){
+		margin: 60px 0 20px;
+	}
+}
+@media (max-width: 991px){
+	.media-body{
+		width: auto !important;
+	}
+}
+h2.hd-sec{
+	display: none;
+}
+@media (max-width: 767px){
+	section{
+		overflow: hidden;
+	}
+}

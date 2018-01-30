@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'notera';
+    src: url('../vendors/notera/notera_personaluseonly-webfont.woff2') format('woff2'),
+         url('../vendors/notera/notera_personaluseonly-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'autograph';
+    src: url('../vendors/autograph/autograf_personaluseonly-webfont.woff2') format('woff2'),
+         url('../vendors/autograph/autograf_personaluseonly-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$font: 'Open Sans', sans-serif;
+$font2: 'Lato', sans-serif;
+$font3: 'notera';
+$font4: 'autograph';
+
+$base: #d66200;
+
+$base-c1: lighten(desaturate(adjust-hue($base, 1.6373), 6.3241), 8.4314); // #f77d0a
+$base-c2: lighten(desaturate(adjust-hue($base, 1.6063), 3.3755), 11.5686); // #fb8516
+
+/*Color List*/
+$color1: #1c1e32;
+$color2: #22243b;
+$color3: #1ccc8b;
+$color4: #292c45;
+$color5: #2b2e4a;
+$color5-2: darken(saturate(adjust-hue($color5, 0.0000), 0.4608), 0.3922); // #2a2d49
+$color6: #767785;
+$color7: darken(saturate(adjust-hue($color1, 0.4545), 0.3663), 1.1765); // #1a1b2e
+$color8: darken(saturate(adjust-hue($color1, 1.4545), 0.0968), 4.9020); // #131422
+$color9: lighten(saturate(adjust-hue($color1, 1.0101), 1.9915), 4.9020); // #262841
+
+
+
+// Mixins
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s){
+    transition: $property $duration $animate $delay; 
+}
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}

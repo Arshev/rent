@@ -1,0 +1,660 @@
+.wrapper-car-details{
+	padding: 80px 0 120px;
+	background: #f9f9f9;
+}
+
+.car-images{
+	.this-heading{
+		background: #fff;	
+		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+		padding: 28px 30px 24px;
+		margin-bottom: 5px;
+		.this-class{
+			text-transform: uppercase;
+			font-family: $font2;
+			font-weight: 800;
+			line-height: 1.2;
+			margin: 0;
+			color: transparentize($color5,.85);
+		}
+		.vehicle-title{
+			color: $color5;
+			margin-bottom: 8px;
+		}
+	}
+	
+	.this-cover-image{
+		height: 465px;
+		background: #fff;	
+		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+		line-height: 465px;
+		text-align: center;
+		position: relative;
+		img{
+			max-width: 100%;
+		}
+		margin-bottom: 5px;
+	}
+	
+	.this-brand{
+		opacity: 0.15;
+		position: absolute;
+		bottom: 15px;
+		right: 50px;
+	}
+	
+	.this-social{
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		li{
+			& + li{
+				margin-top: 5px;
+			}
+			a{
+				line-height: 32px;
+				width: 32px;
+				border-radius: 100%;
+				color: #fff;
+				padding: 0;
+				opacity: 0.2;
+				&:hover,&:focus{
+					opacity: 1;
+				}
+			}
+			&:nth-child(1) a{background: #3b5998;}
+			&:nth-child(2) a{background: #00aced;}
+			&:nth-child(3) a{background: #dd4b39;}
+			&:nth-child(4) a{background: #007bb5;}
+			&:nth-child(5) a{background: #32506d;}
+		}
+	}
+	
+	.other-images{
+		width: 100%;
+        height: 135px;
+		a{
+			display: block;
+		}
+	}
+	
+	.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        width: 150px;		
+    }
+	
+
+	.swiper-container-horizontal>.swiper-scrollbar{
+		background: transparentize($color5,0.9);
+		border-radius: 0;
+		height: 3px;
+		bottom: 10px;
+		.swiper-scrollbar-drag{
+			background: #bebec4;
+			box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.65);
+			height: 10px;
+			margin-top: -5px;
+		}
+	}
+}
+
+.focus-infos{
+	padding: 32px 55px 30px 30px;
+	background: $color2;
+	color: #fff;
+	margin: 0;
+	position: relative;
+	&:before{
+		content: '';
+		background: url(../images/icons/car-details/gear.png) no-repeat scroll right center;
+		width: 55px;
+		height: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		opacity: 0.05;
+	}
+	.this-heading{
+		text-transform: uppercase;
+		margin: 0 0 15px;
+		font-family: $font2;
+		font-weight: 800;
+		line-height: 1;
+		&:before{
+			content: '';
+			width: 5px;
+			height: 15px;
+			float: left;
+			margin-right: 10px;
+			background: $base-c1;
+		}
+	}
+	p{
+		margin: 0;
+		font-family: $font;
+		line-height: 24px;
+	}
+}
+
+.focus-informations{
+	padding: 20px 0 60px;
+	line-height: 46px;
+	background: $color5;	
+	li {
+		padding-left: 28px;
+		padding-right: 30px;
+		font-family: $font;
+		color: transparentize(#fff,0.85);
+		& + li{
+			border-top: 1px dotted;
+			border-top-color: transparentize(#fff,0.92);
+		}
+		
+		.icon{
+			width: 42px;
+			float: left;
+		}
+		
+		.this-value{
+			float: right;
+			color: #fff;
+			font-weight: 800;
+		}
+	}
+}
+
+.car-infomations{
+	.rent{
+		float: left;
+		width: 230px;
+		margin: 0;
+		padding: 17px 0;
+		background: $color2;
+		color: $base-c1;
+		small{
+			color: #fff;
+		}
+	}
+}
+	
+.hire-btn{
+	width: 140px;
+	line-height: 58px;
+	float: left;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font;
+	font-weight: 800;
+	color: #fff;
+	background: $base-c1;
+	position: relative;
+	border: none;
+	&:before{
+		content: '';
+		background: url(../images/car-detail/left-shadow.png) no-repeat scroll 0 0;
+		width: 11px;
+		height: 60px;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -11px;
+		@include transition;
+	}
+	&:hover,&:focus{
+		&:before{
+			opacity: 0;
+		}
+	}
+}
+
+.desctiption-tabs.nav-tabs.nav-justified{
+	margin-top: 45px;
+	margin-bottom: 5px;
+	border: none;
+	overflow: hidden;
+	li{
+		a{
+			border-radius: 0;
+			line-height: 60px;
+			padding: 0 15px;
+			text-transform: uppercase;
+			background: $color5;
+			border: none;
+			font-family: $font2;
+			font-weight: 800;
+			color: transparentize(#fff,0.85	);
+			position: relative;
+			&:before,&:after{
+				content: '';
+				width: 11px;
+				height: 60px;
+				position: absolute;
+				top: 0;
+				display: block;
+				background: no-repeat scroll center top;
+				opacity: 0;
+				@include transition;
+			}
+			&:before{
+				left: -11px;
+				background-image: url(../images/car-detail/left-shadow.png);
+			}
+			&:after{
+				right: -11px;
+				background-image: url(../images/car-detail/right-shadow.png);
+			}
+			&:hover,&:focus{
+				background: $color2;
+				color: #fff;
+			}
+		}
+		&.active{			
+			a{
+				border: none;
+				background: $color2;
+				color: #fff;
+				z-index: 2;
+				&:before,
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.desctiption-contents{
+	margin-bottom: 185px;
+	.tab-pane{
+		padding: 45px 50px;
+		background: #fff;
+		font-family: $font;
+		line-height: 24px;
+		color: transparentize($color5,0.25);
+		p{
+			margin-bottom: 30px;			
+		}
+	}
+	
+	.half-col{
+		padding: 0 55px;
+		@media(max-width: 767px){
+			padding: 0 15px;
+		}
+	}
+}
+
+.car-detail-list{
+	li{
+		padding-left: 24px;
+		font-style: italic;
+		&:before{
+			content: "\f120";
+			font-family: "Ionicons";
+			color: $base-c1;
+			font-size: 16px;
+			width: 24px;
+			float: left;
+			margin-left: -24px;
+			font-style: normal;
+		}
+		& + li{
+			margin-top: 12px;
+		}
+	}
+}
+
+.may-you-like-header{
+	margin-bottom: 45px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGElEQVQIW2NkYGAwZmBgOMsABYwwBvECAD26AQUATQ6nAAAAAElFTkSuQmCC) repeat scroll 0 0;
+	.this-title{
+		float: left;
+		margin: 0 0 0 30px;
+		line-height: 60px;
+		font-family: $font2;
+		font-weight: 800;
+		color: $color5;
+	}
+}
+
+.may-you-like-nav{
+	width: 90px;
+	float: right;
+	text-align: center;
+	
+	.owl-prev,
+	.owl-next{
+		line-height: 60px;
+		display: inline-block;
+		font-size: 18px;
+		color: $color5;
+		@include transition;
+		cursor: pointer;
+		&:hover,&:focus{
+			color: $base-c1;
+		}
+	}
+	
+	.owl-prev{
+		margin-right: 8px;
+	}
+	.owl-next{}
+}
+.may-you-like-carousel{
+	.item{
+		padding: 15px;
+		.media{
+			background: #fff;
+			.media-left{
+				text-align: center;
+				img{
+					width: auto;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+.order-modal{
+	.modal-lg{
+		width: 1280px;
+		max-width: 100%;
+		padding: 0 40px 60px;
+		background: #f9f9f9;
+	}
+	.modal-content{
+		box-shadow: none;
+		border-radius: 0;
+		border: none;
+		background: none;
+	}
+	
+	.this-navigation{
+		max-width: 630px;
+		margin: -25px auto 95px;
+		background: #fff;
+		border-radius: 50px;
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+		border: 1px solid #eee;
+		counter-reset: my-badass-counter;
+		padding: 0 50px;
+		li{
+			a{
+				padding: 0;
+				line-height: 48px;
+				font-family: $font;
+				font-size: 12px;
+				color: transparentize($color5,0.7);
+				&:hover,&:focus{
+					color: $color5;
+					background: none;
+				}
+				&:before{
+					content: "0" counter(my-badass-counter) ". ";
+					counter-increment: my-badass-counter;
+				}
+			}
+			&.active a{
+				color: $color5;
+				background: none;
+				font-weight: 700;
+			}
+		}
+	}
+	
+	.this-top{
+		text-transform: uppercase;
+		font-family: $font;
+		color: transparentize($color5,0.25);
+		margin-top: 5px;
+		margin-bottom: 20px;
+		a{
+			color: $base-c1;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		& + .this-top{
+			margin-bottom: 28px;
+			
+			a{
+				color: $color3;
+			}
+		}
+	}
+	
+	.form-group{
+		margin-bottom: 20px;
+	}
+	.this-label{
+		margin: 0 0 6px;
+		line-height: 1;
+		font-family: $font;
+		color: transparentize($color5,0.25);
+		span{
+			color: $color3;
+		}
+	}
+	.form-control{
+		height: 50px;
+		padding: 5px 20px;
+		border-radius: 0;
+		box-shadow: none;
+		color: transparentize($color5,0.7);
+		border-color: #f3f3f3;
+	}
+	textarea.form-control{
+		height: 96px;
+	}
+	
+	#create-account{
+		display: none;
+		& + label{
+			padding-left: 25px;
+			line-height: 16px;
+			font-family: $font;
+			color: transparentize($color5,0.25);
+			margin: 0;
+			font-weight: normal;
+			position: relative;
+			&:before, &:after{
+				content: '';
+				float: left;				
+			}
+			&:before{
+				width: 16px;
+				height: 16px;
+				border: 1px solid;
+				border-color: $color5;
+				opacity: 0.45;
+				margin-left: -25px;
+			}
+			&:after{
+				width: 12px;
+				height: 12px;
+				border: none;
+				position: absolute;
+				top: 2px;
+				left: 2px;
+				background: $color5;
+				opacity: 0;
+				@include transition;
+			}
+		}
+		&:checked + label{
+			&:after{
+				opacity: 1;
+			}
+		}
+	}
+	
+	.btn[type="submit"]{
+		background: $color3;
+		border-radius: 0;
+	}
+}
+
+.your-order{
+	.this-heading{
+		text-transform: uppercase;
+		text-align: center;
+		font: 800 16px/60px $font2;
+		margin: 0;
+		color: #fff;
+		background: $color5;
+		position: relative;
+		&:after{
+			content: '';
+			width: 50%;
+			height: 60px;
+			background: url(../images/car-detail/order.png) no-repeat scroll right center;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+	.btn{
+		border-radius: 0;
+	}
+}
+
+.order-data{
+	margin: 0;
+	background: #fff;
+	padding: 28px 34px 20px;
+	
+	.media{
+		& + .media{
+			margin-top: 5px;
+		}
+		.media-left{
+			padding-right: 0;
+			span{
+				white-space: nowrap;
+				width: 140px;
+				display: block;
+				color: transparentize($color5,0.7);
+				font-size: 12px;
+				font-family: $font;
+				text-transform: uppercase;
+			}
+		}
+		.media-body{
+			text-align: right;
+			font-family: $font;
+			font-weight: 800;
+			color: $color5;
+		}
+	}
+	
+}
+
+.other-infos-car{
+	margin-top: 8px;
+	li{
+		color: transparentize($color5,0.7);
+		border-top: 1px solid;
+		border-top-color: transparentize($color5,0.95);
+		font-size: 12px;
+		font-family: $font;
+		text-transform: uppercase;
+		line-height: 45px;
+		span{
+			font-family: $font;
+			font-weight: 800;
+			color: $color5;
+			float: right;
+			font-size: 14px;
+		}
+		&:last-child{
+			font-size: 14px;
+			color: transparentize($color5,0.25);
+		}
+	}
+}
+
+.contact-back{
+	color: transparentize($color5,0.7);
+	line-height: 2;
+	margin: 0;
+	font-family: $font;
+}
+.straight-pay{
+	color: transparentize($color5,0.9);
+	margin: 0 0 10px;
+	line-height: 1;
+	font-family: $font;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.choose-payment-method{
+	padding: 18px 35px 35px;
+	background: #fff;
+}
+
+input[name="payment-method"]{
+	& + label{
+		color: transparentize($color5,0.7);
+		font-family: $font;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 12px;
+		display: block;
+		margin: 0;
+		line-height: 30px;
+		&:before{
+			content: "\f3a6";
+			float: left;
+			font-size: 15px;
+			font-family: "Ionicons";			
+			width: 16px;			
+		}
+		
+		a{
+			float: right;
+		}
+		
+		&[for="payment-method01"]{
+			line-height: 50px;
+		}
+		
+		& + article{
+			margin-bottom: 25px;
+			background: #f6f6f6;
+			padding: 12px 18px;
+			position: relative;
+			&:before{
+				content: '';
+				width: 0;
+				height: 0;
+				border-bottom: 8px solid;
+				border-bottom-color: #f6f6f6;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				position: absolute;
+				top: -8px;
+				left: 0;
+			}
+		}
+	}
+	&:checked + label{
+		color: $base-c1;
+		&:before{
+			content: "\f3a7";
+		}
+	}
+}
+@media(max-width: 991px){
+	.car-dt{
+		max-width: 630px;
+		margin: 0 auto;
+		.this-footer{
+			display: flex;
+			h3, button{
+				width: 100%;
+			}
+		}
+	}
+}

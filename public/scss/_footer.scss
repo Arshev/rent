@@ -1,0 +1,144 @@
+.top-footer{
+	border-bottom: 1px solid;
+	padding: 60px 0 75px;
+	@media (max-width: 991px){
+		.ft{
+			max-width: 630px;
+			margin: 0 auto 30px;
+		}
+		.footer-widget{
+			height: auto !important;	
+			margin-bottom: 30px;
+		}
+	}
+	.widget-about{
+		.foot-logo{
+			margin-bottom: 38px;
+			display: block;
+		}
+		p{
+			margin-bottom: 25px;
+			& + p{
+				margin-top: 30px;
+			}
+		}
+	}
+	
+	.widget{
+		& + .widget{
+			@media (max-width: 767px){
+				margin-top: 30px;
+			}
+		}
+		.social-nav{
+			padding-top: 30px;
+			border-top: 1px solid;
+			li{
+				& + li{
+					margin-left: 17px;
+					@media (max-width: 1199px){
+						margin-left: 10px;
+					}
+				}
+				a{
+				}
+			}
+		}
+	}
+	
+	.widget-title{
+		margin-top: 15px;
+		margin-bottom: 38px;
+		font-family: $font2;
+		font-size: 16px;
+		text-transform: uppercase;
+		line-height: 1;
+		font-weight: 800;
+	}
+	
+	.google-map{
+		margin-top: 40px;
+		height: 130px;
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+}
+
+.bottom-footer{	
+	border-top: 1px solid;
+	padding: 33px 0 23px;
+	line-height: 24px;
+	text-align: center;
+	font-family: $font;
+}
+
+.foot-nav{
+	li{
+		font-family: $font;
+		line-height: 24px;
+		float: left;
+		width: 100%;
+		padding-left: 25px;
+		& + li{
+			margin-top: 15px;
+			@media (max-width: 1199px){
+				margin-top: 5px;
+			}
+		}
+		i{
+			float: left;
+			width: 25px;
+			font-size: 18px;
+			line-height: 24px;
+			margin-left: -25px;
+		}
+		a{
+			float: left;
+			padding: 0;
+			&:hover,&:focus{
+				background: none;
+			}
+		}
+	}
+	
+	&.style2{
+		li{
+			padding-left: 18px;
+			i{
+				width: 18px;
+				font-size: 14px;
+				margin-left: -18px;
+			}
+		}
+	}
+}
+
+.social-nav{
+	li{
+		& + li{
+			margin-left: 10px;
+		}
+		a{
+			width: 40px;
+			line-height: 40px;
+			border-radius: 100%;
+			text-align: center;
+			padding: 0;
+			font-size: 18px;
+			@media (max-width: 1199px){
+				width: 34px;
+				line-height: 34px;
+				font-size: 16px;
+			}
+		}	
+		.tooltip{
+			white-space: nowrap;
+			.tooltip-inner{
+				border-radius: 0;
+				font-family: $font;
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+/*Prefix Styles*/
+.m0{margin: 0;}
+.p0{padding: 0;}
+
+body{
+	position: relative;
+    /*Section Fix*/
+    section, header, footer{
+        &.row{            
+            margin: 0;
+            position: relative;
+        }
+    }
+	
+	.container{
+		@media (min-width: 1281px){
+			width: 1200px;
+		}
+	}
+}
+
+/*Ancore*/
+a,.btn,button{
+    outline: none;
+    @include transition;
+    &:before,&:after{
+        @include transition;
+    }
+    &:focus,&:hover{
+        outline: none;
+        text-decoration: none;
+        @include transition;
+    }
+}
+
+/*Buttons*/
+.btn,.bootstrap-select>.btn{
+	border-radius: 50px;
+	padding: 0 30px;
+	line-height: 50px;
+	display: inline-block;
+	border: none;
+	font-family: $font;
+	font-weight: 800;
+	text-transform: uppercase;	
+	text-shadow: none;
+	&.light{
+		border: 1px solid;
+		padding: 0 47px;
+	}
+}
+.btn-outline{
+	border: 1px solid;
+	padding: 0 45px;
+}
+
+.btn-sm{
+	line-height: 33px;
+	padding: 0 30px;
+}
+
+/*Section Title*/
+.section-title{
+	margin:0 auto 40px;
+	max-width: 770px;
+	h6,h2{
+		margin: 0;
+	}
+	@media (max-width: 991px){
+		max-width: 630px;
+		margin: 0 auto 30px;
+	}
+	.this-top{
+		font-family: $font;
+		font-weight: 900;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+	.this-main{
+		font-family: $font2;
+		font-weight: 900;
+		& + p{
+			margin-top: 30px;
+			margin-bottom: 0;
+			line-height: 24px;
+			a{
+				font-style: italic;
+			}
+		}
+	}
+	
+	.btn{
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+	
+	& + .section-title-img{
+		padding-bottom: 35px;
+		@media (max-width: 991px){
+			max-width: 630px;
+			margin: 0 auto;
+		}
+		img{
+			max-width: 100%;
+		}
+	}
+}

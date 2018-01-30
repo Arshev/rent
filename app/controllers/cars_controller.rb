@@ -14,7 +14,7 @@ class CarsController < ApplicationController
 
   def create
     @car = current_user.cars.build(car_params)
-    if @car.save!
+    if @car.save
       redirect_to listing_car_path(@car), notice: "Сохранено"
     else
       render :new, notice: "Что то пошло не так!"
