@@ -13,54 +13,46 @@
 	<!--Find Quick-->
 	<section class="row find-quick">
 		<div class="container">
-			<form action="#" method="get" class="row m0 find-quick-form text-center">
+			<%= form_for @quick_booking, html: {class:"row m0 find-quick-form text-center"} do |f| %>
 				<h2 class="this-title">Быстрая заявка</h2>
-				<p class="this-p">You just do one step behind, we will delivery car to your door!</p>
+				<p class="this-p">Если вам срочно нужен автомобиль заполните эту форму!</p>
 
 				<ul class="nav nav-pills cartypes">
-					<li><input type="checkbox" name="cartype" id="cartype01"><label for="cartype01">Luxury car</label></li>
-					<li><input type="checkbox" name="cartype" id="cartype02"><label for="cartype02">Vans/Minivans</label></li>
-					<li><input type="checkbox" name="cartype" id="cartype03"><label for="cartype03">Sport car</label></li>
-					<li><input type="checkbox" name="cartype" id="cartype04"><label for="cartype04">SUV</label></li>
-					<li><input type="checkbox" name="cartype" id="cartype05"><label for="cartype05">Sedan</label></li>
+					<li><%= f.check_box :is_sedan %> <label>Седан</label></li>
+					<li><%= f.check_box :is_hatch %> <label>Хэтчбэк</label></li>
+					<li><%= f.check_box :is_cross %> <label>Кроссовер</label></li>
+					<li><%= f.check_box :is_minivan %> <label>Минивен</label></li>
+					<li><%= f.check_box :is_universal %> <label>Универсал</label></li>
 				</ul>
 
 				<div class="row m0 fr-it">
 					<div class="location-group">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter airport, city or postcode...">
-						<span class="input-group-addon"><i class="ion-android-locate"></i></span>
-					</div>
-					<input type="checkbox" name="dlocation" id="dlocation" class="sr-only">
-					<label for="dlocation">Different return location?</label>
-					<div class="dlocate">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Enter airport, city or postcode...">
+							<%= f.text_field :name, placeholder: "Имя", class: "form-control" %>
 							<span class="input-group-addon"><i class="ion-android-locate"></i></span>
 						</div>
 					</div>
+					<div class="input-group date-group">
+						<%= f.text_field :start_date, placeholder: "Дата начала", id:"reservation_start_date", class: "datepicker form-control" %>
+						<span class="input-group-addon"><i class="ion-calendar"></i></span>
+					</div>
+
+					<div class="input-group date-group">
+						<%= f.text_field :end_date, placeholder: "Дата окончания", id:"reservation_end_date", class: "datepicker form-control" %>
+						<span class="input-group-addon"><i class="ion-calendar"></i></span>
+					</div>
+					<div class="input-group">
+						<%= f.text_field :contacts, placeholder: "Телефон или Email", class: "form-control" %>
+						<span class="input-group-addon"><i class="ion-calendar"></i></span>
+					</div>
+
 				</div>
-				<div class="input-group date-group">
-					<input type="text" class="datedroper form-control" placeholder="Pick up date">
-					<span class="input-group-addon"><i class="ion-calendar"></i></span>
-				</div>
-				<div class="input-group time-group">
-					<input type="text" class="timedroper form-control" placeholder="08:00 am">
-					<span class="input-group-addon"><i class="ion-ios-alarm-outline"></i></span>
-				</div>
-				<div class="input-group date-group">
-					<input type="text" class="datedroper form-control" placeholder="Drop off date">
-					<span class="input-group-addon"><i class="ion-calendar"></i></span>
-				</div>
-				<div class="input-group time-group">
-					<input type="text" class="timedroper form-control" placeholder="08:00 am">
-					<span class="input-group-addon"><i class="ion-ios-alarm-outline"></i></span>
-				</div>
+				<br/>
+				<div class="row m0">
+					<%= f.submit "Отправить заявку", class: "btn btn-primary" %>
 				</div>
 
-				<div class="row m0"><input type="submit" value="reserve a car" class="btn btn-primary"></div>
-
-			</form>
+			<% end %>
 		</div>
 	</section>
  	<!--Features-->
@@ -608,6 +600,18 @@
  		</div>
  	</section>
  	<%= render 'shared/footer' %>
+
+	<script>
+	  $('#reservation_start_date').datepicker({
+	    dateFormat: 'dd-mm-yy',
+	    minDate: 0
+	  });
+
+	  $('#reservation_end_date').datepicker({
+	    dateFormat: 'dd-mm-yy',
+	    minDate: 0,
+	  });
+	</script>
 
   <!--Google Map-->
   <script src="https://maps.googleapis.com/maps/api/js"></script>
