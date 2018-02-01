@@ -1,4 +1,4 @@
-<% if (!user_signed_in?) && !current_page?(root_path) %>
+<% if current_page?(root_path) || current_page?(cars_path) || current_page?("/cars/#{params[:id]}") %>
   <!--Top Bar-->
     <section class="row top-bar">
       <h2 class="hd-sec">Heading</h2>
@@ -20,34 +20,33 @@
   		<div class="container">
   			<div class="row">
   				<div class="col-sm-3 col-xs-8 logo-box">
-  					<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+  					<a href="/" class="logo"><img src="/images/logo.png" alt=""></a>
   				</div>
   				<div class="col-sm-9 col-xs-4 info-box">
   					<div class="header-informations hidden-xs">
   						<div class="media info-media">
   							<div class="media-left"><i class="ion-location"></i></div>
   							<div class="media-body">
-  								<h5 class="this-top">3588 N  Stelling road, Brooklyn,</h5>
-  								<h5 class="this-bottom">NYC, United State.</h5>
+  								<h5 class="this-top">Невского 36В, 3 этаж</h5>
+  								<h5 class="this-bottom">Калининград</h5>
   							</div>
   						</div>
   						<div class="media info-media">
   							<div class="media-left"><i class="ion-ios-telephone"></i></div>
   							<div class="media-body">
-  								<h5 class="this-top">1800 - 112 - 8888/ EXT: 001</h5>
+  								<h5 class="this-top">(4012) 52-16-15</h5>
   								<h5 class="this-bottom">Support@Supershine.com</h5>
   							</div>
   						</div>
   						<div class="media info-media">
   							<div class="media-left"><i class="ion-ios-clock"></i></div>
   							<div class="media-body">
-  								<h5 class="this-top">Monday - Friday:</h5>
-  								<h5 class="this-bottom">08:00am ~ 05:00pm</h5>
+  								<h5 class="this-top">Пн - Вс:</h5>
+  								<h5 class="this-bottom">10:00 ~ 19:00</h5>
   							</div>
   						</div>
   					</div>
   					<div class="cart-nav">
-  						<a href="#" class="cart-count"><i class="ion-bag"></i><span class="badge">03</span></a>
   						<a href="#" class="nav-hider hidden-xs hidden-sm"><i class="ion-android-menu"></i></a>
   						<button type="button" class="navbar-toggle nav-hider collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
   							<span class="sr-only">Toggle navigation</span>
@@ -65,7 +64,7 @@
   			<div class="collapse navbar-collapse" id="main-nav">
   				<ul class="nav navbar-nav">
   					<li><%= link_to "Главная", root_path %></li>
-  					<li><%= link_to "Автомобили", root_path %></li>
+  					<li><%= link_to "Автомобили", cars_path %></li>
   					<li><%= link_to "Цены", root_path %></li>
   					<li><%= link_to "Контакты", root_path %></li>
             <li><%= link_to "Заказать", root_path %></li>
@@ -76,7 +75,7 @@
   			</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
   	</nav>
-
+<% else %>
   <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px">
     <div class="container-fluid">
       <div class="navbar-header">

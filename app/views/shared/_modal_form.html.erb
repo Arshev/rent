@@ -1,0 +1,107 @@
+<div class="modal fade order-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content container">
+    	<ul class="nav nav-pills this-navigation nav-justified">
+    		<li><a href="fleet.html">Выберите автомобиль</a></li>
+    		<li class="active"><a href="#">Ваши данные</a></li>
+    		<li><a href="#">Подтверждение</a></li>
+    	</ul>
+
+    	<form action="#" class="row">
+    		<div class="col-sm-8">
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Имя <span>*</span></h5>
+    					<input type="text" class="form-control">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Фамилия <span>*</span></h5>
+    					<input type="text" class="form-control">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Email <span>*</span></h5>
+    					<input type="text" class="form-control">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Телефон <span>*</span></h5>
+    					<input type="text" class="form-control">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Дата начала аренды</h5>
+    					<input type="text" class="form-control" placeholder="01/01/2016">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Дата окончания аренды</h5>
+    					<input type="text" class="form-control" placeholder="01/04/2016">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Trip Type</h5>
+    					<select class="form-control">
+    						<option>Per Hour (3 hours minimum)</option>
+    						<option>Fixed</option>
+    					</select>
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Drop off Date</h5>
+    					<select class="form-control">
+    						<option>01</option>
+    						<option selected>02</option>
+    						<option>03</option>
+    						<option>04</option>
+    						<option>05</option>
+    						<option>06</option>
+    					</select>
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Pickup Location</h5>
+    					<textarea class="form-control"></textarea>
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<h5 class="this-label">Destination</h5>
+    					<textarea class="form-control"></textarea>
+    				</div>
+    				<div class="form-group col-sm-12">
+    					<input type="checkbox" name="create-account" id="create-account">
+    					<label for="create-account">Create an account?</label>
+    				</div>
+    				<div class="form-group col-sm-12">
+    					<h5 class="this-label">Order Note</h5>
+    					<textarea class="form-control"></textarea>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-sm-4">
+    			<div class="your-order row m0">
+    				<h4 class="this-heading">Your Order</h4>
+    				<div class="row order-data">
+    					<div class="media name-of-car">
+    						<div class="media-left media-middle"><span>Name of car</span></div>
+    						<div class="media-body">Mercedes Benz Sprinter (Black 2016)</div>
+    					</div>
+    					<div class="media image-of-car">
+    						<div class="media-left media-bottom"><span>Image</span></div>
+    						<div class="media-body"><img src="images/car-detail/2.png" alt=""></div>
+    					</div>
+    					<ul class="nav other-infos-car">
+    						<li>Price (per day) <span>$195.00</span></li>
+    						<li>Tax (10%) <span>(free) $0.00</span></li>
+    						<li>total cost <span>$195.00</span></li>
+    					</ul>
+    				</div>
+    				<button class="btn btn-primary btn-block">BOOK BY EMAIL!</button>
+    			</div>
+    			<h6 class="contact-back text-center">(We will contact you back!)</h6>
+    			<h4 class="straight-pay text-center">STRAIGHT PAY</h4>
+    			<div class="row m0 choose-payment-method">
+    				<input type="radio" name="payment-method" id="payment-method01" class="sr-only" checked>
+    				<label for="payment-method01">Stripe Payment <a href="#"><img src="images/car-detail/stripe.jpg" alt=""></a></label>
+    				<article class="stripe">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</article>
+    				<input type="radio" name="payment-method" id="payment-method02" class="sr-only">
+    				<label for="payment-method02">Paypal <a href="#"><img src="images/car-detail/paypal.png" alt=""></a></label>
+    			</div>
+    			<input type="submit" value="PAY NOW!" class="btn btn-primary btn-block">
+    		</div>
+    	</form>
+    </div>
+  </div>
+</div>

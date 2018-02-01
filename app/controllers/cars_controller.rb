@@ -22,6 +22,7 @@ class CarsController < ApplicationController
   end
 
   def show
+    @photos = @car.photos
   end
 
   def listing

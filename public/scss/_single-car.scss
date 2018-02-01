@@ -1,11 +1,11 @@
 .wrapper-car-details{
-	padding: 80px 0 120px;
+	padding: 80px 0 20px;
 	background: #f9f9f9;
 }
 
 .car-images{
 	.this-heading{
-		background: #fff;	
+		background: #fff;
 		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
 		padding: 28px 30px 24px;
 		margin-bottom: 5px;
@@ -22,10 +22,10 @@
 			margin-bottom: 8px;
 		}
 	}
-	
+
 	.this-cover-image{
 		height: 465px;
-		background: #fff;	
+		background: #fff;
 		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
 		line-height: 465px;
 		text-align: center;
@@ -35,14 +35,14 @@
 		}
 		margin-bottom: 5px;
 	}
-	
+
 	.this-brand{
 		opacity: 0.15;
 		position: absolute;
 		bottom: 15px;
 		right: 50px;
 	}
-	
+
 	.this-social{
 		position: absolute;
 		top: 24px;
@@ -69,7 +69,7 @@
 			&:nth-child(5) a{background: #32506d;}
 		}
 	}
-	
+
 	.other-images{
 		width: 100%;
         height: 135px;
@@ -77,13 +77,13 @@
 			display: block;
 		}
 	}
-	
+
 	.swiper-slide {
         text-align: center;
         font-size: 18px;
-        width: 150px;		
+        width: 150px;
     }
-	
+
 
 	.swiper-container-horizontal>.swiper-scrollbar{
 		background: transparentize($color5,0.9);
@@ -141,7 +141,7 @@
 .focus-informations{
 	padding: 20px 0 60px;
 	line-height: 46px;
-	background: $color5;	
+	background: $color5;
 	li {
 		padding-left: 28px;
 		padding-right: 30px;
@@ -151,12 +151,12 @@
 			border-top: 1px dotted;
 			border-top-color: transparentize(#fff,0.92);
 		}
-		
+
 		.icon{
 			width: 42px;
 			float: left;
 		}
-		
+
 		.this-value{
 			float: right;
 			color: #fff;
@@ -178,7 +178,7 @@
 		}
 	}
 }
-	
+
 .hire-btn{
 	width: 140px;
 	line-height: 58px;
@@ -250,7 +250,7 @@
 				color: #fff;
 			}
 		}
-		&.active{			
+		&.active{
 			a{
 				border: none;
 				background: $color2;
@@ -273,10 +273,10 @@
 		line-height: 24px;
 		color: transparentize($color5,0.25);
 		p{
-			margin-bottom: 30px;			
+			margin-bottom: 30px;
 		}
 	}
-	
+
 	.half-col{
 		padding: 0 55px;
 		@media(max-width: 767px){
@@ -322,7 +322,7 @@
 	width: 90px;
 	float: right;
 	text-align: center;
-	
+
 	.owl-prev,
 	.owl-next{
 		line-height: 60px;
@@ -335,7 +335,7 @@
 			color: $base-c1;
 		}
 	}
-	
+
 	.owl-prev{
 		margin-right: 8px;
 	}
@@ -370,7 +370,7 @@
 		border: none;
 		background: none;
 	}
-	
+
 	.this-navigation{
 		max-width: 630px;
 		margin: -25px auto 95px;
@@ -403,7 +403,7 @@
 			}
 		}
 	}
-	
+
 	.this-top{
 		text-transform: uppercase;
 		font-family: $font;
@@ -417,13 +417,13 @@
 		}
 		& + .this-top{
 			margin-bottom: 28px;
-			
+
 			a{
 				color: $color3;
 			}
 		}
 	}
-	
+
 	.form-group{
 		margin-bottom: 20px;
 	}
@@ -447,7 +447,7 @@
 	textarea.form-control{
 		height: 96px;
 	}
-	
+
 	#create-account{
 		display: none;
 		& + label{
@@ -460,7 +460,7 @@
 			position: relative;
 			&:before, &:after{
 				content: '';
-				float: left;				
+				float: left;
 			}
 			&:before{
 				width: 16px;
@@ -488,7 +488,7 @@
 			}
 		}
 	}
-	
+
 	.btn[type="submit"]{
 		background: $color3;
 		border-radius: 0;
@@ -523,7 +523,7 @@
 	margin: 0;
 	background: #fff;
 	padding: 28px 34px 20px;
-	
+
 	.media{
 		& + .media{
 			margin-top: 5px;
@@ -547,7 +547,7 @@
 			color: $color5;
 		}
 	}
-	
+
 }
 
 .other-infos-car{
@@ -608,18 +608,18 @@ input[name="payment-method"]{
 			content: "\f3a6";
 			float: left;
 			font-size: 15px;
-			font-family: "Ionicons";			
-			width: 16px;			
+			font-family: "Ionicons";
+			width: 16px;
 		}
-		
+
 		a{
 			float: right;
 		}
-		
+
 		&[for="payment-method01"]{
 			line-height: 50px;
 		}
-		
+
 		& + article{
 			margin-bottom: 25px;
 			background: #f6f6f6;
