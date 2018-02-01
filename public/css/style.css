@@ -4390,11 +4390,12 @@ input[name="payment-method"]:checked + label {
 
 .location-group {
   float: left;
-  margin-right: 40px;
+  margin-right: 15px;
   width: 300px; }
 
 .date-group {
   float: left;
+  margin-right: 15px;
   width: 200px; }
   .date-group + .time-group {
     margin-left: 10px; }

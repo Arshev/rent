@@ -1,77 +1,120 @@
-<!--Top Bar-->
-  <section class="row top-bar">
-    <h2 class="hd-sec">Heading</h2>
-  	<div class="container">
-  		<div class="welcome-texts"><span class="welcome-text">Добро пожаловать в </span><span>Super Shine!</span></div>
-  		<ul class="social-lists-wSearch nav nav-pills">
-  			<li><a href="#" class="search-pop"><span class="ion-ios-search-strong"></span></a></li>
-  			<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-  			<li><a href="#"><i class="ion-social-twitter"></i></a></li>
-  			<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-  			<li><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
-  			<li><a href="#"><i class="ion-social-rss"></i></a></li>
-  		</ul>
-  	</div>
-  </section>
+<% if (!user_signed_in?) && !current_page?(root_path) %>
+  <!--Top Bar-->
+    <section class="row top-bar">
+      <h2 class="hd-sec">Heading</h2>
+    	<div class="container">
+    		<div class="welcome-texts"><span class="welcome-text">Добро пожаловать в </span><span>Super Shine!</span></div>
+    		<ul class="social-lists-wSearch nav nav-pills">
+    			<li><a href="#" class="search-pop"><span class="ion-ios-search-strong"></span></a></li>
+    			<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+    			<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+    			<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+    			<li><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
+    			<li><a href="#"><i class="ion-social-rss"></i></a></li>
+    		</ul>
+    	</div>
+    </section>
 
-  <!--Info Bar-->
-	<section class="row info-bar">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3 col-xs-8 logo-box">
-					<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
-				</div>
-				<div class="col-sm-9 col-xs-4 info-box">
-					<div class="header-informations hidden-xs">
-						<div class="media info-media">
-							<div class="media-left"><i class="ion-location"></i></div>
-							<div class="media-body">
-								<h5 class="this-top">3588 N  Stelling road, Brooklyn,</h5>
-								<h5 class="this-bottom">NYC, United State.</h5>
-							</div>
-						</div>
-						<div class="media info-media">
-							<div class="media-left"><i class="ion-ios-telephone"></i></div>
-							<div class="media-body">
-								<h5 class="this-top">1800 - 112 - 8888/ EXT: 001</h5>
-								<h5 class="this-bottom">Support@Supershine.com</h5>
-							</div>
-						</div>
-						<div class="media info-media">
-							<div class="media-left"><i class="ion-ios-clock"></i></div>
-							<div class="media-body">
-								<h5 class="this-top">Monday - Friday:</h5>
-								<h5 class="this-bottom">08:00am ~ 05:00pm</h5>
-							</div>
-						</div>
-					</div>
-					<div class="cart-nav">
-						<a href="#" class="cart-count"><i class="ion-bag"></i><span class="badge">03</span></a>
-						<a href="#" class="nav-hider hidden-xs hidden-sm"><i class="ion-android-menu"></i></a>
-						<button type="button" class="navbar-toggle nav-hider collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<i class="ion-android-menu"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!--Info Bar-->
+  	<section class="row info-bar">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-sm-3 col-xs-8 logo-box">
+  					<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+  				</div>
+  				<div class="col-sm-9 col-xs-4 info-box">
+  					<div class="header-informations hidden-xs">
+  						<div class="media info-media">
+  							<div class="media-left"><i class="ion-location"></i></div>
+  							<div class="media-body">
+  								<h5 class="this-top">3588 N  Stelling road, Brooklyn,</h5>
+  								<h5 class="this-bottom">NYC, United State.</h5>
+  							</div>
+  						</div>
+  						<div class="media info-media">
+  							<div class="media-left"><i class="ion-ios-telephone"></i></div>
+  							<div class="media-body">
+  								<h5 class="this-top">1800 - 112 - 8888/ EXT: 001</h5>
+  								<h5 class="this-bottom">Support@Supershine.com</h5>
+  							</div>
+  						</div>
+  						<div class="media info-media">
+  							<div class="media-left"><i class="ion-ios-clock"></i></div>
+  							<div class="media-body">
+  								<h5 class="this-top">Monday - Friday:</h5>
+  								<h5 class="this-bottom">08:00am ~ 05:00pm</h5>
+  							</div>
+  						</div>
+  					</div>
+  					<div class="cart-nav">
+  						<a href="#" class="cart-count"><i class="ion-bag"></i><span class="badge">03</span></a>
+  						<a href="#" class="nav-hider hidden-xs hidden-sm"><i class="ion-android-menu"></i></a>
+  						<button type="button" class="navbar-toggle nav-hider collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+  							<span class="sr-only">Toggle navigation</span>
+  							<i class="ion-android-menu"></i>
+  						</button>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
 
-  <nav class="navbar navbar-default main-navigation navbar-static-top">
-		<div class="container">
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="main-nav">
-				<ul class="nav navbar-nav">
-					<li><%= link_to "Главная", root_path %></li>
-					<li><%= link_to "Автомобили", root_path %></li>
-					<li><%= link_to "Цены", root_path %></li>
-					<li><%= link_to "Контакты", root_path %></li>
-          <li><%= link_to "Заказать", root_path %></li>
-					<li><%= link_to "Отзывы", root_path %></li>
-					<li><%= link_to "Условия", root_path %></li>
-					<li><%= link_to "О нас", root_path %></li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	</nav>
+    <nav class="navbar navbar-default main-navigation navbar-static-top">
+  		<div class="container">
+  			<!-- Collect the nav links, forms, and other content for toggling -->
+  			<div class="collapse navbar-collapse" id="main-nav">
+  				<ul class="nav navbar-nav">
+  					<li><%= link_to "Главная", root_path %></li>
+  					<li><%= link_to "Автомобили", root_path %></li>
+  					<li><%= link_to "Цены", root_path %></li>
+  					<li><%= link_to "Контакты", root_path %></li>
+            <li><%= link_to "Заказать", root_path %></li>
+  					<li><%= link_to "Отзывы", root_path %></li>
+  					<li><%= link_to "Условия", root_path %></li>
+  					<li><%= link_to "О нас", root_path %></li>
+  				</ul>
+  			</div><!-- /.navbar-collapse -->
+  		</div><!-- /.container-fluid -->
+  	</nav>
+
+  <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Rent", root_path, class: "navbar-brand" %>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <button class="btn btn-form btn-small">
+              <%= link_to "Добавить авто", new_car_path, style: "color: white; text-decoration: none;" %>
+            </button>
+          </li>
+
+          <% if !user_signed_in? %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% else %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.name %> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Manage Listings", cars_path %></li>
+                <li><%= link_to "List Your Space", new_car_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          <% end %>
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+<% end %>

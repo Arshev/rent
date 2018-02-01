@@ -1,33 +1,303 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Your Listing", cars_path, class: "sidebar-link active" %></li>
-      <li class="sidebar-item"><%= link_to "Your Reservations", cars_path, class: "sidebar-link" %></li>
-      <li class="sidebar-item"><%= link_to "Your Trips", cars_path, class: "sidebar-link" %></li>
-    </ul>
-  </div>
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Listing
-      </div>
-      <div class="panel-body">
+<!--Page Cover-->
+	<section class="row page-cover">
+		<div class="container">
+			<h2 class="h1 page-title">Fleet <span>(No Sidebar)</span></h2>
+			<ol class="breadcrumb">
+				<li><a href="index.html">home</a></li>
+				<li class="active">fleet</li>
+			</ol>
+		</div>
+	</section>
+	<section class="row wrapper-fleet">
+		<div class="container">
+			<div class="row m0 banner-row"><a href="#"><img src="images/banner/fleet.png" alt="" class="img-responsive"></a></div>
+			<div class="row m0 fleet-filters">
+				<div class="filter-by filter-div">
+					<div class="this-label">Filter by:</div>
+					<select class="selectpicker fleet-filter-select">
+						<option>All category</option>
+						<option>Category 01</option>
+						<option>Category 02</option>
+						<option>Category 03</option>
+						<option>Category 04</option>
+						<option>Category 05</option>
+					</select>
+				</div>
+				<div class="filter-div layout-filter">
+					<a href="#"><i class="ion-ios-list-outline"></i></a>
+					<a href="#" class="active"><i class="ion-grid"></i></a>
+				</div>
+				<div class="filter-div show-fleet">
+					<div class="this-label">Show:</div>
+					<select class="selectpicker fleet-filter-select">
+						<option>05 items/page</option>
+						<option>10 items/page</option>
+						<option>15 items/page</option>
+						<option>20 items/page</option>
+						<option>25 items/page</option>
+					</select>
+				</div>
+			<ul class="pagination">
+				<li class="active"><a href="#">01</a></li>
+				<li><a href="#">02</a></li>
+				<li class="dots"><a href="#">...</a></li>
+				<li><a href="#">30</a></li>
+				<li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+			</ul>
+			</div>
+			<div class="media fleet fleet-list">
+				<div class="row">
+					<div class="col-md-5  col-sm-12 col-xs-12">
+						<div class="media-left"><a href="single-car.html"><img src="images/fleet/1.jpg" alt=""></a></div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+						<div class="media-body this-body">
+							<div class="media this-header">
+								<div class="media-body">
+									<div class="row m0">
+										<h2 class="rent">$69.96<sub>/day</sub></h2>
+									<h6 class="reviews">
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										(5 reviews)
+									</h6>
+									</div>
+									<h4 class="vehicle-title">Alfa Romeo Mito (Mercedes Series 2016)</h4>
+								</div>
+								<div class="media-right">
+									<a href="single-car.html" class="detail-btn btn"><span>detail</span><span><img src="images/fleet/key.png" alt=""></span></a>
+								</div>
+							</div>
+							<div class="summary row m0">
+								Rental car companies are notorious for finding additional surcharges, sometimes not added until the point of sale. These can include location or airport taxe...
+							</div>
+							<div class="row specification">
+								<ul class="nav">
+									<li><span><img src="images/icons/fleet-list/1.png" alt=""></span>Auto trasition</li>
+									<li><span><img src="images/icons/fleet-list/2.png" alt=""></span>06 list/100 kms</li>
+									<li><span><img src="images/icons/fleet-list/3.png" alt=""></span>02 seats</li>
+									<li><span><img src="images/icons/fleet-list/4.png" alt=""></span>Make Year 2016</li>
+									<li><span><img src="images/icons/fleet-list/5.png" alt=""></span>04 air bags</li>
+									<li><span><img src="images/icons/fleet-list/6.png" alt=""></span>100 lits capity</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="media fleet fleet-list sale-offer">
+				<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="media-left"><a href="single-car.html"><img src="images/fleet/2.jpg" alt=""></a></div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+						<div class="media-body this-body">
+							<div class="media this-header">
+								<div class="media-body">
+									<div class="row m0">
+										<h2 class="rent">$169.96<sub>/day</sub></h2>
+									<h6 class="reviews">
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										(5 reviews)
+									</h6>
+									</div>
+									<h4 class="vehicle-title">Volkswagen Double Size Canvas Vans 2014</h4>
+								</div>
+								<div class="media-right">
+									<a href="single-car.html" class="detail-btn btn"><span>detail</span><span><img src="images/fleet/key.png" alt=""></span></a>
+								</div>
+							</div>
+							<div class="summary row m0">
+								Rental car companies are notorious for finding additional surcharges, sometimes not added until the point of sale. These can include location or airport taxe...
+							</div>
+							<div class="row specification">
+								<ul class="nav">
+									<li><span><img src="images/icons/fleet-list/1.png" alt=""></span>Auto trasition</li>
+									<li><span><img src="images/icons/fleet-list/2.png" alt=""></span>06 list/100 kms</li>
+									<li><span><img src="images/icons/fleet-list/3.png" alt=""></span>02 seats</li>
+									<li><span><img src="images/icons/fleet-list/4.png" alt=""></span>Make Year 2016</li>
+									<li><span><img src="images/icons/fleet-list/5.png" alt=""></span>04 air bags</li>
+									<li><span><img src="images/icons/fleet-list/6.png" alt=""></span>100 lits capity</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <% @cars.each do |car| %>
-          <div class="row">
-            <div class="col-md-2">
-              <%= image_tag car.cover_photo(:thumb) %>
-            </div>
-            <div class="col-md-7">
-              <h4><%= car.car_name %></h4>
-            </div>
-            <div class="col-md-3 right">
-              <%= link_to "Update", listing_car_path(car), class: "btn btn-form" %>
-            </div>
-          </div>
-          <hr/>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+			<div class="media fleet fleet-list">
+				<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="media-left"><a href="single-car.html"><img src="images/fleet/3.jpg" alt=""></a></div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+						<div class="media-body this-body">
+							<div class="media this-header">
+								<div class="media-body">
+									<div class="row m0">
+										<h2 class="rent">$69.96<sub>/day</sub></h2>
+									<h6 class="reviews">
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										(5 reviews)
+									</h6>
+									</div>
+									<h4 class="vehicle-title">Alfa Romeo Mito (Mercedes Series 2016)</h4>
+								</div>
+								<div class="media-right">
+									<a href="single-car.html" class="detail-btn btn"><span>detail</span><span><img src="images/fleet/key.png" alt=""></span></a>
+								</div>
+							</div>
+							<div class="summary row m0">
+								Rental car companies are notorious for finding additional surcharges, sometimes not added until the point of sale. These can include location or airport taxe...
+							</div>
+							<div class="row specification">
+								<ul class="nav">
+									<li><span><img src="images/icons/fleet-list/1.png" alt=""></span>Auto trasition</li>
+									<li><span><img src="images/icons/fleet-list/2.png" alt=""></span>06 list/100 kms</li>
+									<li><span><img src="images/icons/fleet-list/3.png" alt=""></span>02 seats</li>
+									<li><span><img src="images/icons/fleet-list/4.png" alt=""></span>Make Year 2016</li>
+									<li><span><img src="images/icons/fleet-list/5.png" alt=""></span>04 air bags</li>
+									<li><span><img src="images/icons/fleet-list/6.png" alt=""></span>100 lits capity</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="media fleet fleet-list sale-offer">
+				<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="media-left"><a href="single-car.html"><img src="images/fleet/4.jpg" alt=""></a></div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+						<div class="media-body this-body">
+							<div class="media this-header">
+								<div class="media-body">
+									<div class="row m0">
+										<h2 class="rent">$69.96<sub>/day</sub></h2>
+									<h6 class="reviews">
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										(5 reviews)
+									</h6>
+									</div>
+									<h4 class="vehicle-title">Alfa Romeo Mito (Mercedes Series 2016)</h4>
+								</div>
+								<div class="media-right">
+									<a href="single-car.html" class="detail-btn btn"><span>detail</span><span><img src="images/fleet/key.png" alt=""></span></a>
+								</div>
+							</div>
+							<div class="summary row m0">
+								Rental car companies are notorious for finding additional surcharges, sometimes not added until the point of sale. These can include location or airport taxe...
+							</div>
+							<div class="row specification">
+								<ul class="nav">
+									<li><span><img src="images/icons/fleet-list/1.png" alt=""></span>Auto trasition</li>
+									<li><span><img src="images/icons/fleet-list/2.png" alt=""></span>06 list/100 kms</li>
+									<li><span><img src="images/icons/fleet-list/3.png" alt=""></span>02 seats</li>
+									<li><span><img src="images/icons/fleet-list/4.png" alt=""></span>Make Year 2016</li>
+									<li><span><img src="images/icons/fleet-list/5.png" alt=""></span>04 air bags</li>
+									<li><span><img src="images/icons/fleet-list/6.png" alt=""></span>100 lits capity</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="media fleet fleet-list sale-offer">
+				<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="media-left"><a href="single-car.html"><img src="images/fleet/5.jpg" alt=""></a></div>
+					</div>
+					<div class="col-md-7">
+						<div class="media-body this-body">
+							<div class="media this-header">
+								<div class="media-body">
+									<div class="row m0">
+										<h2 class="rent">$69.96<sub>/day</sub></h2>
+									<h6 class="reviews">
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o starred"></i>
+										<i class="fa fa-star-o"></i>
+										<i class="fa fa-star-o"></i>
+										(5 reviews)
+									</h6>
+									</div>
+									<h4 class="vehicle-title">Alfa Romeo Mito (Mercedes Series 2016)</h4>
+								</div>
+								<div class="media-right">
+									<a href="single-car.html" class="detail-btn btn"><span>detail</span><span><img src="images/fleet/key.png" alt=""></span></a>
+								</div>
+							</div>
+							<div class="summary row m0">
+								Rental car companies are notorious for finding additional surcharges, sometimes not added until the point of sale. These can include location or airport taxe...
+							</div>
+							<div class="row specification">
+								<ul class="nav">
+									<li><span><img src="images/icons/fleet-list/1.png" alt=""></span>Auto trasition</li>
+									<li><span><img src="images/icons/fleet-list/2.png" alt=""></span>06 list/100 kms</li>
+									<li><span><img src="images/icons/fleet-list/3.png" alt=""></span>02 seats</li>
+									<li><span><img src="images/icons/fleet-list/4.png" alt=""></span>Make Year 2016</li>
+									<li><span><img src="images/icons/fleet-list/5.png" alt=""></span>04 air bags</li>
+									<li><span><img src="images/icons/fleet-list/6.png" alt=""></span>100 lits capity</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row fleet-pagination-row pagination-row fleet-filters">
+				<div class="pagi-info">
+					<h5>Total <span>150</span>results</h5>
+					<h5>Showing items from <span><u>01 to 05</u></span></h5>
+				</div>
+				<ul class="pagination">
+					<li>Page:</li>
+					<li class="active"><a href="#">01</a></li>
+					<li><a href="#">02</a></li>
+					<li class="dots"><a href="#">...</a></li>
+					<li><a href="#">30</a></li>
+					<li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+ 	<section class="row banner2-prefolder">
+ 		<div class="container">
+ 			<div class="row inner m0">
+ 				<div class="col-md-6 this-left">
+ 					<div class="this-texts">
+ 						<h2 class="this-title">Quick Sale</h2>
+					<h2 class="this-title2 h1">VANS PICKUP!</h2>
+					<p>At vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum.</p>
+					<a href="#" class="read-more">read more<i class="ion-arrow-right-b"></i></a>
+ 					</div>
+			</div>
+			<div class="col-md-6 this-right">
+ 					<div class="this-texts">
+ 						<h2 class="this-title">Online Booking</h2>
+					<h2 class="this-title2 h1">CADILAC SALE 39%</h2>
+					<p>At vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum.</p>
+					<a href="#" class="read-more">read more<i class="ion-arrow-right-b"></i></a>
+ 					</div>
+			</div>
+ 			</div>
+ 		</div>
+ 	</section>

@@ -1,6 +1,6 @@
 <% @cars.each do |car| %>
   <div class="col-md-4 fleet fleet2">
-    <div class="inner row">
+    <div class="inner row" style="height: 570px;">
       <h2 class="rent text-center"><small>от</small><%= car.price_main %><sub>/сутки</sub></h2>
       <h4 class="vehicle-title text-center"><%= car.car_name %></h4>
       <div class="row vehicle-img text-center">
@@ -9,16 +9,24 @@
         <% end %>
       </div>
       <div class="row specification">
-        <ul class="nav">
-          <li><span><img src="images/icons/fleet2/transmission.png" style="width: 15px;" alt=""></span> <%= car.transmission %></li>
-          <li><span><img src="images/icons/fleet2/fuel.png" style="width: 15px;" alt=""></span> <%= car.fuel %></li>
-          <li><span><img src="images/icons/fleet2/year.png" style="width: 15px;" alt=""></span> <%= car.year %></li>
-          <li><span><img src="images/icons/fleet2/car_type.png" style="width: 15px;" alt=""></span> <%= car.car_type %></li>
-          <li><span><img src="images/icons/fleet2/capacity.png" style="width: 15px;" alt=""></span> <%= car.engine_capacity %></li>
-          <% if car.is_air %>
-            <li><span><img src="images/icons/fleet2/air.png" style="width: 15px;" alt=""></span> Кондиционер</li>
-          <% end %>
-        </ul>
+        <div>
+          <table class="table" >
+            <tr>
+              <td  style="display:inline-block;"><img src="images/icons/fleet2/transmission.png" style="width: 15px;" alt=""> <%= car.transmission %></td>
+              <td  style="display:inline-block;"><img src="images/icons/fleet2/fuel.png" style="width: 15px;" alt=""> <%= car.fuel %></td>
+              <td style="display:inline-block;"><img src="images/icons/fleet2/year.png" style="width: 15px;" alt=""> <%= car.year %></td>
+            </tr>
+            <tr>
+              <td style="display:inline-block;"><img src="images/icons/fleet2/car_type.png" style="width: 15px;" alt=""> <%= car.car_type %></td>
+              <td style="display:inline-block;"><img src="images/icons/fleet2/capacity.png" style="width: 15px;" alt=""> <%= car.engine_capacity %></td>
+              <td style="display:inline-block;">
+                <% if car.is_air %>
+                  <img src="images/icons/fleet2/air.png" style="width: 15px;" alt=""> Кондиционер
+                <% end %>
+              </td>
+            </tr>
+          </table>
+        </div>
         <%= link_to "+", car_path(car), class: "details-page" %>
       </div>
     </div>
