@@ -18,4 +18,5 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
   end
   resources :quick_bookings, only: [:create]
+  resources :bookings, only: [:create, :show, :index, :new]
 end

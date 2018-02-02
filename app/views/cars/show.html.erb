@@ -65,7 +65,7 @@
         </ul>
   		<div class="this-footer row m0">
   			<h3 class="rent text-center"><small>от</small><%= @car.price_4 %><sub>/сутки</sub></h3>
-  			<button class="hire-btn" data-toggle="modal" data-target=".order-modal">Забронировать</button>
+        <%= link_to "Забронировать", new_booking_path(car_id: @car.id), class:"hire-btn" %>
   		</div>
   	</div>
   	</div>
