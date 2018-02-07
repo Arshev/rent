@@ -1,4 +1,4 @@
-<%= form_for @booking, class:"row" do |f| %>
+<%= form_for @booking, class:"row", remote: true do |f| %>
   <div class="col-sm-8">
     <div class="row">
       <div class="form-group col-sm-12">
@@ -6,7 +6,7 @@
         <% if @car %>
           <%= f.text_field :car, value: @car.car_name, class: "form-control", disabled: true %>
         <% else %>
-          <%= select_tag 'Автомобили', options_for_select(@cars.collect{ |u| [u.car_name, u.id] }), prompt: "Выберите автомобиль" %>
+          <%= select_tag 'Автомобили', options_for_select(@cars.collect{ |u| [u.car_name, u.id] }), prompt: "Выберите автомобиль", id: "imgCar" %>
         <% end %>
       </div>
       <div class="form-group col-sm-6">
@@ -40,11 +40,11 @@
 
       <div class="form-group col-sm-6">
         <h5 class="this-label">Место получения автомобиля</h5>
-        <%= select_tag(:location_start, options_for_select([['Офис', 'Офис'], ['Аэропорт', 'Аэропорт'], ['Другой адрес', 'Другой адрес']])) %>
+        <%= select_tag(:location_start, options_for_select([['Офис', 'Офис'], ['Аэропорт', 'Аэропорт'], ['Светлогорск', 'Светлогорск'], ['Зеленоградск', 'Зеленоградск'], ['Другой адрес в Калининграде', 'Другой адрес в Калининграде']])) %>
       </div>
       <div class="form-group col-sm-6">
         <h5 class="this-label">Место возврата автомобиля</h5>
-        <%= select_tag(:location_end, options_for_select([['Офис', 'Офис'], ['Аэропорт', 'Аэропорт'], ['Другой адрес', 'Другой адрес']])) %>
+        <%= select_tag(:location_end, options_for_select([['Офис', 'Офис'], ['Аэропорт', 'Аэропорт'], ['Светлогорск', 'Светлогорск'], ['Зеленоградск', 'Зеленоградск'], ['Другой адрес в Калининграде', 'Другой адрес в Калининграде']])) %>
       </div>
       <div class="form-group col-sm-12">
         <%= f.check_box :accept %> Принимаю положения закона о персональных данных
@@ -60,17 +60,23 @@
       <h4 class="this-heading">Стоимость</h4>
       <div class="row order-data">
         <div class="media name-of-car">
-          <div class="media-left media-middle"><span>Name of car</span></div>
-          <div class="media-body">Mercedes Benz Sprinter (Black 2016)</div>
-        </div>
-        <div class="media image-of-car">
-          <div class="media-left media-bottom"><span>Image</span></div>
-          <div class="media-body"><img src="images/car-detail/2.png" alt=""></div>
+          <div class="media-left media-middle"><span>Название</span></div>
+          <div class="media-body" id="car_name">
+            <% if @car %>
+              <%= @car.car_name %>
+            <% end %>
+          </div>
         </div>
         <ul class="nav other-infos-car">
-          <li>Price (per day) <span>$195.00</span></li>
-          <li>Tax (10%) <span>(free) $0.00</span></li>
-          <li>total cost <span>$195.00</span></li>
+          <li>Цена (за сутки) <span id="car_price"></span></li>
+          <li>Всего суток<span id="car_days"></span></li>
+          <li id="extra_options">Дополнительные опции <span id="extra_price"></span></li>
+          <li>Итого <span id="total_price"></span></li>
+          <li>Залог <span id="deposit_price">
+            <% if @car %>
+              <%= @car.deposit %> руб
+            <% end %>
+          </span></li>
         </ul>
       </div>
       <button class="btn btn-primary btn-block">BOOK BY EMAIL!</button>
@@ -79,12 +85,59 @@
     <h4 class="straight-pay text-center">STRAIGHT PAY</h4>
     <div class="row m0 choose-payment-method">
       <input type="radio" name="payment-method" id="payment-method01" class="sr-only" checked>
-      <label for="payment-method01">Stripe Payment <a href="#"><img src="images/car-detail/stripe.jpg" alt=""></a></label>
+      <label for="payment-method01">Stripe Payment <a href="#"><img src="/images/car-detail/stripe.jpg" alt=""></a></label>
       <article class="stripe">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</article>
       <input type="radio" name="payment-method" id="payment-method02" class="sr-only">
-      <label for="payment-method02">Paypal <a href="#"><img src="images/car-detail/paypal.png" alt=""></a></label>
+      <label for="payment-method02">Paypal <a href="#"><img src="/images/car-detail/paypal.png" alt=""></a></label>
     </div>
     <input type="submit" value="PAY NOW!" class="btn btn-primary btn-block">
   </div>
 </form>
+<% end %>
+<% if @car %>
+  <script>
+
+    $('#reservation_start_date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '3m',
+      onSelect: function(selected) {
+        $('#reservation_end_date').datepicker("option", "minDate", selected);
+        $('#reservation_end_date').attr("disabled", false);
+
+      }
+    });
+
+    $('#reservation_end_date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '3m',
+      onSelect: function(selected) {
+        $('#reservation_start_date').datepicker("option", "maxDate", selected);
+        $('#btn_book').attr("disabled", false);
+
+        var start_date = $('#reservation_start_date').datepicker('getDate');
+        var end_date = $('#reservation_end_date').datepicker('getDate');
+        var nights = (end_date - start_date)/1000/60/60/24;
+
+
+
+          var price;
+          if (nights > 3 && nights <= 7) {
+            price  = <%= @car.price_2 %>;
+          } else if (nights > 7 && nights <= 14) {
+            price  = <%= @car.price_3 %>;
+          } else if (nights > 14) {
+            price  = <%= @car.price_4 %>;
+          } else {
+            price  = <%= @car.price_1 %>;
+          }
+
+          var total = nights * price;
+          $('#car_price').text(price + " руб");
+          $('#car_days').text(nights);
+          $('#reservation_total').text(total);
+      }
+    });
+  </script>
 <% end %>

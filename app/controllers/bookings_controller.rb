@@ -17,11 +17,21 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = current_user.bookings.build
+    @booking = Booking.new
     if params[:car_id]
       @car = Car.find(params[:car_id])
+    else
+      @cars = Car.all
+      gon.cars_info = @cars
     end
-    @cars = Car.all
+  end
+
+  def change_car_info
+    car_id = params[:car_id]
+    @car_info = Car.find_by car_id: car_id
+    respond_to do |format|
+      format.json { render json: @car_info }
+    end
   end
 
   private
