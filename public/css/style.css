@@ -4020,7 +4020,7 @@ input[name="engine-type"] {
       white-space: nowrap;
       width: 140px;
       display: block;
-      color: rgba(43, 46, 74, 0.3);
+      color: black;
       font-size: 12px;
       font-family: "Open Sans", sans-serif;
       text-transform: uppercase; }
@@ -4033,7 +4033,7 @@ input[name="engine-type"] {
 .other-infos-car {
   margin-top: 8px; }
   .other-infos-car li {
-    color: rgba(43, 46, 74, 0.3);
+    color: black;
     border-top: 1px solid;
     border-top-color: rgba(43, 46, 74, 0.05);
     font-size: 12px;

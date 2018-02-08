@@ -1,4 +1,4 @@
-<% if current_page?(root_path) || current_page?(cars_path) || current_page?("/cars/#{params[:id]}") %>
+<% if current_page?(root_path) || current_page?(cars_path) || current_page?("/cars/#{params[:id]}") || current_page?(new_booking_path) %>
   <!--Top Bar-->
     <section class="row top-bar">
       <h2 class="hd-sec">Heading</h2>
@@ -67,7 +67,7 @@
   					<li><%= link_to "Автомобили", cars_path %></li>
   					<li><%= link_to "Цены", root_path %></li>
   					<li><%= link_to "Контакты", root_path %></li>
-            <li><%= link_to "Заказать", root_path %></li>
+            <li><%= link_to "Заказать", new_booking_path %></li>
   					<li><%= link_to "Отзывы", root_path %></li>
   					<li><%= link_to "Условия", root_path %></li>
   					<li><%= link_to "О нас", root_path %></li>
