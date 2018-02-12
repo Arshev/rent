@@ -2,6 +2,7 @@ class QuickBookingsController < ApplicationController
   def create
     @quick_booking = QuickBooking.create(quick_booking_params)
     if @quick_booking.save
+      QuickBookingMailer.with(quick_booking: @quick_booking).new_quick_booking_email.deliver_later
       redirect_to root_path, notice: "Заявка успешно создана! Ожидайте звонка оператора."
     else
       redirect_to root_path, alert: "Что то пошло не так!"

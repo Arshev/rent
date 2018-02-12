@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Ура! Пришла новая заявка на бронирование!</h1>
+    <p>Имя: <%= @quick_booking.name %></p>
+    <p>Телефон: <%= @quick_booking.contacts %></p>
+    <p>Начало аренды: <%= @quick_booking.start_date.strftime("%d-%m-%Y") %> </p>
+    <p>Конец аренды: <%= @quick_booking.end_date.strftime("%d-%m-%Y") %></p>
+    <p>Тип авто:
+      <% if @quick_booking.is_sedan %>
+        Седан
+      <% elsif @quick_booking.is_hatch %>
+        Хэтчбек
+      <% elsif @quick_booking.is_kupe %>
+        Купе
+      <% elsif @quick_booking.is_minivan %>
+        Минивен
+      <% elsif @quick_booking.is_universal %>
+        Универсал
+      <% else %>
+        Непонятно
+      <% end %>
+    </p>
+  </body>
+</html>
