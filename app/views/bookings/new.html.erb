@@ -4,7 +4,7 @@
       <div class="col-sm-12 col-md-8 col-xs-12 car-images fleet">
       </div>
     </div>
-    <%= form_for @booking, class:"row", html: {multipart: true}  do |f| %>
+    <%= form_for @booking, class:"row", url: bookings_path, html: {multipart: true}  do |f| %>
       <div class="col-sm-8">
         <div class="row">
           <div class="form-group col-sm-12">
@@ -56,11 +56,17 @@
             <%= f.check_box :accept %> Принимаю положения закона о персональных данных
           </div>
           <div class="form-group col-sm-12">
-            <h5 class="this-label">Чтобы оформление документов было быстрее, загрузите сканы документов</h5>
-            <span class="btn btn-default btn-file">
-              <i class="fa fa-cloud-upload" aria-hidden="true"></i> Загрузите документы
-              <%= f.file_field "documents", type: :file %>
-            </span>
+            <details>
+              <summary>Чтобы оформление документов было быстрее, загрузите сканы документов</summary>
+              <span class="btn btn-default btn-file">
+                <i class="fa fa-cloud-upload" aria-hidden="true"></i> Загрузите паспорт
+                <%= f.file_field :avatar %>
+              </span>
+              <span class="btn btn-default btn-file">
+                <i class="fa fa-cloud-upload" aria-hidden="true"></i> Загрузите права
+                <%= f.file_field :prava %>
+              </span>
+            </details>
           </div>
         </div>
       </div>
@@ -141,8 +147,8 @@
       }
     });
     // Доставка
-    $("#location_start").click( function() {
-      delivery_start = $("#location_start").val();
+    $("#booking_location_start").click( function() {
+      delivery_start = $("#booking_location_start").val();
       switch (delivery_start) {
         case "Аэропорт":
           delivery_price_start = 800;
@@ -171,8 +177,8 @@
       total_price = total + extra_price + delivery_price;
       $('#total_price').text(total_price + " руб");
     });
-    $("#location_end").click( function() {
-      delivery_end = $("#location_end").val();
+    $("#booking_location_end").click( function() {
+      delivery_end = $("#booking_location_end").val();
       switch (delivery_end) {
         case "Аэропорт":
           delivery_price_end = 800;

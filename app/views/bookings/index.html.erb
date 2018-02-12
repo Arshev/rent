@@ -19,7 +19,10 @@
               Конец: <%= booking.end_date %>
             </div>
             <div class="col-md-2">
-              <%= image_tag booking.document.url(:medium) %>
+              <%= image_tag booking.cover_avatar(:medium) %>
+            </div>
+            <div class="col-md-2">
+              <%= image_tag booking.cover_prava(:medium) %>
             </div>
             <div class="col-md-5">
 

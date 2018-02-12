@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show]
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, only: [:show, :index]
   def create
     @booking = Booking.create(booking_params)
     if @booking.save
@@ -43,6 +43,6 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-      params.require(:booking).permit(:start_date, :end_date, :location_start, :location_end, :firstname, :lastname, :middlename, :baby_chair, :phone, :email, :car, :navigator, :accept, :documents, :doc)
+      params.require(:booking).permit(:start_date, :end_date, :location_start, :location_end, :firstname, :lastname, :middlename, :baby_chair, :phone, :email, :car, :navigator, :accept, :avatar, :prava)
     end
 end
