@@ -12,7 +12,7 @@
             <% if @car %>
               <%= f.text_field :car, value: @car.car_name, class: "form-control", disabled: true %>
             <% else %>
-              <%= f.select :car, options_for_select(@cars.collect{ |u| [u.car_name, u.id] }), prompt: "Выберите автомобиль", id: "imgCar" %>
+              <%= f.select :car, options_for_select(@cars.collect{ |u| [u.car_name, u.id] }, selected: @booking.car), prompt: "Выберите автомобиль" %>
             <% end %>
           </div>
           <div class="form-group col-sm-6">
