@@ -4,7 +4,7 @@
       <div class="col-sm-12 col-md-8 col-xs-12 car-images fleet">
       </div>
     </div>
-    <%= form_for @booking, class:"row", remote: true do |f| %>
+    <%= form_for @booking, class:"row", html: {multipart: true}  do |f| %>
       <div class="col-sm-8">
         <div class="row">
           <div class="form-group col-sm-12">
@@ -12,7 +12,7 @@
             <% if @car %>
               <%= f.text_field :car, value: @car.car_name, class: "form-control", disabled: true %>
             <% else %>
-              <%= select_tag 'Автомобили', options_for_select(@cars.collect{ |u| [u.car_name, u.id] }), prompt: "Выберите автомобиль", id: "imgCar" %>
+              <%= f.select :car, options_for_select(@cars.collect{ |u| [u.car_name, u.id] }), prompt: "Выберите автомобиль", id: "imgCar" %>
             <% end %>
           </div>
           <div class="form-group col-sm-6">
@@ -41,11 +41,11 @@
           </div>
           <div class="form-group col-sm-6">
             <h5 class="this-label">Место получения автомобиля</h5>
-            <%= select_tag(:location_start, options_for_select([['Офис (бесплатно)', 'Офис'], ['Аэропорт - 800 руб', 'Аэропорт'], ['Светлогорск - 1200 руб', 'Светлогорск'], ['Зеленоградск - 1000 руб', 'Зеленоградск'], ['Другой адрес в Калининграде  - 300 руб', 'Другой адрес в Калининграде']]), prompt: "Выберите место", required: true) %>
+            <%= f.select(:location_start, options_for_select([['Офис (бесплатно)', 'Офис'], ['Аэропорт - 800 руб', 'Аэропорт'], ['Светлогорск - 1200 руб', 'Светлогорск'], ['Зеленоградск - 1000 руб', 'Зеленоградск'], ['Другой адрес в Калининграде  - 300 руб', 'Другой адрес в Калининграде']]), prompt: "Выберите место", required: true) %>
           </div>
           <div class="form-group col-sm-6">
             <h5 class="this-label">Место возврата автомобиля</h5>
-            <%= select_tag(:location_end, options_for_select([['Офис (бесплатно)', 'Офис'], ['Аэропорт - 800 руб', 'Аэропорт'], ['Светлогорск - 1200 руб', 'Светлогорск'], ['Зеленоградск - 1000 руб', 'Зеленоградск'], ['Другой адрес в Калининграде - 300 руб', 'Другой адрес в Калининграде']]), prompt: "Выберите место", required: true) %>
+            <%= f.select(:location_end, options_for_select([['Офис (бесплатно)', 'Офис'], ['Аэропорт - 800 руб', 'Аэропорт'], ['Светлогорск - 1200 руб', 'Светлогорск'], ['Зеленоградск - 1000 руб', 'Зеленоградск'], ['Другой адрес в Калининграде - 300 руб', 'Другой адрес в Калининграде']]), prompt: "Выберите место", required: true) %>
           </div>
           <div class="form-group col-sm-12">
             <h5 class="this-label">Дополнительные опции</h5>
@@ -57,7 +57,10 @@
           </div>
           <div class="form-group col-sm-12">
             <h5 class="this-label">Чтобы оформление документов было быстрее, загрузите сканы документов</h5>
-
+            <span class="btn btn-default btn-file">
+              <i class="fa fa-cloud-upload" aria-hidden="true"></i> Загрузите документы
+              <%= f.file_field "documents", type: :file %>
+            </span>
           </div>
         </div>
       </div>
@@ -88,7 +91,6 @@
           <%= f.submit "ОТПРАВИТЬ ЗАЯВКУ", class: "btn btn-primary btn-block", id: "btn_book", disabled: true %>
         </div>
       </div>
-    </form>
     <% end %>
   </div>
 </section>

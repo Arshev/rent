@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:show]
+  before_action :authenticate_user!, only: [:show]
   def create
     @booking = Booking.create(booking_params)
     if @booking.save
@@ -9,11 +11,10 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def index
-    @bookings = current_user.bookings
+    @bookings = Booking.all
   end
 
   def new
@@ -26,17 +27,22 @@ class BookingsController < ApplicationController
     end
   end
 
-  def change_car_info
-    car_id = params[:car_id]
-    @car_info = Car.find_by car_id: car_id
-    respond_to do |format|
-      format.json { render json: @car_info }
-    end
+  def document_uploads
+    @booking = Booking.find(params[:id])
+    @documents = @booking.documents
   end
 
   private
 
+    def set_booking
+      @booking = Booking.find(params[:id])
+    end
+
+    def set_documents
+      @documents = @booking.documents
+    end
+
     def booking_params
-      params.require(:booking).permit(:start_date, :end_date, :location_start, :location_end, :firstname, :lastname, :middlename, :baby_chair, :phone, :email, :car, :navigator, :accept)
+      params.require(:booking).permit(:start_date, :end_date, :location_start, :location_end, :firstname, :lastname, :middlename, :baby_chair, :phone, :email, :car, :navigator, :accept, :documents, :doc)
     end
 end

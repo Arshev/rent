@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202125940) do
+ActiveRecord::Schema.define(version: 20180212103919) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "car"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20180202125940) do
     t.integer "number_doors"
     t.boolean "active"
     t.index ["user_id"], name: "index_cars_on_user_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.integer "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "doc_file_name"
+    t.string "doc_content_type"
+    t.integer "doc_file_size"
+    t.datetime "doc_updated_at"
+    t.index ["booking_id"], name: "index_documents_on_booking_id"
   end
 
   create_table "photos", force: :cascade do |t|

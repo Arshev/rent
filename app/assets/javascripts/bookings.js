@@ -1,10 +1,10 @@
 jQuery(function($) {
   var value = 0, car = 0, total = 0, extra_price = 0, baby_chair = 0, nav = 0, delivery_price = 0, delivery_price_start = 0, delivery_price_end = 0, total_price = 0;
 
-  $("#imgCar").click( function() {
+  $("#booking_car").click( function() {
     if (gon.cars_info) {
-      value = $("#imgCar").val();
-      car = gon.cars_info[value]
+      value = $("#booking_car").val();
+      car = gon.cars_info[value-1]
       $(".car_name").remove();
       $( `<p class="car_name" id="car_name_${car.id}">${car.car_name}</p>` ).appendTo( "#car_name" );
       // Залог
@@ -62,8 +62,8 @@ jQuery(function($) {
         }
       });
       // Доставка
-      $("#location_start").click( function() {
-        delivery_start = $("#location_start").val();
+      $("#booking_location_start").click( function() {
+        delivery_start = $("#booking_location_start").val();
         switch (delivery_start) {
           case "Аэропорт":
             delivery_price_start = 800;
@@ -93,8 +93,8 @@ jQuery(function($) {
         $('#total_price').text(total_price + " руб");
       });
 
-      $("#location_end").click( function() {
-        delivery_end = $("#location_end").val();
+      $("#booking_location_end").click( function() {
+        delivery_end = $("#booking_location_end").val();
         switch (delivery_end) {
           case "Аэропорт":
             delivery_price_end = 800;
