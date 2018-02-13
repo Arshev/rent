@@ -21,6 +21,13 @@ class ReviewsController < ApplicationController
     respond_to :js
   end
 
+  def approve
+    @review = Review.find(params[:id])
+    @review.active = true
+    @review.save
+    redirect_back(fallback_location: request.referer, notice: "Отзыв одобрен!")
+  end
+
   private
     def review_params
       params.require(:review).permit(:text, :star, :active, :name, :email)

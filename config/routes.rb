@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   resources :bookings, only: [:create, :show, :index, :new] do
     resources :documents, only: [:create]
   end
-  resources :reviews, only: [:create, :index, :destroy]
+  resources :reviews, only: [:create, :index, :destroy, :approve] do
+    member do
+      post '/approve' => "reviews#approve"
+    end
+  end
 end
