@@ -21,4 +21,14 @@ class Booking < ApplicationRecord
       "blank.jpg"
     end
   end
+
+  def send_sms
+    @car_name = Car.where("id = '#{self.car}'").first.car_name
+    @client = Twilio::REST::Client.new
+    @client.messages.create(
+    from: '+13477089316',
+    to: '+79022504797',
+    body: "Новая заявка,#{self.firstname},#{self.lastname},#{@car_name},#{self.phone},#{self.start_date.strftime("%d-%m-%Y")},#{self.end_date.strftime("%d-%m-%Y")}"
+    )
+  end
 end

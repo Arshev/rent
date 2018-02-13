@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.create(booking_params)
     if @booking.save
+      @booking.send_sms
       BookingMailer.with(booking: @booking).new_booking_email.deliver_later
       redirect_to root_path, notice: "Заявка успешно создана! Ожидайте звонка оператора."
     else
