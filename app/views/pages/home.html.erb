@@ -42,8 +42,8 @@
 						<span class="input-group-addon"><i class="ion-calendar"></i></span>
 					</div>
 					<div class="input-group">
-						<%= f.text_field :contacts, placeholder: "Телефон или Email", class: "form-control" %>
-						<span class="input-group-addon"><i class="ion-at"></i></span>
+						<%= f.text_field :contacts, placeholder: "Телефон", class: "form-control" %>
+						<span class="input-group-addon"><i class="ion-speakerphone"></i></span>
 					</div>
 
 				</div>
@@ -63,14 +63,14 @@
  					<div class="media-left"><span><img src="images/icons/features/1.png" alt=""></span></div>
  					<div class="media-body">
  						<h4 class="this-title">СТРАХОВКА КАСКО</h4>
-					<p>Never need to pay for Fuel. If you need extra fuel just fill up and keep the receipt, we will <strong>refund the amount.</strong></p>
+					<p>Все авто застрахованы, минимальная ответственность клиента даже при происшествиях по его вине.</p>
  					</div>
  				</div>
  				<div class="media">
  					<div class="media-left"><span><img src="images/icons/features/2.png" alt=""></span></div>
  					<div class="media-body">
- 						<h4 class="this-title">ПОМОЩЬ НА ДОРОГЕ 24/7</h4>
-					<p>You drive to adventures, we get it. We and our roadside assistance partners are <strong>available</strong> around the clock.</p>
+ 						<h4 class="this-title">ГАРАНТИЯ ЛУЧШЕ ЦЕНЫ</h4>
+					<p>Если найдете цену дешевле, с аналогичными условиями аренды — мы снизим цену для Вас!</p>
  					</div>
  				</div>
  			</div>
@@ -78,15 +78,15 @@
  				<div class="media">
  					<div class="media-left"><span><img src="images/icons/features/3.png" alt=""></span></div>
  					<div class="media-body">
- 						<h4 class="this-title">TAX &amp; INSURANCE INCLUDED</h4>
-					<p>The hourly price includes Taxes &amp; Insurance. <strong>No hidden charges!</strong> Dosis amet consectua.</p>
+ 						<h4 class="this-title">НЕОГРАНИЧЕННЫЙ ПРОБЕГ</h4>
+					<p>Ограничение суточного пробега и штраф за несоблюдение не предусмотрен.</p>
  					</div>
  				</div>
  				<div class="media">
  					<div class="media-left"><span><img src="images/icons/features/4.png" alt=""></span></div>
  					<div class="media-body">
- 						<h4 class="this-title">ALL USA. PERMIT</h4>
-					<p>Go <strong>anywhere.</strong> Our cars have all‐USA permits. Just remember to pay state tolls and taxes.</p>
+ 						<h4 class="this-title">ПОДДЕРЖКА 24/7</h4>
+					<p>Круглосуточная поддержка клиента по всем вопросам, связанным с арендой автомобиля.</p>
  					</div>
  				</div>
  			</div>
@@ -94,15 +94,15 @@
  				<div class="media">
  					<div class="media-left"><span><img src="images/icons/features/5.png" alt=""></span></div>
  					<div class="media-body">
- 						<h4 class="this-title">REFUNDABLE DEPOSIT</h4>
-					<p>We take a small refundable deposit of <strong>$5,000.</strong> It will take 5‐15 days before the refund reflects in your account.</p>
+ 						<h4 class="this-title">НЕМЕДЛЕННЫЙ ВОЗВРАТ ЗАЛОГА</h4>
+					<p>Возвращаем залоговую на месте возврата сразу же после осмотра автомобиля.</p>
  					</div>
  				</div>
  				<div class="media">
  					<div class="media-left"><span><img src="images/icons/features/6.png" alt=""></span></div>
  					<div class="media-body">
- 						<h4 class="this-title">DOORSTEP CAR DELIVERY</h4>
-					<p>Get your car <strong>delivered</strong> to your doorstep as well as picked up once you are done lorem dolor.</p>
+ 						<h4 class="this-title">ДРУЖЕСТВЕННОЕ ОТНОШЕНИЕ</h4>
+					<p>Мы ценим своих клиентов и не придираемся к мелким недостаткам при приеме автомобиля.</p>
  					</div>
  				</div>
  			</div>
@@ -121,368 +121,27 @@
  		</div>
  	</section>
 
+<%= render 'reviews/reviews_on_main' %>
 
- 	<!--Funfact-->
- 	<section class="row funfacts">
- 		<div class="container">
- 			<div class="row inner">
- 				<!--Fact-->
- 				<div class="col-xs-6 col-md-3 fact">
- 					<div class="inner-fact">
- 						<div class="this-icon"><i class="ion-ios-alarm-outline"></i></div>
- 						<div class="this-texts">
- 							<h2 class="this-counter"><span class="counter">1991</span><sup>+</sup></h2>
- 							<h5 class="this-about">Hours Saled</h5>
- 						</div>
- 					</div>
- 				</div>
- 				<!--Fact-->
- 				<div class="col-xs-6 col-md-3 fact">
- 					<div class="inner-fact">
- 						<div class="this-icon"><i class="ion-ios-ionic-outline"></i></div>
- 						<div class="this-texts">
- 							<h2 class="this-counter"><span class="counter">69</span></h2>
- 							<h5 class="this-about">City Park</h5>
- 						</div>
- 					</div>
- 				</div>
- 				<!--Fact-->
- 				<div class="col-xs-6 col-md-3 fact">
- 					<div class="inner-fact">
- 						<div class="this-icon"><i class="ion-ios-paw-outline"></i></div>
- 						<div class="this-texts">
- 							<h2 class="this-counter"><span class="counter">581</span></h2>
- 							<h5 class="this-about">Clients in USA</h5>
- 						</div>
- 					</div>
- 				</div>
- 				<!--Fact-->
- 				<div class="col-xs-6 col-md-3 fact">
- 					<div class="inner-fact">
- 						<div class="this-icon"><i class="ion-ios-speedometer-outline"></i></div>
- 						<div class="this-texts">
- 							<h2 class="this-counter"><span class="counter">251</span><sup>+</sup></h2>
- 							<h5 class="this-about">Cars Storage</h5>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
- 		</div>
- 	</section>
- 	<!--Banner 01-->
- 	<section class="row banner01">
- 		<div class="container">
- 			<div class="row inner text-center">
- 				<h2 class="this-cursive">The Flash</h2>
- 				<h4 class="this-deliver">DELIVERED AT <u>YOUR DOOR</u></h4>
- 				<h2 class="this-title">Yes, just at home!</h2>
-			<h4 class="this-hire">Hire a car <u>never been easier!</u></h4>
-				<a href="#" class="btn btn-outline">RESERVE A CAR</a>
- 			</div>
- 		</div>
- 	</section>
- 	<section class="row popular-fleets">
- 		<div class="container">
- 			<div class="row">
- 				<div class="col-lg-8">
- 					<div class="row popular-tabs-row">
- 						<!-- Nav tabs -->
-					<ul class="nav nav-tabs popular-fleets-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#popular-t01" aria-controls="popular-t01" role="tab" data-toggle="tab">Popular</a></li>
-						<li role="presentation"><a href="#propular-t02" aria-controls="propular-t02" role="tab" data-toggle="tab">Related</a></li>
-						<li role="presentation"><a href="#propular-t03" aria-controls="propular-t02" role="tab" data-toggle="tab">Release</a></li>
-					</ul>
-					<ul class="tab-switcher list-unstyled">
-						<li><i class="ion-chevron-left"></i></li>
-						<li><i class="ion-chevron-right"></i></li>
-					</ul>
- 					</div>
-
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane active" id="popular-t01">
-						<div class="row fleets-row">
-							<!--Popular Fleets-->
-							<div class="col-md-6 popular-fleet fleet sale-offer">
-								<div class="media inner">
-									<div class="media-left"><a href="single-car.html"><img src="images/fleet/popular/1.png" alt=""></a></div>
-									<div class="media-body">
-										<h4 class="rent"><small>from</small>$96.90<sub>/day</sub></h4>
-										<h6 class="reviews">
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											(5 reviews)
-										</h6>
-										<h4 class="vehicle-title">Mercedes S500 v8l</h4>
-									</div>
-								</div>
-							</div>
-							<!--Popular Fleets-->
-							<div class="col-md-6 popular-fleet fleet">
-								<div class="media inner">
-									<div class="media-left"><a href="single-car.html"><img src="images/fleet/popular/2.png" alt=""></a></div>
-									<div class="media-body">
-										<h4 class="rent"><small>from</small>$96.90<sub>/day</sub></h4>
-										<h6 class="reviews">
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											(5 reviews)
-										</h6>
-										<h4 class="vehicle-title">Honda Civic 2016</h4>
-									</div>
-								</div>
-							</div>
-							<!--Popular Fleets-->
-							<div class="col-md-6 popular-fleet fleet">
-								<div class="media inner">
-									<div class="media-left"><a href="single-car.html"><img src="images/fleet/popular/3.png" alt=""></a></div>
-									<div class="media-body">
-										<h4 class="rent"><small>from</small>$96.90<sub>/day</sub></h4>
-										<h6 class="reviews">
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											(5 reviews)
-										</h6>
-										<h4 class="vehicle-title">Lexus h400</h4>
-									</div>
-								</div>
-							</div>
-							<!--Popular Fleets-->
-							<div class="col-md-6 popular-fleet fleet">
-								<div class="media inner">
-									<div class="media-left"><a href="single-car.html"><img src="images/fleet/popular/4.png" alt=""></a></div>
-									<div class="media-body">
-										<h4 class="rent"><small>from</small>$96.90<sub>/day</sub></h4>
-										<h6 class="reviews">
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											(5 reviews)
-										</h6>
-										<h4 class="vehicle-title">Jaguar XJL Brand</h4>
-									</div>
-								</div>
-							</div>
-							<!--Popular Fleets-->
-							<div class="col-md-6 popular-fleet fleet">
-								<div class="media inner">
-									<div class="media-left"><a href="single-car.html"><img src="images/fleet/popular/5.png" alt=""></a></div>
-									<div class="media-body">
-										<h4 class="rent"><small>from</small>$96.90<sub>/day</sub></h4>
-										<h6 class="reviews">
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											(5 reviews)
-										</h6>
-										<h4 class="vehicle-title">Lamboghini Avado</h4>
-									</div>
-								</div>
-							</div>
-							<!--Popular Fleets-->
-							<div class="col-md-6 popular-fleet fleet sale-offer">
-								<div class="media inner">
-									<div class="media-left"><a href="single-car.html"><img src="images/fleet/popular/6.png" alt=""></a></div>
-									<div class="media-body">
-										<h4 class="rent"><small>from</small>$96.90<sub>/day</sub></h4>
-										<h6 class="reviews">
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o starred"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											(5 reviews)
-										</h6>
-										<h4 class="vehicle-title">BMW i8 Black Edition</h4>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane" id="propular-t02">...</div>
-					<div role="tabpanel" class="tab-pane" id="propular-t03">...</div>
-				</div>
- 				</div>
- 				<div class="col-lg-4 banner2">
- 					<a href="#"><img src="images/banner/banner.jpg" alt="" class="img-responsive"></a>
- 				</div>
- 			</div>
- 		</div>
- 	</section>
- 	<!--Banner 3-->
- 	<section class="row banner3">
- 		<div class="container">
- 			<div class="media inner">
- 				<div class="media-body">
- 					<h2 class="h1 this-title">Many reasons to choose <u>HireCarPro!</u></h2>
- 					<p>Our fleet comprises quite the range of rides, whether you need a small hybrid for efficient bursts across town.</p>
- 				</div>
- 				<div class="media-right">
- 					<a href="#" class="btn btn-primary dark">read more</a>
- 				</div>
- 			</div>
- 		</div>
- 	</section>
- 	<section class="row video-testimonial">
- 		<div class="container">
- 			<div class="row vd-test">
- 				<div class="col-md-5 col-sm-12 introduction intro-with-video">
-  				<div class="row section-title m0">
-  					<h2 class="h1 this-main">Live review on Youtube <i class="ion-social-youtube-outline"></i></h2>
-  					<p>In viverra faucibus neque eu imperdiet. Aenean eget turpis a arcu egestas rhoncus vel nec risus. Vivamus varius tristique varius. Read more at: <a href="http://www.haintheme.com/Portfolio">http://www.haintheme.com/Portfolio</a></p>
-
-  					<a href="#" class="btn btn-primary light">get profile</a>
-  				</div>
-  				<a href="#"><img src="images/services/12.jpg" alt="" class="img-responsive"></a>
-  			</div>
-			  	<div class="col-sm-6 col-md-push-1 testimonials">
-				<div class="row section-title m0">
-					<h2 class="h1 this-main">Happy Clients</h2>
-				</div>
-			  		<div class="media testimonial2">
-			  			<div class="media-left"><a href="#"><img src="images/services/13.jpg" alt="" class="img-circle"></a></div>
-			  			<div class="media-body">
-			  				<p>“PUKDG is my favorite booking car company ever! <span>Cool drivers</span> , amazing cars, top notch services! You won't believe it, but they actually didn't took any tip :)”</p>
-    						<span class="stars">
-    							<i class="fa fa-star"></i>
-    							<i class="fa fa-star"></i>
-    							<i class="fa fa-star"></i>
-    							<i class="fa fa-star"></i>
-    							<i class="fa fa-star"></i>
-    						</span>
-						    <h4 class="client">Diego Furlan <small>- Sandiago/29 ages</small></h4>
-			  			</div>
-			  		</div>
-			  		<hr class="testimonial-hr">
-			  		<div class="media testimonial2">
-			  			<div class="media-left"><a href="#"><img src="images/services/13.jpg" alt="" class="img-circle"></a></div>
-			  			<div class="media-body">
-			  				<p>“PUKDG is my favorite booking car company ever! <span>Cool drivers</span> , amazing cars, top notch services! You won't believe it, but they actually didn't took any tip :)”</p>
-						<span class="stars">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</span>
-						<h4 class="client">Diego Furlan <small>- Sandiago/29 ages</small></h4>
-			  			</div>
-			  		</div>
-			  	</div>
- 			</div>
- 		</div>
- 	</section>
- 	<!--Banner 01-->
- 	<section class="row banner04 mt0">
- 		<div class="container">
- 			<div class="row">
- 				<div class="col-sm-4 this-mobile">
- 					<img src="images/banner/mobile.png" alt="">
- 				</div>
- 				<div class="col-sm-8">
- 					<h2 class="this-cursive">Two step</h2>
-				<h4 class="this-h4">AVAILABLE APP FtOR <u>BOOK ONLINE CAR!</u></h4>
-					<h2 class="this-main">Anytime, any where!</h2>
-				<ul class="this-facts nav nav-pills">
-					<li>111,171+ Download times</li>
-					<li>5,000 shares</li>
-					<li>No Ad or spam</li>
-					<li>Don’t have my OS phone?</li>
-				</ul>
-					<div class="buttons-row row m0">
-						<a href="#" class="btn download-btn iphone"><i class="ion-social-apple"></i><span>APPLE iOS</span></a>
-						<a href="#" class="btn download-btn android"><i class="ion-social-android"></i><span>ANDROID</span></a>
-						<a href="#" class="btn download-btn windows"><i class="ion-social-windows"></i><span>WINDOWS</span></a>
-					</div>
- 				</div>
- 			</div>
- 		</div>
- 	</section>
- 	<!--From Blogs-->
- 	<section class="row from-blogs">
- 		<div class="container">
- 			<div class="row section-title text-center">
- 				<h2 class="h1 this-main">From Blogs</h2>
- 			</div>
- 			<div class="row">
- 				<div class="col-md-6 latest-blog">
- 					<div class="media">
- 						<div class="media-left"><a href="#"><img src="images/blogs/latest/1.jpg" alt=""></a></div>
- 						<div class="media-body">
-						<a href="single.html"><h4 class="post-title">Chauffeured &amp; shuttle of two services in ski City!</h4></a>
-							<h6 class="post-meta">
-								<a href="#" class="date">March 12, 2016</a>
-								<a href="#" class="likes"><i class="ion-heart"></i>69</a>
-								<a href="#" class="comments"><i class="ion-chatbubble-working"></i>06</a>
-							</h6>
-							<a href="single.html" class="read-more btn btn-outline btn-sm">read more</a>
- 						</div>
- 					</div>
- 				</div>
- 				<div class="col-md-6 latest-blog">
- 					<div class="media">
- 						<div class="media-left"><a href="#"><img src="images/blogs/latest/2.jpg" alt=""></a></div>
- 						<div class="media-body">
-						<a href="single.html"><h4 class="post-title">Chauffeured &amp; shuttle of two services in ski City!</h4></a>
-							<h6 class="post-meta">
-								<a href="#" class="date">March 12, 2016</a>
-								<a href="#" class="likes"><i class="ion-heart"></i>69</a>
-								<a href="#" class="comments"><i class="ion-chatbubble-working"></i>06</a>
-							</h6>
-							<a href="single.html" class="read-more btn btn-outline btn-sm">read more</a>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
- 		</div>
- 	</section>
- 	<section class="row banner2-prefolder">
- 		<div class="container">
- 			<div class="row inner m0">
- 				<div class="col-md-6 this-left">
- 					<div class="this-texts">
- 						<h2 class="this-title">Quick Sale</h2>
-					<h2 class="this-title2 h1">VANS PICKUP!</h2>
-					<p>At vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum.</p>
-					<a href="#" class="read-more">read more<i class="ion-arrow-right-b"></i></a>
- 					</div>
-			</div>
-			<div class="col-md-6 this-right">
- 					<div class="this-texts">
- 						<h2 class="this-title">Online Booking</h2>
-					<h2 class="this-title2 h1">CADILAC SALE 39%</h2>
-					<p>At vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum.</p>
-					<a href="#" class="read-more">read more<i class="ion-arrow-right-b"></i></a>
- 					</div>
-			</div>
- 			</div>
- 		</div>
- 	</section>
- 	<%= render 'shared/footer' %>
+ <%= render 'shared/footer' %>
 
 	<script>
 	  $('#reservation_start_date').datepicker({
 	    dateFormat: 'dd-mm-yy',
-	    minDate: 0
+	    minDate: 0,
+			maxDate: '6m',
+      onSelect: function(selected) {
+        $('#reservation_end_date').datepicker("option", "minDate", selected);
+			}
 	  });
 
 	  $('#reservation_end_date').datepicker({
-	    dateFormat: 'dd-mm-yy',
-	    minDate: 0,
+			dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '6m',
+      onSelect: function(selected) {
+        $('#reservation_start_date').datepicker("option", "maxDate", selected);
+			}
 	  });
 	</script>
 

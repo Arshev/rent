@@ -1,0 +1,17 @@
+<ul class="media-list comment-list">
+  <% @reviews.each do |review| %>
+    <% if review.active || current_user.is_admin? %>
+      <li class="comment media">
+        <div class="media-body">
+        <a href="#"><h5 class="this-title"><%= review.name %>  <i><%= review.created_at.strftime("%d-%m-%Y") %></i></h5></a>
+        <p><%= review.text %></p>
+        </div>
+      </li>
+    <% end %>
+    <% if current_user.is_admin %>
+      <%= link_to review_path(review.id), remote: true, method: :delete, data: {confirm: "Уверен?"} do %>
+        <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>

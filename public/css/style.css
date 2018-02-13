@@ -3085,8 +3085,7 @@ h2.hd-sec {
 .comments-area {
   padding-top: 70px;
   border-top: 1px solid;
-  border-color: rgba(34, 36, 59, 0.1);
-  margin-top: 70px; }
+  border-color: rgba(34, 36, 59, 0.1); }
   .comments-area .this-area-title {
     margin: 0;
     line-height: 1;

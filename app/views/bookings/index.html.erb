@@ -18,17 +18,11 @@
               Начало: <%= booking.start_date %>
               Конец: <%= booking.end_date %>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-5">
               <%= image_tag booking.cover_avatar(:medium) %>
             </div>
-            <div class="col-md-2">
-              <%= image_tag booking.cover_prava(:medium) %>
-            </div>
             <div class="col-md-5">
-
-            </div>
-            <div class="col-md-3 text-right">
-
+              <%= image_tag booking.cover_prava(:medium) %>
             </div>
           </div>
           <hr/>
