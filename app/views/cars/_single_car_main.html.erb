@@ -1,11 +1,11 @@
 <% @cars.each do |car| %>
   <div class="col-md-4 fleet fleet2">
-    <div class="inner row" style="height: 570px;">
+    <div class="inner row" style="border-radius:20px;">
       <h2 class="rent text-center"><small>от</small><%= car.price_main %><sub>/сутки</sub></h2>
       <h4 class="vehicle-title text-center"><%= car.car_name %></h4>
       <div class="row vehicle-img text-center">
         <%= link_to car_path(car) do %>
-          <%= image_tag car.cover_photo(:main) %>
+          <%= image_tag car.cover_photo(:main), class:"car-list-main" %>
         <% end %>
       </div>
       <div class="row specification">

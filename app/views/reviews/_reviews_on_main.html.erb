@@ -1,44 +1,57 @@
 <section class="row video-testimonial">
   <div class="container">
-<div class="row">
-  <h2>Carousel Reviews</h2>
-</div>
-</div>
-<div class="carousel-reviews broun-block">
-  <div class="container">
-      <div class="row">
-          <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <% count = 0 %>
-                <% @reviews.each do |review| %>
-                  <% if review.active? %>
-                    <% count += 1 %>
-                    <% if count <= 3 %>
-                      <div class="item active">
-                    <% else %>
-                      <div class="item">
-                    <% end %>
-                      <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
-                        <div class="block-text rel zmin">
-                          <h3><%= review.name %></h3>
-                          <p><%= truncate review.text, length: 300 %></p>
-                          <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                        </div>
-                        <div class="person-text rel">
-                        </div>
-                      </div>
+    <div class="row">
+      <h2 class="text-center">Отзывы</h2>
+  <div class="carousel-reviews broun-block">
+        <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% count = 0 %>
+            <% @reviews.each do |review| %>
+              <% if review.active? %>
+                <% count += 1 %>
+                <% if count == 1 %>
+                  <div class="item active">
+                <% end %>
+                <% if count == 4 || count == 7 %>
+                  <div class="item">
+                <% end %>
+                <% if count == 1 || count == 4 || count == 7 %>
+                  <div class="col-md-4 col-sm-6">
+                <% end %>
+                <% if count == 2 || count == 5 || count == 8 %>
+                  <div class="col-md-4 col-sm-6 hidden-xs">
+                <% end %>
+                <% if count == 3 || count == 6 || count == 9 %>
+                  <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                <% end %>
+                    <div class="block-text rel zmin">
+                      <h3 class="text-center" style="color:#f77d0a;"><%= review.name %></h3>
+                      <p><%= truncate review.text, length: 300 %></p>
+                      <ins class="ab zmin sprite sprite-i-triangle block"></ins>
+                    </div>
+                    <div class="person-text rel">
+                    </div>
+                  </div>
+                  <% if count == 3 %>
                     </div>
                   <% end %>
-                <% end %>
-              </div>
-              <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="right carousel-control" href="#carousel-reviews" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
+                  <% if count == 6 %>
+                    </div>
+                  <% end %>
+                  <% if count == 9 %>
+                    </div>
+                  <% end %>
+              <% end %>
+            <% end %>
           </div>
+          <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
+            <i class="glyphicon glyphicon-chevron-left" style="color:#f77d0a;font-size:20px;" aria-hidden="true"></i>
+          </a>
+          <a class="right carousel-control" href="#carousel-reviews" role="button" data-slide="next">
+            <i class="glyphicon glyphicon-chevron-right" style="color:#f77d0a;font-size:20px;" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
+    </div>
   </div>
-</div>
 </section>

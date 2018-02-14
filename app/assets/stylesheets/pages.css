@@ -1,6 +1,6 @@
 .carousel-control.left,.carousel-control.right  {background:none;width:25px;}
-.carousel-control.left {left:-25px;}
-.carousel-control.right {right:-25px;}
+.carousel-control.left {left:-10px;}
+.carousel-control.right {right:-10px;}
 .broun-block {
     background: url("") repeat scroll center top rgba(0, 0, 0, 0);
     padding-bottom: 34px;
@@ -75,4 +75,9 @@
 }
 .rel {
     position: relative;
+}
+
+.car-list-main {
+  border-radius: 10px;
+  max-width: 180px;
 }

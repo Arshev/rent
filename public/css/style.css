@@ -839,9 +839,8 @@ a, .btn, button {
     height: 1px;
     background: #eee; }
   .fleet2 .vehicle-img {
-    line-height: 240px;
     text-align: center;
-    margin-bottom: 20px; }
+  }
     @media (max-width: 1199px) {
       .fleet2 .vehicle-img {
         line-height: 180px; } }
@@ -850,7 +849,7 @@ a, .btn, button {
         padding: 20px 0;
         line-height: 1; } }
     .fleet2 .vehicle-img img {
-      max-width: 100%; }
+      max-width: 85%; }
   .fleet2 .specification {
     padding: 20px 40px;
     border: 1px solid;
@@ -1362,17 +1361,17 @@ a, .btn, button {
 
 /*--------------------------------------------------------------------------------------------*/
 .service-detail-tabs {
-  padding: 115px 0 120px; }
+  padding: 115px 0 0px; }
   .service-detail-tabs:before, .service-detail-tabs:after {
     content: '';
-    height: 635px;
+    height: 585px;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     right: 0; }
   .service-detail-tabs:before {
-    background: url(../images/about/bg2.jpg) no-repeat scroll center top;
+    /* background: url(../images/about/bg2.jpg) no-repeat scroll center top; */
     background-size: cover; }
   .service-detail-tabs:after {
     background: #2b2e4a;
@@ -1589,7 +1588,7 @@ a, .btn, button {
     background: #1ccc8b; }
 
 .video-testimonial {
-  padding: 120px 0; }
+  padding: 0; }
 
 .intro-with-video h2 {
   margin-bottom: 45px; }
@@ -3495,7 +3494,7 @@ input[name="engine-type"] {
     color: rgba(34, 36, 59, 0.75); }
 
 .missin-benefits {
-  padding: 120px 0; }
+  padding: 10px; }
   .missin-benefits .this-title {
     font-family: "Lato", sans-serif;
     text-transform: capitalize;
