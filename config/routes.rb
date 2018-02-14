@@ -26,4 +26,5 @@ Rails.application.routes.draw do
       post '/approve' => "reviews#approve"
     end
   end
+  resources :prices, only: [:index]
 end

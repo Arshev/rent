@@ -375,3 +375,18 @@ a {
     color: #468847;
     text-align: left;
  }
+
+ /* Таблица сделана зеброй моим цветом */
+ .table-striped>tbody>tr:nth-child(odd)>td,
+ .table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: rgba(247, 125, 10, 0.2); // Choose your own color here
+    vertical-align: middle;
+  }
+  .table-prices {
+     background-color: rgba(50, 125, 10, 0.2);
+     vertical-align: middle;
+  }
+  .table-prices td {
+    vertical-align: middle;
+    border: 1px solid black;
+  }
