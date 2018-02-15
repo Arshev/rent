@@ -4429,7 +4429,3 @@ input[name="payment-method"]:checked + label {
     content: "\f364"; }
   #dlocation:checked + label + .dlocate {
     height: 50px; }
-
-/*--------------------------------------------------------------------------------------------*/
-
-/*# sourceMappingURL=style.css.map */

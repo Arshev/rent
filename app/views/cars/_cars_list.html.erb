@@ -1,47 +1,49 @@
 <% @cars.each do |car| %>
-  <div class="media fleet fleet-list sale-offer">
-  <div class="row">
-    <div class="col-md-5 col-sm-12 col-xs-12">
-      <div class="media-left">
-        <%= link_to car_path(car) do %>
-          <%= image_tag car.cover_photo(:list) %>
-        <% end %>
+  <% if car.active %>
+    <div class="media fleet fleet-list sale-offer">
+    <div class="row">
+      <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="media-left">
+          <%= link_to car_path(car) do %>
+            <%= image_tag car.cover_photo(:list) %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="col-md-7 col-sm-12 col-xs-12">
-      <div class="media-body this-body">
-        <div class="media this-header">
-          <div class="media-body">
-            <div class="row m0">
-              <h2 class="rent">от <%= car.price_main %><sub>/сутки</sub></h2>
+      <div class="col-md-7 col-sm-12 col-xs-12">
+        <div class="media-body this-body">
+          <div class="media this-header">
+            <div class="media-body">
+              <div class="row m0">
+                <h2 class="rent">от <%= car.price_main %><sub>/сутки</sub></h2>
+              </div>
+              <h4 class="vehicle-title"><%= car.car_name %></h4>
             </div>
-            <h4 class="vehicle-title"><%= car.car_name %></h4>
-          </div>
-          <div class="media-right">
-            <%= link_to car_path(car), class:"detail-btn btn" do %>
-              <span>подробнее</span><span><i class="ion-flash"></i></span>
-            <% end %>
-          </div>
-        </div>
-        <div class="summary row m0">
-          <%= truncate car.description, length: 160 %>
-        </div>
-        <div class="row specification">
-          <ul class="nav">
-            <li><span><img src="/images/icons/fleet2/transmission.png" style="width: 20px;" alt=""></span><%= car.transmission %></li>
-            <li><span><img src="/images/icons/fleet2/fuel.png" style="width: 20px;" alt=""></span><%= car.fuel %></li>
-            <li><span><img src="/images/icons/fleet2/year.png" style="width: 20px;" alt=""></span><%= car.year %></li>
-            <li><span><img src="/images/icons/fleet2/car_type.png" style="width: 20px;" alt=""></span><%= car.car_type %></li>
-            <li><span><img src="/images/icons/fleet2/capacity.png" style="width: 20px;" alt=""></span><%= car.engine_capacity %></li>
-            <li>
-              <% if car.is_air %>
-              <span><img src="/images/icons/fleet2/air.png" style="width: 20px;" alt=""></span> Кондиционер
+            <div class="media-right">
+              <%= link_to car_path(car), class:"detail-btn btn" do %>
+                <span>подробнее</span><span><i class="ion-flash"></i></span>
               <% end %>
-            </li>
-          </ul>
+            </div>
+          </div>
+          <div class="summary row m0">
+            <%= truncate car.description, length: 160 %>
+          </div>
+          <div class="row specification">
+            <ul class="nav">
+              <li><span><img src="/images/icons/fleet2/transmission.png" style="width: 20px;" alt=""></span><%= car.transmission %></li>
+              <li><span><img src="/images/icons/fleet2/fuel.png" style="width: 20px;" alt=""></span><%= car.fuel %></li>
+              <li><span><img src="/images/icons/fleet2/year.png" style="width: 20px;" alt=""></span><%= car.year %></li>
+              <li><span><img src="/images/icons/fleet2/car_type.png" style="width: 20px;" alt=""></span><%= car.car_type %></li>
+              <li><span><img src="/images/icons/fleet2/capacity.png" style="width: 20px;" alt=""></span><%= car.engine_capacity %></li>
+              <li>
+                <% if car.is_air %>
+                <span><img src="/images/icons/fleet2/air.png" style="width: 20px;" alt=""></span> Кондиционер
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <% end %>
 <% end %>

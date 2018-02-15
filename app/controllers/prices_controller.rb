@@ -1,5 +1,5 @@
 class PricesController < ApplicationController
   def index
-    @cars = Car.where("active = 'true'")
+    @cars = Car.all
   end
 end

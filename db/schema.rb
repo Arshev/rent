@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214172428) do
+ActiveRecord::Schema.define(version: 20180215125922) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "car"
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(version: 20180214172428) do
     t.string "fuel"
     t.integer "number_doors"
     t.boolean "active"
+    t.integer "old_price_1"
+    t.integer "old_price_2"
+    t.integer "old_price_3"
+    t.integer "old_price_4"
+    t.integer "old_price_5"
+    t.integer "price_5"
+    t.integer "price_hour"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 

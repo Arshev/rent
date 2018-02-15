@@ -377,16 +377,57 @@ a {
  }
 
  /* Таблица сделана зеброй моим цветом */
- .table-striped>tbody>tr:nth-child(odd)>td,
- .table-striped>tbody>tr:nth-child(odd)>th {
-    background-color: rgba(247, 125, 10, 0.2); // Choose your own color here
+ .table>tbody>tr:nth-child(even)>td,
+ .table>tbody>tr:nth-child(even)>th {
+   vertical-align: middle;
+ }
+ .table>tbody>tr:nth-child(odd)>td,
+ .table>tbody>tr:nth-child(odd)>th {
     vertical-align: middle;
   }
   .table-prices {
-     background-color: rgba(50, 125, 10, 0.2);
+    border-radius: 10px;
+    border-spacing: 0;
+     background-color: rgba(135, 245, 245, 0.1);
      vertical-align: middle;
+     border-collapse: collapse;
+     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
+
   .table-prices td {
     vertical-align: middle;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .old-price {
+    text-decoration: line-through;
+  }
+  .end-column {
+  }
+  .table-prices thead {
+    text-shadow: 0px 0px 1px #2D2020;
+  }
+  .table-prices tbody {
+    font-size: 18px;
+  }
+  .car-name a {
+    color: #2b2e4a;
+  }
+  .manual-transmission,.automatic-transmission {
+    height: 30px;
+    margin-top: 3px;
+  }
+  .air-conditioner {
+    height: 30px;
+    margin-top: 3px;
+  }
+  .car-list-prices {
+    border-radius: 5px;
+  }
+  .real-price {
+    font-weight: bold;
+  }
+  .prices-th {
+    background-color: rgba(245, 137, 15, 0.5);
+    color: black;
   }
