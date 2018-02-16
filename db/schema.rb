@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215125922) do
+ActiveRecord::Schema.define(version: 20180216170109) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.string "car"
@@ -73,6 +79,16 @@ ActiveRecord::Schema.define(version: 20180215125922) do
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.boolean "accept"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.integer "car_id"
     t.datetime "created_at", null: false
@@ -124,6 +140,12 @@ ActiveRecord::Schema.define(version: 20180215125922) do
     t.string "email"
     t.boolean "active"
     t.integer "star", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1361,10 +1361,10 @@ a, .btn, button {
 
 /*--------------------------------------------------------------------------------------------*/
 .service-detail-tabs {
-  padding: 115px 0 0px; }
+  padding: 50px 0 0px; }
   .service-detail-tabs:before, .service-detail-tabs:after {
     content: '';
-    height: 585px;
+    height: 485px;
     display: block;
     position: absolute;
     top: 0;
@@ -2608,7 +2608,7 @@ h2.hd-sec {
 
 /*--------------------------------------------------------------------------------------------*/
 .blog-section {
-  padding: 80px 15px; }
+  padding: 10px 15px; }
   @media (min-width: 768px) {
     .blog-section {
       padding-bottom: 120px; } }

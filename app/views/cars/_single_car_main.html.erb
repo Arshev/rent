@@ -1,5 +1,11 @@
+<% counter = 0 %>
 <% @cars.each do |car| %>
-  <div class="col-md-4 fleet fleet2">
+  <% counter += 1 %>
+  <% if counter <=3 %>
+  <div class="col-md-4 fleet fleet2 ">
+  <% else %>
+  <div class="col-md-4 fleet fleet2 hidden-xs hidden-sm">
+  <% end %>
     <div class="inner row" style="border-radius:20px;">
       <h2 class="rent text-center"><small>от</small><%= car.price_main %><sub>/сутки</sub></h2>
       <h4 class="vehicle-title text-center"><%= car.car_name %></h4>
@@ -10,7 +16,7 @@
       </div>
       <div class="row specification">
         <div>
-          <table class="table" >
+          <table class="table text-center" >
             <tr>
               <td  style="display:inline-block;"><img src="images/icons/fleet2/transmission.png" style="width: 15px;" alt=""> <%= car.transmission %></td>
               <td  style="display:inline-block;"><img src="images/icons/fleet2/fuel.png" style="width: 15px;" alt=""> <%= car.fuel %></td>
@@ -21,7 +27,9 @@
               <td style="display:inline-block;"><img src="images/icons/fleet2/capacity.png" style="width: 15px;" alt=""> <%= car.engine_capacity %></td>
               <td style="display:inline-block;">
                 <% if car.is_air %>
-                  <img src="images/icons/fleet2/air.png" style="width: 15px;" alt=""> Кондиционер
+                  <img src="images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Есть
+                <% else %>
+                  <img src="images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Нет
                 <% end %>
               </td>
             </tr>

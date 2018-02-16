@@ -431,3 +431,23 @@ a {
     background-color: rgba(245, 137, 15, 0.5);
     color: black;
   }
+  .contact-label {
+    color: #fff;
+    margin-bottom: 35px;
+    margin-top: 15px;
+  }
+  .terms ul {
+    list-style-image: url(/images/book.png); /* Путь к изображению маркера */
+   }
+
+   .sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 15px;
+  }
+  .about-text {
+    max-width: 750px;
+  }

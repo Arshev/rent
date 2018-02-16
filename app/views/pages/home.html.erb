@@ -3,10 +3,10 @@
    		<img src="images/slide2.jpg" alt="" class="this-bg hidden-xs">
 
    		<div class="this-texts container">
-   			<h2 class="this-cursive">Прокат автомобилей <span>от профессионалов</span></h2>
-			<h2 class="this-h1"><img src="images/shine.png" alt=""> excellent car hiring</h2>
+   			<h1 class="this-cursive">Прокат автомобилей <span>в Калининграде</span></h1>
+			<h2 class="this-h1">С нами ты всегда у руля!</h2>
   			<h2 class="this-foot">52-16-15</h2>
-  			<a href="#" class="btn btn-primary">Все автомобили</a>
+				<%= link_to 'Все автомобили', cars_path, class: 'btn btn-primary' %>
    		</div>
 
 	</section>
@@ -60,14 +60,14 @@
  		<div class="container">
  			<div class="col-md-4 feature">
  				<div class="media">
- 					<div class="media-left"><span><img src="images/icons/features/1.png" alt=""></span></div>
+ 					<div class="media-left"><span><img src="images/icons/features/1.png" alt="" style="max-width:50px;"></span></div>
  					<div class="media-body">
  						<h4 class="this-title">СТРАХОВКА КАСКО</h4>
 					<p>Все авто застрахованы, минимальная ответственность клиента даже при происшествиях по его вине.</p>
  					</div>
  				</div>
  				<div class="media">
- 					<div class="media-left"><span><img src="images/icons/features/2.png" alt=""></span></div>
+ 					<div class="media-left"><span><img src="images/icons/features/2.png" alt="" style="max-width:50px;"></span></div>
  					<div class="media-body">
  						<h4 class="this-title">ГАРАНТИЯ ЛУЧШЕ ЦЕНЫ</h4>
 					<p>Если найдете цену дешевле, с аналогичными условиями аренды — мы снизим цену для Вас!</p>
@@ -76,14 +76,14 @@
  			</div>
  			<div class="col-md-4 feature">
  				<div class="media">
- 					<div class="media-left"><span><img src="images/icons/features/3.png" alt=""></span></div>
+ 					<div class="media-left"><span><img src="images/icons/features/3.png" alt="" style="max-width:50px;"></span></div>
  					<div class="media-body">
  						<h4 class="this-title">НЕОГРАНИЧЕННЫЙ ПРОБЕГ</h4>
 					<p>Ограничение суточного пробега и штраф за несоблюдение не предусмотрен.</p>
  					</div>
  				</div>
  				<div class="media">
- 					<div class="media-left"><span><img src="images/icons/features/4.png" alt=""></span></div>
+ 					<div class="media-left"><span><img src="images/icons/features/4.png" alt="" style="max-width:50px;"></span></div>
  					<div class="media-body">
  						<h4 class="this-title">ПОДДЕРЖКА 24/7</h4>
 					<p>Круглосуточная поддержка клиента по всем вопросам, связанным с арендой автомобиля.</p>
@@ -92,14 +92,14 @@
  			</div>
  			<div class="col-md-4 feature">
  				<div class="media">
- 					<div class="media-left"><span><img src="images/icons/features/5.png" alt=""></span></div>
+ 					<div class="media-left"><span><img src="images/icons/features/5.png" alt="" style="max-width:50px;"></span></div>
  					<div class="media-body">
  						<h4 class="this-title">НЕМЕДЛЕННЫЙ ВОЗВРАТ ЗАЛОГА</h4>
 					<p>Возвращаем залоговую на месте возврата сразу же после осмотра автомобиля.</p>
  					</div>
  				</div>
  				<div class="media">
- 					<div class="media-left"><span><img src="images/icons/features/6.png" alt=""></span></div>
+ 					<div class="media-left"><span><img src="images/icons/features/6.png" alt="" style="max-width:50px;"></span></div>
  					<div class="media-body">
  						<h4 class="this-title">ДРУЖЕСТВЕННОЕ ОТНОШЕНИЕ</h4>
 					<p>Мы ценим своих клиентов и не придираемся к мелким недостаткам при приеме автомобиля.</p>
@@ -118,6 +118,9 @@
 			<div class="row">
 				<%= render 'cars/single_car_main' %>
 			</div>
+			<div class="text-center" style='padding-bottom: 10px;'>
+				<%= link_to 'Все автомобили', cars_path, class: 'btn btn-primary' %>
+			</div>
  		</div>
  	</section>
 
@@ -125,9 +128,9 @@
 <section class="row service-detail-tabs">
 		<div class="container">
 		<div class="row section-title text-center white">
-			<h6 class="this-top">The VALUE OF BRAND</h6>
-			<h2 class="h1 this-main">What we offer?</h2>
-			<p>We seek to get involved early in the design phase so that we can manage the project more efficiently, provide effective building solutions, and identify challenges early on to mitigate design changes after construction commencement.consectetur adipisicing elit.</p>
+			<h6 class="this-top">НАШИ УСЛУГИ</h6>
+			<h2 class="h1 this-main">Что мы предлагаем?</h2>
+			<p>Автопрокат ТраТаТа предоставляет услуги по аренде автомобилей различных классов без водителя в Калининграде и области. Мы осуществляем доставку авто прямо к клиенту.</p>
 		</div>
 		</div>
 		<div class="row m0 sdtab-contents">
@@ -146,33 +149,33 @@
   		<div class="container">
   			<div class="row mis-be ipad-width">
   				<div class="col-md-6 col-sm-12 col-xs-12 mission-it">
-  					<h3 class="this-title">Our Mission/Strategy</h3>
-  					<p class="this-para"><strong>Supershine WP is a global consulting power hiring car.</strong> We began our operations a few decades ago and have grown due to excellent relationships with our clients. We started out small, with just a few people and a small office, but today we have offices in multiple countries with hundreds of people working inside them.</p>
+  					<h3 class="this-title">Наша миссия</h3>
+  					<p class="this-para">Построение бизнеса нового поколения, основанного на принципе: «К клиенту — с душой!» Стать прокатом автомобилей мирового уровня, лучшим в России. Миссия компании Алиса Голд — развитие рынка доступной, удобной и качественной аренды автомобилей.</p>
 
   					<ul class="nav mission-nav">
-  						<li>Work fewer hours — and make more money</li>
-  						<li>Attract and retain quality, high-paying customers</li>
-  						<li>Manage your time so you’ll get more done in less time</li>
-  						<li>Hone sharp leadership skills to manage your team</li>
-  						<li>Cut expenses without sacrificing quality</li>
-  						<li>Automate your business, so you can leave for days, weeks, or even months at a time</li>
+  						<li>Клиент наш друг!</li>
+  						<li>Всегда стараемся справедливо урегулировать все спорные моменты.</li>
+  						<li>Содержим парк машин в хорошем состоянии.</li>
+  						<li>Договор без подводных камней.</li>
+  						<li>Большие скидки при долгосрочной аренде.</li>
+  						<li>Многолетний опыт работы.</li>
   					</ul>
   				</div>
   				<div class="col-md-6 col-sm-12 col-xs-12 benefit-it">
-  					<h3 class="this-title pl">Our Benefits</h3>
+  					<h3 class="this-title pl">Наши приемущества</h3>
 
 					<div class="panel-group benefit-accordion" role="tablist" aria-multiselectable="true">
 						<div class="panel panel-default">
 							<div class="panel-heading" role="tab" id="heading1">
 								<h4 class="panel-title">
 									<a role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-										Work fewer hours — and make more money
+										Справедливая топливная политика
 									</a>
 								</h4>
 							</div>
 							<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
 								<div class="panel-body">
-									We achieved our success because of how successfully we integrate with our clients. One complaint many people have about consultants is that they can be disruptive. Employees fear outside consultants coming in and destroying the workflow.
+									Выдаем автомобиль с полным баком, при недостаче топлива, оплата по цене заправок без штрафов.
 								</div>
 							</div>
 						</div>
@@ -180,13 +183,13 @@
 							<div class="panel-heading" role="tab" id="heading2">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-										Attract and retain quality, high-paying customers
+										Круглосуточная поддержка 24/7
 									</a>
 								</h4>
 							</div>
 							<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
 								<div class="panel-body">
-									We achieved our success because of how successfully we integrate with our clients. One complaint many people have about consultants is that they can be disruptive. Employees fear outside consultants coming in and destroying the workflow.
+									В любой ситуации, касаемой автомобиля, мы готовы помочь 24 часа в сутки.
 								</div>
 							</div>
 						</div>
@@ -194,13 +197,13 @@
 							<div class="panel-heading" role="tab" id="heading3">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-										Manage your time so you’ll get more done in less time
+										Низкие залоги
 									</a>
 								</h4>
 							</div>
 							<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
 								<div class="panel-body">
-									We achieved our success because of how successfully we integrate with our clients. One complaint many people have about consultants is that they can be disruptive. Employees fear outside consultants coming in and destroying the workflow.
+									Низкие залоговые суммы, начинаются от 3000 рублей.
 								</div>
 							</div>
 						</div>
@@ -208,13 +211,13 @@
 							<div class="panel-heading" role="tab" id="heading4">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
-										Hone sharp leadership skills to manage your team
+										Есть почасовая оплата
 									</a>
 								</h4>
 							</div>
 							<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
 								<div class="panel-body">
-									We achieved our success because of how successfully we integrate with our clients. One complaint many people have about consultants is that they can be disruptive. Employees fear outside consultants coming in and destroying the workflow.
+									Мы не берем стоимость аренды за сутки при опоздании или аренде на неполные сутки. На большинство автомобилей плата за час составляет 150 рублей.
 								</div>
 							</div>
 						</div>
@@ -222,13 +225,13 @@
 							<div class="panel-heading" role="tab" id="heading5">
 								<h4 class="panel-title">
 									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
-										Cut expenses without sacrificing quality
+										Доставка автомобиля
 									</a>
 								</h4>
 							</div>
 							<div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
 								<div class="panel-body">
-									We achieved our success because of how successfully we integrate with our clients. One complaint many people have about consultants is that they can be disruptive. Employees fear outside consultants coming in and destroying the workflow.
+									Доставляем автомобиль до двери, и заключаем договор на месте, не надо ехать в офис.
 								</div>
 							</div>
 						</div>

@@ -1,0 +1,108 @@
+<!--Page Cover-->
+<section class="row page-cover">
+	<div class="container">
+		<h2 class="h1 page-title">Условия</h2>
+		<ol class="breadcrumb">
+			<li><%= link_to "Главная", root_path %></li>
+			<li class="active">Условия</li>
+		</ol>
+	</div>
+</section>
+
+<section class="row wrapper-blog">
+    <div class="container">
+      <h2 class="text-center">Условия аренды</h2>
+      <div class="row wr-blog-res">
+        <div class="col-md-9 col-sm-12 blog-section">
+          <section class="row terms">
+            <div class="container">
+              <div class="col-md-6">
+                <a name="common"></a>
+                <h3>Основные:</h3>
+
+                <ul>
+                  <li>возраст водителя от 26 лет (для бизнес-класса от 28 лет)</li>
+                  <li>водительский стаж от 3 лет (для бизнес-класса от 5 лет)</li>
+                  <li>минимальный срок аренды при заблаговременном бронировании — 5
+                  суток</li>
+                </ul>
+                <a name="docs"></a>
+                <h3>Документы:</h3>
+
+                <ul>
+                  <li>общегражданский паспорт с регистрацией по месту жительства</li>
+                  <li>водительское удостоверение</li>
+                </ul>
+
+                <a name="foregn"></a>
+
+                <h3>Для иностранных граждан:</h3>
+                <ul>
+                  <li>паспорт</li>
+                  <li>водительское удостоверение</li>
+                  <li>увеличенный залог +2000 рублей</li>
+                </ul>
+
+                <a name="org"></a>
+
+                <h3>Для организаций:</h3>
+                <ul>
+                  <li>реквизиты организации</li>
+                  <li>доверенность на сотрудника, который получает автомобиль</li>
+                  <li>паспорт и водительское удостоверения водителя</li>
+                </ul>
+
+                <a name="client"></a>
+
+                <h3>Все для клиента:</h3>
+                <ul>
+                  <li>страховка КАСКО (минимальная ответственность арендатора)</li>
+                  <li>круглосуточная поддержка</li>
+                  <li>возможность безналичной оплаты</li>
+                  <li>возврат залога сразу при возврате автомобиля</li>
+                  <li>пробег не ограничен</li>
+                  <li>скидки постоянным клиентам</li>
+                  <li>индивидуальный подход</li>
+                  <li>скидки по картам других прокатных компаний</li>
+                  <li>лояльное отношение к клиенту при возврате автомобиля</li>
+                  <li>возможность аренды автомобиля без франшизы</li>
+                </ul>
+
+                <a name="other"></a>
+
+                <h3>Прочие условия</h3>
+                <ul>
+                  <li>курение в автомобиле строго запрещено (штраф 3000 рублей)</li>
+                  <li>выдача автомобиля осуществляется с полным баком топлива, возврат
+                  также, либо доплата за топливо из расчета 50 руб. за литр</li>
+                  <li>выдача автомобиля после мойки, возврат также, либо оплата мойки от
+                  300 руб.</li>
+                  <li>
+                    выезд за пределы Калининградской области не разрешен, но возможен
+                    на особых условиях, по согласованию с арендодателем
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!--Sidebar-->
+        <div class="col-md-3 col-sm-12 sidebar">
+          <!--Widget - Category-->
+          <div class="row widget widget-category" >
+            <h4 class="widget-title">Меню</h4>
+            <ul class="nav widget-nav">
+              <li><i class="fa fa-caret-right"></i><a href="#common">Основные условия</a></li>
+              <li><i class="fa fa-caret-right"></i><a href="#docs">Необходимые документы</a></li>
+              <li><i class="fa fa-caret-right"></i><a href="#foregn">Для иностранных граждан</a></li>
+              <li><i class="fa fa-caret-right"></i><a href="#org">Для организаций</a></li>
+              <li><i class="fa fa-caret-right"></i><a href="#client">Условия для клиента</a></li>
+              <li><i class="fa fa-caret-right"></i><a href="#other">Прочие условия</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= render 'shared/footer' %>

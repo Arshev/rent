@@ -27,4 +27,7 @@ Rails.application.routes.draw do
     end
   end
   resources :prices, only: [:index]
+  resources :contacts, only: [:index, :create]
+  resources :terms, only: [:index]
+  resources :abouts, only: [:index]
 end
