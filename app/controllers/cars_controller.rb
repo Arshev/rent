@@ -1,11 +1,11 @@
 class CarsController < ApplicationController
   before_action :set_car, except: [:index, :new, :create]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :update]
   before_action :set_photos, only: [:photo_upload, :show]
 
   def index
-    @cars = current_user.cars
+    @cars = Car.all
   end
 
   def new
