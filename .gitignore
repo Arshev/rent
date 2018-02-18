@@ -24,3 +24,7 @@
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+
+# Database.yml
+config/database.yml
+config/database.yml.sample
