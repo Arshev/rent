@@ -56,6 +56,7 @@ group :development do
   gem "capistrano-rvm", "~> 0.1.2", require: false
   gem "capistrano-rails", "~> 1.3.1", require: false
   gem 'capistrano-passenger', "~> 0.2.0", require: false
+  gem 'capistrano-rails-console', "~> 2.2.1", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
