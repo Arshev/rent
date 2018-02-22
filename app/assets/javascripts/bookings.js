@@ -1,4 +1,4 @@
-jQuery(function($) {
+$( document ).ready(function() {
   var value = 0, car = 0, total = 0, extra_price = 0, baby_chair = 0, nav = 0, delivery_price = 0, delivery_price_start = 0, delivery_price_end = 0, total_price = 0;
 
   $("#booking_car").click( function() {
