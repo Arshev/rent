@@ -89,9 +89,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Encription passwords
-  config.read_encrypted_secrets = true
-
   # Email send Settings
   config.action_mailer.default_url_options = { host: '82.202.236.65', port: 221 }
 
