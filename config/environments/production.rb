@@ -91,4 +91,18 @@ Rails.application.configure do
 
   # Encription passwords
   config.read_encrypted_secrets = true
+
+  # Email send Settings
+  config.action_mailer.default_url_options = { host: '82.202.236.65', port: 221 }
+
+  config.action_mailer.delivery_method = :smtp
+  # Settings for MailGun
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: 'sandbox042fbe9fb3744ba7acd0d9e808491c2f.mailgun.org',
+    authentication: 'plain',
+    user_name: 'postmaster@sandbox042fbe9fb3744ba7acd0d9e808491c2f.mailgun.org',
+    password: '688a5fdc81e2efef68bfbb53bf78ffc4'
+  }
 end

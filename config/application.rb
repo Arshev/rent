@@ -13,8 +13,8 @@ module Rent
     config.active_job.queue_adapter = :sucker_punch
 
     # Add custom fonts
-    config.assets.enabled = true
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    # config.assets.enabled = true
+    # config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
