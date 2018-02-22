@@ -3622,7 +3622,6 @@ input[name="engine-type"] {
     color: #2b2e4a;
     margin-bottom: 8px; }
 .car-images .this-cover-image {
-  height: 465px;
   background: #fff;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
   line-height: 465px;
@@ -3723,7 +3722,7 @@ input[name="engine-type"] {
     padding-left: 28px;
     padding-right: 30px;
     font-family: "Open Sans", sans-serif;
-    color: rgba(255, 255, 255, 0.15); }
+    color: rgba(255, 255, 255, 0.5); }
     .focus-informations li + li {
       border-top: 1px dotted;
       border-top-color: rgba(255, 255, 255, 0.08); }
@@ -3747,7 +3746,7 @@ input[name="engine-type"] {
 
 .hire-btn {
   width: 140px;
-  line-height: 58px;
+  line-height: 60px;
   float: left;
   text-align: center;
   text-transform: uppercase;

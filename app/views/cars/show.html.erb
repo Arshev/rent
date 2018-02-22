@@ -7,36 +7,18 @@
   				<h3 class="vehicle-title"><%= @car.car_name %></h3>
   			</div>
   			<div class="row m0 this-cover-image">
-          <% if @photos.length > 0 %>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <% @photos.each do |photo| %>
-                <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
-                <% end %>
-              </ol>
-
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                <% @photos.each do |photo| %>
-                <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                  <%= image_tag photo.image.url() %>
-                </div>
-                <% end %>
-              </div>
-
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Предыдущее</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Следующее</span>
-              </a>
+          <div class="item">
+            <div class="clearfix" style="max-width:750px;">
+                <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                  <% @photos.each do |photo| %>
+                    <li data-thumb="<%= photo.image.url(:thumb) %>">
+                      <%= image_tag photo.image.url() %>
+                     </li>
+                  <% end %>
+                </ul>
             </div>
-          <% end %>
-  			</div>
+          </div>
+        </div>
   		</div>
 
   		<div class="col-sm-12 col-md-4 col-xs-12 car-infomations fleet">
@@ -54,7 +36,7 @@
           <li><span><img src="/images/icons/fleet2/number-doors-white.png" style="width: 20px;" alt=""></span>  Кол-во дверей <span class="this-value"><%= @car.number_doors %></span></li>
           <li>
             <% if @car.is_air %>
-              <span><img src="/images/icons/fleet2/snow.png" style="width: 20px;" alt=""></span> Кондиционер <span class="this-value">Есть</span>
+              <span><img src="/images/icons/fleet2/snow-white.png" style="width: 20px;" alt=""></span> Кондиционер <span class="this-value">Есть</span>
             <% end %>
           </li>
           <li>
@@ -81,27 +63,24 @@
   </div>
   </section>
 <%= render 'shared/footer' %>
-<%= render 'shared/modal_form' %>
 <script>
-  $(document).ready(function(){
-      // Activate Carousel
-      $("#myCarousel").carousel({interval: 4000});
-  });
+	 $(document).ready(function() {
+	$("#content-slider").lightSlider({
+            loop:true,
+            keyPress:true
+        });
+        $('#image-gallery').lightSlider({
+            gallery:true,
+            item:1,
+            thumbItem:5,
+            slideMargin: 0,
+            vThumbWidth:100,
+            speed:1000,
+            auto:false,
+            loop:true,
+            onSliderLoad: function() {
+                $('#image-gallery').removeClass('cS-hidden');
+            }
+        });
+});
 </script>
-<!--Contact-->
-<script src="/js/jquery.form.js"></script>
-<script src="/js/jquery.validate.min.js"></script>
-<script src="/js/contact.js"></script>
-<!--CounterUp-->
-<script src="/vendors/couterup/jquery.counterup.min.js"></script>
-<!--WayPoints-->
-<script src="/vendors/waypoint/waypoints.min.js"></script>
-<!--Select-->
-<script src="/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-<!--Instafeed-->
-<script src="/vendors/instafeed/instafeed.min.js"></script>
-<!-- Isotope -->
-<script src="/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="/vendors/isotope/isotope.min.js"></script>
-<!--Theme Script-->
-<script src="/js/theme.js"></script>
