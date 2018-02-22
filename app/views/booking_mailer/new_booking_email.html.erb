@@ -8,7 +8,12 @@
     <p>Имя: <%= @booking.firstname %> <%= @booking.middlename %> <%= @booking.lastname %></p>
     <p>Телефон: <%= @booking.phone %></p>
     <p>Email: <%= @booking.email %></p>
-    <p>Автомобиль: <%= Car.where("id = '#{@booking.car}'").first.car_name %></p>
+    <% if @booking.car.length < 3 %>
+      <p>Автомобиль: <%= Car.where("id = '#{@booking.car}'").first.car_name %></p>
+    <% else %>
+      <p>Автомобиль: <%= @booking.car %></p>
+    <% end %>
+
     <p>Начало аренды: <%= @booking.start_date.strftime("%d-%m-%Y") %></p>
     <p>Конец аренды: <%= @booking.end_date.strftime("%d-%m-%Y") %></p>
     <p>Где брать: <%= @booking.location_start %></p>

@@ -23,7 +23,11 @@ class Booking < ApplicationRecord
   end
 
   def send_sms
-    @car_name = Car.where("id = '#{self.car}'").first.car_name
+    if self.car.length < 3
+      @car_name = Car.where("id = '#{self.car}'").first.car_name
+    else
+      @car_name = self.car
+    end
     @client = Twilio::REST::Client.new
     @client.messages.create(
     from: '+13477089316',
