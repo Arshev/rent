@@ -1,7 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <title>Прокат автомобилей в Калининграде - Амиго</title>
+    <% if current_page?(root_path) %>
+      <title>Прокат автомобилей в Калининграде - Амиго</title>
+      <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(cars_path) %>
+        <title>Автомобили в прокат - в автопрокате Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?("/cars/#{params[:id]}") %>
+        <title>Аренда <%= @car.car_name %> - прокат авто Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(new_booking_path) %>
+        <title>Заявка на аренду авто в Калининграде - Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(reviews_path) %>
+        <title>Отзывы о прокате автомобилей Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(prices_path) %>
+        <title>Цены на прокат автомобилей в Калининграде - Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(contacts_path) %>
+        <title>Контакты автопроката Амиго в Калининграде</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(terms_path) %>
+        <title>Условия аренды автомобилей в Калининграде - Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% elsif current_page?(abouts_path) %>
+        <title>Информация о прокате авто Амиго</title>
+        <meta name="description" content="краткое описание страницы">
+      <% else %>
+        <title>Прокат автомобилей в Калининграде - Амиго</title>
+        <meta name="description" content="">
+    <% end %>
     <%= include_gon %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
