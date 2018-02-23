@@ -157,12 +157,12 @@ a, .btn, button {
 
 /*--------------------------------------------------------------------------------------------*/
 .logo-box {
-  padding-top: 27px;
-  padding-bottom: 21px; }
+  padding-top: 5px;
+  padding-bottom: 10px; }
 
 .logo {
   float: left;
-  max-width: 270px; }
+  max-width: 200px; }
   .logo img {
     width: 100%; }
 
