@@ -20,10 +20,6 @@ document.addEventListener("turbolinks:load", function() {
         onSelect: function(selected) {
           $('#reservation_end_date').datepicker("option", "minDate", selected);
           $('#reservation_end_date').attr("disabled", false);
-          if (value === 0) {
-            alert("Сначала выберите автомобиль!")
-          }
-
         }
       });
 
