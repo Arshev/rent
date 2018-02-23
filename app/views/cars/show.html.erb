@@ -1,5 +1,11 @@
-<% cache @car do %>
   <section class="row wrapper-car-details">
+    <div class="container">
+			<ol class="breadcrumb">
+				<li><%= link_to 'Главная', root_path %></li>
+				<li><%= link_to 'Автомобили', cars_path %></li>
+        <li class="active"><%= @car.car_name %></li>
+			</ol>
+		</div>
   <div class="container">
   	<div class="row car-dt">
   		<div class="col-sm-12 col-md-8 col-xs-12 car-images fleet">
@@ -12,9 +18,11 @@
             <div class="clearfix" style="max-width:750px;">
                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                   <% @photos.each do |photo| %>
-                    <li data-thumb="<%= photo.image.url(:thumb) %>">
-                      <%= image_tag photo.image.url() %>
-                     </li>
+                    <% cache photo do %>
+                      <li data-thumb="<%= photo.image.url(:thumb) %>">
+                        <%= image_tag photo.image.url() %>
+                       </li>
+                    <% end %>
                   <% end %>
                 </ul>
             </div>
@@ -63,7 +71,6 @@
   </div>
   </div>
   </section>
-<% end %>
 <%= render 'shared/footer', cached: true %>
 <script>
 	 $(document).ready(function() {
