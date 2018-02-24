@@ -40,7 +40,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -72,3 +71,5 @@ gem 'twilio-ruby', '~> 5.6.0'
 # gem 'sidekiq', '~> 5.1.1'
 gem 'sucker_punch'
 gem 'newrelic_rpm'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem "recaptcha", require: "recaptcha/rails"

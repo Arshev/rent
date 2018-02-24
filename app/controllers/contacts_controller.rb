@@ -1,9 +1,9 @@
 class ContactsController < ApplicationController
-  def index    
+  def index
   end
   def create
     @contact = Contact.create(contact_params)
-    if @contact.save
+    if verify_recaptcha(model: @contact) && @contact.save
       ContactMailer.with(contact: @contact).contact_email.deliver_later
       redirect_to root_path, notice: "Ваше сообщение успешно отправлено!"
     else

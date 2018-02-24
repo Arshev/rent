@@ -37,7 +37,8 @@
 							</div>
     						<h5 class="textarea-label">Сообщение <i class="ion-chatbubble-working"></i></h5>
                 <%= f.text_area :message, minlength: 30, placeholder: "Ваше сообщение", class: "form-control", required: true %>
-                <%= f.submit "ОТПРАВИТЬ", class: "btn btn-primary" %>
+								<%= invisible_recaptcha_tags text: 'Отправить' %>
+								<%= f.submit "ОТПРАВИТЬ", class: "btn btn-primary" %>
     					</form>
               <% end %>
 						</div>
