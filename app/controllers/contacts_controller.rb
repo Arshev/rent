@@ -5,9 +5,9 @@ class ContactsController < ApplicationController
     @contact = Contact.create(contact_params)
     if verify_recaptcha(model: @contact) && @contact.save
       ContactMailer.with(contact: @contact).contact_email.deliver_later
-      redirect_to root_path, notice: "Ваше сообщение успешно отправлено!"
+      redirect_back(fallback_location: request.referer, notice: "Ваше сообщение успешно отправлено!")
     else
-      redirect_to root_path, alert: "Что то пошло не так!"
+      redirect_back(fallback_location: request.referer, alert: "Вы заполнили не все поля!")
     end
   end
 

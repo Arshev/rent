@@ -8,10 +8,36 @@
 		</ol>
 	</div>
 </section>
+<div class="container">
+	<div class="media contact-addresses ipad-width">
+		<div class="media-left  media-middle">
+			<div class="img-holder">
+				<img src="/images/nevskiy.jpg" alt="" style="max-width:270px;">
+				<div class="hover-box">
+				<ul class="nav nav-pills social-nav">
+					<li><a href="#" class="ion-social-facebook" data-toggle="tooltip" data-placement="top" title="Facbook"></a></li>
+					<li><a href="#" class="ion-social-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"></a></li>
+					<li><a href="#" class="ion-social-googleplus" data-toggle="tooltip" data-placement="top" title="Google Plus"></a></li>
+				</ul>
+				</div>
+		</div>
+		</div>
+		<div class="media-body media-middle">
+			<div class="col-md-6 address-portion">
+				<h4 class="this-title">Адрес офиса</h4>
+					<ul class="nav foot-nav style3">
+						<li><i class="ion-location"></i>ул. Александра Невского 36В, 3 этаж<br class="visible-lg">Калининград.</li>
+						<li><i class="ion-ios-telephone"></i>(4012) 52-16-15</li>
+						<li><i class="ion-email-unread"></i><a href="mailto:a.c@live.ru">a.c@live.ru</a></li>
+					</ul>
+			</div>
+		</div>
+	</div>
+</div>
 <section class="row wrapper-contact">
 	<div class="container contact-map ipad-width">
 		<div class="row contact-google-map">
-      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad4c0ea8c9bc834ff6ecf1da1605a4a94310c734a3d41eeb07d04c40ae8c25cc7&amp;width=100%25&amp;height=535&amp;lang=ru_RU&amp;scroll=true"></script>
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad4c0ea8c9bc834ff6ecf1da1605a4a94310c734a3d41eeb07d04c40ae8c25cc7&amp;width=100%25&amp;height=620&amp;lang=ru_RU&amp;scroll=true"></script>
     </div>
 		<div class="contact-form-area col-md-push-8 col-sm-push-6 col-md-4 col-sm-6">
 			<div class="form-area row">
@@ -33,11 +59,12 @@
     						</div>
                 <div class="row m0">
                   <%= f.check_box :accept, required: true %>
-  								<label class="contact-label" for="subscribe2">Принимаю соглашение по 152-ФЗ *</label>
+  								<label class="contact-label" style="display: inline;" for="subscribe2">Принимаю соглашение О персональных данных согласно 152-ФЗ *</label>
 							</div>
+							<br>
     						<h5 class="textarea-label">Сообщение <i class="ion-chatbubble-working"></i></h5>
                 <%= f.text_area :message, minlength: 30, placeholder: "Ваше сообщение", class: "form-control", required: true %>
-								<%= invisible_recaptcha_tags text: 'Отправить' %>
+								<%= recaptcha_tags %>
 								<%= f.submit "ОТПРАВИТЬ", class: "btn btn-primary" %>
     					</form>
               <% end %>
@@ -46,32 +73,28 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="container">
-		<div class="media contact-addresses ipad-width">
-			<div class="media-left  media-middle">
-				<div class="img-holder">
-					<img src="/images/nevskiy.jpg" alt="" style="max-width:270px;">
-					<div class="hover-box">
-					<ul class="nav nav-pills social-nav">
-						<li><a href="#" class="ion-social-facebook" data-toggle="tooltip" data-placement="top" title="Facbook"></a></li>
-						<li><a href="#" class="ion-social-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"></a></li>
-						<li><a href="#" class="ion-social-googleplus" data-toggle="tooltip" data-placement="top" title="Google Plus"></a></li>
-					</ul>
-					</div>
-			</div>
-			</div>
-			<div class="media-body media-middle">
-				<div class="col-md-6 address-portion">
-					<h4 class="this-title">Адрес офиса</h4>
-						<ul class="nav foot-nav style3">
-							<li><i class="ion-location"></i>ул. Александра Невского 36В, 3 этаж<br class="visible-lg">Калининград.</li>
-							<li><i class="ion-ios-telephone"></i>(4012) 52-16-15</li>
-							<li><i class="ion-email-unread"></i><a href="mailto:a.c@live.ru">a.c@live.ru</a></li>
-						</ul>
-				</div>
-			</div>
-		</div>
-	</div>
 </section>
   <%= render 'shared/footer' %>
+	<script type="text/javascript">
+    var verifyCallback = function(response) {
+      alert(response);
+    };
+    var widgetId1;
+    var widgetId2;
+    var onloadCallback = function() {
+      // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+      // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+      widgetId1 = grecaptcha.render('example1', {
+        'sitekey' : "<%= Recaptcha.configuration.site_key %>",
+        'theme' : 'light'
+      });
+      widgetId2 = grecaptcha.render(document.getElementById('example2'), {
+        'sitekey' : "<%= Recaptcha.configuration.site_key %>"
+      });
+      grecaptcha.render('example3', {
+        'sitekey' : "<%= Recaptcha.configuration.site_key %>",
+        'callback' : verifyCallback,
+        'theme' : 'dark'
+      });
+    };
+  </script>
