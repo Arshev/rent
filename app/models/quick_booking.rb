@@ -1,4 +1,8 @@
 class QuickBooking < ApplicationRecord
+  validates :name, presence: true
+  validates :contacts, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
   def send_sms
     @client = Twilio::REST::Client.new
     @client.messages.create(

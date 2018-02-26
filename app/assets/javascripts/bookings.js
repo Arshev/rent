@@ -62,13 +62,13 @@ document.addEventListener("turbolinks:load", function() {
         delivery_start = $("#booking_location_start").val();
         switch (delivery_start) {
           case "Аэропорт":
-            delivery_price_start = 800;
+            delivery_price_start = 400;
             break;
           case "Светлогорск":
-            delivery_price_start = 1200;
+            delivery_price_start = 1000;
             break;
           case "Зеленоградск":
-            delivery_price_start = 1000;
+            delivery_price_start = 800;
             break;
           case "Другой адрес в Калининграде":
             delivery_price_start = 300;
@@ -93,13 +93,13 @@ document.addEventListener("turbolinks:load", function() {
         delivery_end = $("#booking_location_end").val();
         switch (delivery_end) {
           case "Аэропорт":
-            delivery_price_end = 800;
+            delivery_price_end = 400;
             break;
           case "Светлогорск":
-            delivery_price_end = 1200;
+            delivery_price_end = 1000;
             break;
           case "Зеленоградск":
-            delivery_price_end = 1000;
+            delivery_price_end = 800;
             break;
           case "Другой адрес в Калининграде":
             delivery_price_end = 300;

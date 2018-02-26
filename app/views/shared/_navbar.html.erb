@@ -1,16 +1,11 @@
-<% if current_page?(root_path) || current_page?(cars_path) || current_page?("/cars/#{params[:id]}") || current_page?(new_booking_path) || current_page?(reviews_path) || current_page?(prices_path) || current_page?(contacts_path) || current_page?(terms_path) || current_page?(abouts_path) %>
+<% if current_page?(root_path) || current_page?(cars_path) || current_page?("/cars/#{params[:id]}") || current_page?(new_booking_path) || current_page?(reviews_path) || current_page?(prices_path) || current_page?(contacts_path) || current_page?(terms_path) || current_page?(abouts_path) || current_page?(faqs_path) %>
   <!--Top Bar-->
     <section class="row top-bar">
       <h2 class="hd-sec">Heading</h2>
     	<div class="container">
-    		<div class="welcome-texts"><span class="welcome-text">Дорогой друг, добро пожаловать в автопрокат </span><span>Амиго</span>!</div>
+    		<div class="welcome-texts"><span class="welcome-text">Дорогой друг, добро пожаловать в автопрокат </span><span style="font-size:20px;">Амиго!</span></div>
     		<ul class="social-lists-wSearch nav nav-pills">
-    			<li><a href="#" class="search-pop"><span class="ion-ios-search-strong"></span></a></li>
-    			<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-    			<li><a href="#"><i class="ion-social-twitter"></i></a></li>
-    			<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-    			<li><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
-    			<li><a href="#"><i class="ion-social-rss"></i></a></li>
+    			<!-- <li><a href="#"><i class="ion-social-facebook"></i></a></li> -->
     		</ul>
     	</div>
     </section>
@@ -35,7 +30,7 @@
   							<div class="media-left"><i class="ion-ios-telephone"></i></div>
   							<div class="media-body">
   								<h5 class="this-top">(4012) 52-16-15</h5>
-  								<h5 class="this-bottom">Support@Supershine.com</h5>
+  								<h5 class="this-bottom">a.c@live.ru</h5>
   							</div>
   						</div>
   						<div class="media info-media">
@@ -47,7 +42,7 @@
   						</div>
   					</div>
   					<div class="cart-nav">
-  						<a href="#" class="nav-hider hidden-xs hidden-sm"><i class="ion-android-menu"></i></a>
+  						<a href="#" class="nav-hider hidden-desktop hidden-xs hidden-sm"><i class="ion-android-menu"></i></a>
   						<button type="button" class="navbar-toggle nav-hider collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
   							<span class="sr-only">Toggle navigation</span>
   							<i class="ion-android-menu"></i>
@@ -70,7 +65,7 @@
             <li><%= link_to "Заказать", new_booking_path %></li>
   					<li><%= link_to "Отзывы", reviews_path %></li>
   					<li><%= link_to "Условия", terms_path %></li>
-  					<li><%= link_to "О нас", abouts_path %></li>
+  					<li><%= link_to "FAQ", faqs_path %></li>
   				</ul>
   			</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
@@ -85,7 +80,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "Rent", root_path, class: "navbar-brand" %>
+        <%= link_to "Амиго", root_path, class: "navbar-brand" %>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">

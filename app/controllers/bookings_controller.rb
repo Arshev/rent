@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     if @booking.save
       @booking.send_sms
       BookingMailer.with(booking: @booking).new_booking_email.deliver_later
-      redirect_to root_path, notice: "Заявка успешно создана! Ожидайте звонка оператора."
+      redirect_to root_path, notice: "Заявка успешно создана! Ожидайте звонка оператора. Обработка заявки производится в течение суток"
     else
       redirect_to root_path, alert: "Что то пошло не так!"
     end
