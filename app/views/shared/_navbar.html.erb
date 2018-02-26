@@ -1,5 +1,6 @@
 <% if current_page?(root_path) || current_page?(cars_path) || current_page?("/cars/#{params[:id]}") || current_page?(new_booking_path) || current_page?(reviews_path) || current_page?(prices_path) || current_page?(contacts_path) || current_page?(terms_path) || current_page?(abouts_path) || current_page?(faqs_path) %>
   <!--Top Bar-->
+  <% if current_page?(root_path) %>
     <section class="row top-bar">
       <h2 class="hd-sec">Heading</h2>
     	<div class="container">
@@ -9,7 +10,7 @@
     		</ul>
     	</div>
     </section>
-
+  <% end %>
     <!--Info Bar-->
   	<section class="row info-bar">
   		<div class="container">
