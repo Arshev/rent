@@ -73,3 +73,4 @@ gem 'sucker_punch'
 gem 'newrelic_rpm'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'sitemap_generator', '~> 6.0.1'
