@@ -23,16 +23,16 @@ toastr.options = {
   "debug": false,
   "newestOnTop": true,
   "progressBar": true,
-  "positionClass": "toast-top-center",
+  "positionClass": "toast-top-full-width",
   "preventDuplicates": false,
   "onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
-  "timeOut": 5000,
-  "extendedTimeOut": 3000,
+  "timeOut": 15000,
+  "extendedTimeOut": 13000,
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut",
-  "tapToDismiss": false
+  "tapToDismiss": true
 }
