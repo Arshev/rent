@@ -18,11 +18,11 @@
             <div class="clearfix" style="max-width:750px;">
                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                   <% @photos.each do |photo| %>
-                    <% cache photo do %>
+
                       <li data-thumb="<%= photo.image.url(:thumb) %>">
                         <%= image_tag photo.image.url() %>
                        </li>
-                    <% end %>
+                    
                   <% end %>
                 </ul>
             </div>
