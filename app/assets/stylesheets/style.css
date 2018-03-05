@@ -107,7 +107,7 @@ a, .btn, button {
     text-transform: uppercase;
     margin-bottom: 15px; }
   .section-title .this-main {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 900; }
     .section-title .this-main + p {
       margin-top: 30px;
@@ -233,7 +233,7 @@ a, .btn, button {
     padding: 0;
     line-height: 18px;
     text-align: center;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 9px;
     font-weight: bold;
     border-radius: 100%;
@@ -282,7 +282,7 @@ a, .btn, button {
         background-image: url(../images/nav-right.png);
         right: -84px; }
       .main-navigation #main-nav .navbar-nav li a {
-        font-family: "Lato", sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 900;
         line-height: 54px;
         padding: 0 19px;
@@ -340,7 +340,7 @@ a, .btn, button {
     .main-navigation2 #main-nav .navbar-nav {
       margin-right: 14px; }
       .main-navigation2 #main-nav .navbar-nav li a {
-        font-family: "Lato", sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 900;
         line-height: 120px;
         padding: 0 14px;
@@ -424,7 +424,7 @@ a, .btn, button {
       .slide-banner .this-cursive {
         font-size: 30px; } }
   .slide-banner .this-h1 {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-size: 80px;
     line-height: 1;
@@ -460,7 +460,7 @@ a, .btn, button {
           max-width: 200px; } }
   .slide-banner .this-foot {
     font-size: 40px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 900;
     margin: 5px 0 45px; }
     @media (max-width: 1199px) {
@@ -534,7 +534,7 @@ a, .btn, button {
   margin: 0;
   line-height: 1;
   position: absolute;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   width: 180px;
   text-align: center;
@@ -580,7 +580,7 @@ a, .btn, button {
       margin-top: 30px; } }
 .car-finder-form .form-title {
   margin-top: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 900; }
 .car-finder-form .input-group {
   margin-bottom: 15px; }
@@ -656,7 +656,7 @@ a, .btn, button {
   float: left; }
   .car-finder-form .day-month .btn {
     font-size: 60px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 900;
     line-height: 0.8; }
     @media (max-width: 1199px) {
@@ -675,7 +675,7 @@ a, .btn, button {
           padding-bottom: 0;
           margin-bottom: 0; } }
   .car-finder-form .month-year .btn {
-    font-family: "Lato", sans-serif; }
+    font-family: "Roboto", sans-serif; }
 .car-finder-form .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
   width: auto; }
 .car-finder-form .time {
@@ -731,7 +731,7 @@ a, .btn, button {
     transition: all 300ms linear 0s; }
 .feature .this-title {
   margin: 0 0 20px;
-  font: 900 16px/1.15 "Lato", sans-serif; }
+  font: 900 16px/1.15 "Roboto", sans-serif; }
 .feature p {
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -796,12 +796,13 @@ a, .btn, button {
   top: 0;
   left: 20px; }
 .fleet .vehicle-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   margin: 0; }
 .fleet .rent {
-  font-family: "Lato", sans-serif;
-  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
   margin-top: 30px;
   margin-bottom: 5px; }
   .fleet .rent small {
@@ -810,7 +811,7 @@ a, .btn, button {
     margin-right: 2px; }
   .fleet .rent sub {
     font-size: 14px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     margin-left: 2px; }
 .fleet .reviews {
   margin: 0 0 5px;
@@ -1313,7 +1314,7 @@ a, .btn, button {
   .service-offer .this-title {
     margin: 0 0 15px;
     text-transform: uppercase;
-    font: 900 16px/1.1 "Lato", sans-serif;
+    font: 900 16px/1.1 "Roboto", sans-serif;
     transition: all 300ms linear 0s; }
     @media (max-width: 1199px) {
       .service-offer .this-title {
@@ -1427,7 +1428,7 @@ a, .btn, button {
     .sdtabs-nav li a .this-title {
       margin: 0 0 15px;
       text-transform: uppercase;
-      font: 900 16px/1.1 "Lato", sans-serif;
+      font: 900 16px/1.1 "Roboto", sans-serif;
       color: #FFF;
       transition: all 300ms linear 0s; }
     .sdtabs-nav li a .this-area {
@@ -1489,7 +1490,7 @@ a, .btn, button {
   .sdtab-content .this-title {
     line-height: 1;
     color: #fff;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 30px; }
@@ -1663,7 +1664,7 @@ a, .btn, button {
   .banner01.row .this-title {
     margin-top: 18px;
     margin-bottom: 15px;
-    font: bold 72px/1.15 "Lato", sans-serif; }
+    font: bold 72px/1.15 "Roboto", sans-serif; }
     @media (max-width: 639px) {
       .banner01.row .this-title {
         font-size: 52px; } }
@@ -1822,7 +1823,7 @@ a, .btn, button {
         max-width: 630px;
         margin: 0 auto; } }
   .banner3 .this-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     margin: -5px 0 10px; }
     @media (max-width: 1199px) {
@@ -1898,7 +1899,7 @@ a, .btn, button {
     font-weight: bold; }
   .banner04.row .this-main {
     font-size: 80px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     margin-top: 0;
     color: #fff;
@@ -1993,7 +1994,7 @@ a, .btn, button {
   .top-footer .widget-title {
     margin-top: 15px;
     margin-bottom: 38px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     text-transform: uppercase;
     line-height: 1;
@@ -2191,7 +2192,7 @@ a, .btn, button {
       .form-area .this-inner {
         padding: 0 15px; } }
   .form-area .this-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     line-height: 1;
     margin-top: 25px;
@@ -2259,7 +2260,7 @@ a, .btn, button {
       .contact-addresses .address-portion {
         padding: 15px 20px; } }
   .contact-addresses .this-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     line-height: 32px;
@@ -2294,7 +2295,7 @@ a, .btn, button {
 
 .page-title {
   margin: 118px 0 78px;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   text-align: center; }
@@ -2326,7 +2327,7 @@ h2.hd-sec {
   .wrapper-404 .this-message {
     margin-top: 35px;
     margin-bottom: 20px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-size: 48px; }
     @media (max-width: 479px) {
@@ -2349,7 +2350,7 @@ h2.hd-sec {
   margin: 0;
   border: none; }
   .popular-fleets-tabs li a {
-    font: 800 36px/60px "Lato", sans-serif;
+    font: 800 36px/60px "Roboto", sans-serif;
     text-transform: capitalize;
     padding: 0 30px;
     border-radius: 0;
@@ -2573,7 +2574,7 @@ h2.hd-sec {
     line-height: 50px; }
 
 .post-title {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 800;
   line-height: 26px;
   margin-top: 0;
@@ -2804,7 +2805,7 @@ h2.hd-sec {
     filter: blur(15.3px); }
 
 .link-quote {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   display: table;
   position: relative;
@@ -2815,7 +2816,7 @@ h2.hd-sec {
   color: #fff; }
   .link-quote:before, .link-quote:after {
     content: 'ΓÇ£';
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-size: 120px;
     position: absolute;
@@ -2871,7 +2872,7 @@ h2.hd-sec {
   position: relative; }
   .quotation:before {
     content: 'ΓÇ£';
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-size: 120px;
     position: absolute;
@@ -2904,7 +2905,7 @@ h2.hd-sec {
     .sidebar .widget + .widget {
       margin-top: 55px; }
   .sidebar .widget-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1;
     margin-bottom: 30px;
     margin-top: 0;
@@ -3074,7 +3075,7 @@ h2.hd-sec {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 16px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     text-transform: uppercase; }
   .author-widget p {
@@ -3091,7 +3092,7 @@ h2.hd-sec {
     margin: 0;
     line-height: 1;
     text-transform: uppercase;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     color: #2b2e4a; }
   .comments-area .this-sub-title {
@@ -3199,7 +3200,7 @@ h2.hd-sec {
   margin-top: 50px; }
 .fleet-sidebar .widget-title {
   margin-bottom: 30px;
-  font: 800 16px/50px "Lato", sans-serif;
+  font: 800 16px/50px "Roboto", sans-serif;
   color: #fff;
   margin-top: 0;
   border-left: 3px solid;
@@ -3408,7 +3409,7 @@ input[name="engine-type"] {
   .intro-info:before {
     content: "0" counter(my-badass-counter) "/";
     counter-increment: my-badass-counter;
-    font: 800 72px/0.7 "Lato", sans-serif;
+    font: 800 72px/0.7 "Roboto", sans-serif;
     position: absolute;
     top: 0;
     left: -141px;
@@ -3424,7 +3425,7 @@ input[name="engine-type"] {
   .intro-info .this-title {
     margin: 0;
     text-transform: uppercase;
-    font: 800 16px/1.15 "Lato", sans-serif;
+    font: 800 16px/1.15 "Roboto", sans-serif;
     color: #2b2e4a; }
   .intro-info .media-body {
     position: relative; }
@@ -3484,7 +3485,7 @@ input[name="engine-type"] {
     line-height: 58px; }
   .some-feature .this-title {
     font-size: 16px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     line-height: 1;
     margin: 20px 0;
@@ -3498,7 +3499,7 @@ input[name="engine-type"] {
 .missin-benefits {
   padding: 10px; }
   .missin-benefits .this-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-transform: capitalize;
     font-weight: 800;
     margin-top: 0;
@@ -3615,7 +3616,7 @@ input[name="engine-type"] {
   margin-bottom: 5px; }
   .car-images .this-heading .this-class {
     text-transform: uppercase;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     line-height: 1.2;
     margin: 0;
@@ -3701,7 +3702,7 @@ input[name="engine-type"] {
   .focus-infos .this-heading {
     text-transform: uppercase;
     margin: 0 0 15px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     line-height: 1; }
     .focus-infos .this-heading:before {
@@ -3783,7 +3784,7 @@ input[name="engine-type"] {
     text-transform: uppercase;
     background: #2b2e4a;
     border: none;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.15);
     position: relative; }
@@ -3852,7 +3853,7 @@ input[name="engine-type"] {
     float: left;
     margin: 0 0 0 30px;
     line-height: 60px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     color: #2b2e4a; }
 
@@ -3991,7 +3992,7 @@ input[name="engine-type"] {
 .your-order .this-heading {
   text-transform: uppercase;
   text-align: center;
-  font: 800 16px/60px "Lato", sans-serif;
+  font: 800 16px/60px "Roboto", sans-serif;
   margin: 0;
   color: #fff;
   background: #2b2e4a;
@@ -4149,7 +4150,7 @@ input[name="payment-method"]:checked + label {
     line-height: 1;
     color: #f77d0a; }
   .coming-soon-header .this-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     margin-top: 0; }
 
@@ -4280,7 +4281,7 @@ input[name="payment-method"]:checked + label {
       border-left: 1px solid;
       border-left-color: rgba(255, 255, 255, 0.05); }
   #coming-soon-countdown .number {
-    font: 800 72px/0.75 "Lato", sans-serif;
+    font: 800 72px/0.75 "Roboto", sans-serif;
     display: block;
     margin-top: -2px; }
   #coming-soon-countdown .string {
@@ -4325,7 +4326,7 @@ input[name="payment-method"]:checked + label {
   .find-quick-form .this-title {
     line-height: 1;
     margin: 0 0 8px;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     text-transform: uppercase; }
   .find-quick-form .this-p {
