@@ -25,6 +25,10 @@
     <%= link_to "Всякое", amenities_car_path, class: "sidebar-link active" %>
     <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
+  <li class="sidebar-item">
+    <%= link_to 'Дата окончания цен', edit_price_path(price_id: 1), class: "sidebar-link active" %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
 </ul>
 <hr/>
 <% is_ready = !@car.active && !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? && !@car.car_name.blank? && !@car.photos.blank?  %>
