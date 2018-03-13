@@ -17,7 +17,12 @@
               <div class="row m0">
                 <h2 class="rent">от <%= car.price_main %><sub>/сутки</sub></h2>
               </div>
-              <h4 class="vehicle-title"><%= car.car_name %></h4>
+              <h4 class="vehicle-title">
+                <%= car.car_name %>
+                <% if current_user && current_user.is_admin %>
+                  <%= link_to ' Изменить', listing_car_path(car) %>
+                <% end %>
+              </h4>
             </div>
             <div class="media-right">
               <%= link_to car_path(car), class:"detail-btn btn" do %>

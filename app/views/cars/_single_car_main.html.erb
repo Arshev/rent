@@ -1,42 +1,44 @@
 <% counter = 0 %>
 <% @cars.each do |car| %>
-  <% counter += 1 %>
-  <% if counter <=3 %>
-  <div class="col-md-4 fleet fleet2 ">
-  <% else %>
-  <div class="col-md-4 fleet fleet2 hidden-xs hidden-sm">
-  <% end %>
-    <div class="inner row" style="border-radius:20px;">
-      <h2 class="rent text-center"><small>от</small><%= car.price_main %><sub>/сутки</sub></h2>
-      <h4 class="vehicle-title text-center"><%= car.car_name %></h4>
-      <div class="row vehicle-img text-center">
-        <%= link_to car_path(car) do %>
-          <%= image_tag car.cover_photo(:main), class:"car-list-main" %>
-        <% end %>
-      </div>
-      <div class="row specification">
-        <div>
-          <table class="table text-center" >
-            <tr>
-              <td  style="display:inline-block;"><img src="/images/icons/fleet2/transmission.png" style="width: 15px;" alt=""> <%= car.transmission %></td>
-              <td  style="display:inline-block;"><img src="/images/icons/fleet2/fuel.png" style="width: 15px;" alt=""> <%= car.fuel %></td>
-              <td style="display:inline-block;"><img src="/images/icons/fleet2/year.png" style="width: 15px;" alt=""> <%= car.year %></td>
-            </tr>
-            <tr>
-              <td style="display:inline-block;"><img src="/images/icons/fleet2/car_type.png" style="width: 15px;" alt=""> <%= car.car_type %></td>
-              <td style="display:inline-block;"><img src="/images/icons/fleet2/capacity.png" style="width: 15px;" alt=""> <%= car.engine_capacity %></td>
-              <td style="display:inline-block;">
-                <% if car.is_air %>
-                  <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Есть
-                <% else %>
-                  <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Нет
-                <% end %>
-              </td>
-            </tr>
-          </table>
+  <% if car.show_on_main %>
+    <% counter += 1 %>
+    <% if counter <=3 %>
+    <div class="col-md-4 fleet fleet2 ">
+    <% else %>
+    <div class="col-md-4 fleet fleet2 hidden-xs hidden-sm">
+    <% end %>
+      <div class="inner row" style="border-radius:20px;">
+        <h2 class="rent text-center"><small>от</small><%= car.price_main %><sub>/сутки</sub></h2>
+        <h4 class="vehicle-title text-center"><%= car.car_name %></h4>
+        <div class="row vehicle-img text-center">
+          <%= link_to car_path(car) do %>
+            <%= image_tag car.cover_photo(:main), class:"car-list-main" %>
+          <% end %>
         </div>
-        <%= link_to "+", car_path(car), class: "details-page" %>
+        <div class="row specification">
+          <div>
+            <table class="table text-center" >
+              <tr>
+                <td  style="display:inline-block;"><img src="/images/icons/fleet2/transmission.png" style="width: 15px;" alt=""> <%= car.transmission %></td>
+                <td  style="display:inline-block;"><img src="/images/icons/fleet2/fuel.png" style="width: 15px;" alt=""> <%= car.fuel %></td>
+                <td style="display:inline-block;"><img src="/images/icons/fleet2/year.png" style="width: 15px;" alt=""> <%= car.year %></td>
+              </tr>
+              <tr>
+                <td style="display:inline-block;"><img src="/images/icons/fleet2/car_type.png" style="width: 15px;" alt=""> <%= car.car_type %></td>
+                <td style="display:inline-block;"><img src="/images/icons/fleet2/capacity.png" style="width: 15px;" alt=""> <%= car.engine_capacity %></td>
+                <td style="display:inline-block;">
+                  <% if car.is_air %>
+                    <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Есть
+                  <% else %>
+                    <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Нет
+                  <% end %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <%= link_to "+", car_path(car), class: "details-page" %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
