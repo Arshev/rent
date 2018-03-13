@@ -22,12 +22,13 @@
                       <li data-thumb="<%= photo.image.url(:thumb) %>">
                         <%= image_tag photo.image.url() %>
                        </li>
-                    
+
                   <% end %>
                 </ul>
             </div>
           </div>
         </div>
+        <%= link_to 'Назад', url_for(:back), class:"btn btn-normal" %>
   		</div>
 
   		<div class="col-sm-12 col-md-4 col-xs-12 car-infomations fleet">
