@@ -218,10 +218,74 @@
                 <% end %>
               <% end %>
             <% end %>
+            <th colspan="10" class="prices-th text-center">Коммерческий</th>
+            <% @cars.each do |car| %>
+              <% if car.active %>
+              <% if car.car_class == 'Коммерческий' %>
+                <tr>
+                  <td class="car-name">
+                    <%= link_to car_path(car) do %>
+                      <%= car.car_name %>
+                    <% end %>
+                    <div class="price-action"></div>
+                      <%= link_to car_path(car) do %>
+                        <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
+                      <% end %>
+                    <div class="transmission">
+                      <% if car.transmission == "Механика" %>
+                        <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
+                      <% else %>
+                        <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
+                      <% end %>
+                      <% if car.is_air %>
+                        <%= image_tag ('air-conditioner.png'), class:"air-conditioner" %>
+                      <% end %>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <%= car.car_type %>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="old-price"><sup><%= car.old_price_1 %></sup></span>
+                    <div class="real-price"><%= car.price_1 %></div>
+                  </td>
+                  <td>
+                    <span class="old-price"><sup><%= car.old_price_2 %></sup></span>
+                    <div class="real-price"><%= car.price_2 %></div>
+                  </td>
+                  <td>
+                    <span class="old-price"><sup><%= car.old_price_3 %></sup></span>
+                    <div class="real-price"><%= car.price_3 %></div>
+                  </td>
+                  <td>
+                    <span class="old-price"><sup><%= car.old_price_4 %></sup></span>
+                    <div class="real-price"><%= car.price_4 %></div>
+                  </td>
+                  <td>
+                    <span class="old-price"><sup><%= car.old_price_5 %></sup></span>
+                    <div class="real-price"><%= car.price_5 %></div>
+                  </td>
+                  <td>
+                    <div class="real-price"><%= car.price_hour %></div>
+                  </td>
+                  <td>
+                    <div class="real-price"><%= car.deposit %></div>
+                  </td>
+                  <td class="end-column" style="border-right:0px;">
+                    <%= link_to car_path(car), class:"btn btn-primary" do %>
+                      Заказать
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          <% end %>
           </tbody>
         </table>
       </div>
-      <p style="font-weight:bold;">Посмотреть текст договора можно <%= link_to 'здесь', asset_path('/docs/dogovor.pdf') %>, акт приема автомобиля и штрафные санкции <%= link_to 'здесь', asset_path('/docs/akt.pdf') %>.</p>
+      <p style="font-weight:bold;" class="text-center">Посмотреть текст договора можно <%= link_to 'здесь', asset_path('/docs/dogovor.pdf') %>, акт приема автомобиля и штрафные санкции <%= link_to 'здесь', asset_path('/docs/akt.pdf') %>.</p>
     </div>
   </div>
 <%= render 'shared/footer', cached: true %>

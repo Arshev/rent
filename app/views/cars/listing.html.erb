@@ -14,7 +14,7 @@
           <%= form_for @car do |f| %>
 
             <div class="row">
-              <div class="col-md-4 select">
+              <div class="col-md-2 select">
                 <div class="form-group">
                   <label>Тип кузова</label>
                   <%= f.select :car_type, [["Седан", "Седан"], ["Хэтчбек", "Хэтчбек"], ["Универсал", "Универсал"], ["Купе", "Купе"], ["Кроссовер", "Кроссовер"]],
@@ -22,15 +22,15 @@
                 </div>
               </div>
 
-              <div class="col-md-4 select">
+              <div class="col-md-2 select">
                 <div class="form-group">
                   <label>Класс автомобиля</label>
-                  <%= f.select :car_class, [["Эконом", "Эконом"], ["Средний", "Средний"], ["Бизнес", "Бизнес"]],
+                  <%= f.select :car_class, [["Эконом", "Эконом"], ["Средний", "Средний"], ["Бизнес", "Бизнес"], ["Коммерческий", "Коммерческий"]],
                                 id: "car_class", prompt: "Выбери класс авто...", class: "form-control" %>
                 </div>
               </div>
 
-              <div class="col-md-4 select">
+              <div class="col-md-2 select">
                 <div class="form-group">
                   <label>Коробка передач</label>
                   <%= f.select :transmission, [["Автомат", "Автомат"], ["Механика", "Механика"], ["Вариатор", "Вариатор"], ["Робот", "Робот"]],
@@ -38,7 +38,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4 select">
+              <div class="col-md-2 select">
                 <div class="form-group">
                   <label>Количество дверей</label>
                   <%= f.select :number_doors, [["2", 2], ["3", 3], ["4", 4], ["5", 5]],
@@ -46,7 +46,7 @@
                 </div>
               </div>
 
-              <div class="col-md-4 select">
+              <div class="col-md-2 select">
                 <div class="form-group">
                   <label>Топливо</label>
                   <%= f.select :fuel, [["Бензин", "Бензин"], ["Дизель", "Дизель"]],
