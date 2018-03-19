@@ -1,8 +1,8 @@
 class ReviewMailer < ApplicationMailer
-  default from: 'notifications@rent.com'
+  default from: 'no-reply@amigorent.ru'
 
   def review_email
     @review = params[:review]
-    mail(to: 'ashev08@gmail.com', subject: 'Новый отзыв')
+    mail(to: 'a.c01@yandex.ru', subject: 'Новый отзыв')
   end
 end

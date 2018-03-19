@@ -1,8 +1,8 @@
 class BookingMailer < ApplicationMailer
-  default from: 'notifications@rent.com'
+  default from: 'no-reply@amigorent.ru'
 
   def new_booking_email
     @booking = params[:booking]
-    mail(to: 'ashev08@gmail.com', subject: 'Новая заявка на бронирование')
+    mail(to: 'a.c01@yandex.ru', subject: 'Новая заявка на бронирование')
   end
 end

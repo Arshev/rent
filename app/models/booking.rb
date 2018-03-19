@@ -31,7 +31,7 @@ class Booking < ApplicationRecord
     @client = Twilio::REST::Client.new
     @client.messages.create(
     from: '+13477089316',
-    to: '+79022504797',
+    to: '+79082900908',
     body: "Новая заявка,#{self.firstname},#{self.lastname},#{@car_name},#{self.phone},#{self.start_date.strftime("%d-%m-%Y")},#{self.end_date.strftime("%d-%m-%Y")}"
     )
   end

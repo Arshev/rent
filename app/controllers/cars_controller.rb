@@ -67,7 +67,7 @@ class CarsController < ApplicationController
     end
 
     def is_authorised
-      redirect_to root_path, alert: "У вас нет прав на просмотр данной страницы!" unless current_user.id == @car.user_id
+      redirect_to root_path, alert: "У вас нет прав на просмотр данной страницы!" unless current_user.id == @car.user_id || current_user.is_admin
     end
 
     def is_ready_car
