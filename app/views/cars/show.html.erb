@@ -67,6 +67,42 @@
   <!-- Tab panes -->
   <div class="tab-content desctiption-contents">
   	<div class="tab-pane active">
+      <table class="table table-bordered prices-single-car text-center">
+        <thead>
+          <h3>Цены</h3>
+        </thead>
+			  <tbody>
+        <tr class="prices-single-car-header">
+  				<td class="prices-table-header">1-3 сутки</td>
+  				<td class="prices-table-header">4-7 суток</td>
+  				<td class="prices-table-header">8-14 суток</td>
+  				<td class="prices-table-header">15-30 суток</td>
+  				<td class="prices-table-header">> 30 суток</td>
+          <td class="prices-table-header">Залог</td>
+			  </tr>
+					<tr>
+            <td>
+							<div><%= @car.price_1 %> рублей</div>
+						</td>
+					<td>
+            <div><%= @car.price_2 %> рублей</div>
+					</td>
+					<td>
+						<div><%= @car.price_3 %> рублей</div>
+					</td>
+					<td>
+						<div><%= @car.price_4 %> рублей</div>
+					</td>
+					<td>
+						<div><%= @car.price_5 %> рублей</div>
+					</td>
+          <td>
+						<div><%= @car.deposit %> рублей</div>
+					</td>
+				</tr>
+      </tbody>
+      </table>
+      <h3>Описание</h3>
   		<%= @car.description %>
   	</div>
   </div>
