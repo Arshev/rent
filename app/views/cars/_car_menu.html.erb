@@ -31,9 +31,14 @@
   </li>
 </ul>
 <hr/>
-<% is_ready = !@car.active && !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? && !@car.car_name.blank? && !@car.photos.blank?  %>
-
+<% is_ready = !@car.price_1.blank? && !@car.price_2.blank? && !@car.price_3.blank? && !@car.price_4.blank? && !@car.price_main.blank? && !@car.car_name.blank? && !@car.photos.blank?  %>
+<% is_active = @car.active %>
 <%= form_for @car do |f| %>
   <%= f.hidden_field :active, value: true %>
   <%= f.submit "Опубликовать", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>
+<br>
+<%= form_for @car do |f| %>
+  <%= f.hidden_field :active, value: false %>
+  <%= f.submit "Снять с публикации", id: "unpublish_button", class: "btn btn-normal btn-block", disabled: !is_active %>
 <% end %>
