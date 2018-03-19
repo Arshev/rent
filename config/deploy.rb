@@ -41,3 +41,5 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 #Была ошибка PassengerInstanceRegistryDir option, Nginx's, это помогло
 set :passenger_restart_with_touch, true
+#Для Whenever устанавливает параметры для неймспейса в файле крона в зависимости от названия и рабочей среды приложения
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
