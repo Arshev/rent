@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
   before_action :set_car, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :update]
+  before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :update, :destroy]
   before_action :set_photos, only: [:photo_upload, :show]
 
   def index
@@ -18,6 +18,14 @@ class CarsController < ApplicationController
       redirect_to listing_car_path(@car), notice: "Сохранено"
     else
       render :new, notice: "Что то пошло не так!"
+    end
+  end
+
+  def destroy
+    if @car.destroy
+      redirect_to root_path, notice: "Удалено"
+    else
+      flash[:alert] = "Что то не так!"
     end
   end
 

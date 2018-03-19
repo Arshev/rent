@@ -42,3 +42,7 @@
   <%= f.hidden_field :active, value: false %>
   <%= f.submit "Снять с публикации", id: "unpublish_button", class: "btn btn-normal btn-block", disabled: !is_active %>
 <% end %>
+<br>
+<%= link_to car_path(@car), remote: true, method: :delete, data: {confirm: "Уверены?"} do %>
+  <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+<% end %>
