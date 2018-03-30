@@ -13,7 +13,7 @@
               <%= f.text_field :car, placeholder: "#{@car.car_name}" , class: "form-control", disabled: true %>
               <%= f.hidden_field :car, value: @car.car_name %>
             <% else %>
-              <%= f.select :car, options_for_select(@cars.collect{ |u| [u.car_name, u.id] }, selected: @booking.car), prompt: "Выберите автомобиль" %>
+              <%= f.select :car, options_for_select(@cars.sort_by { |obj| obj.id }.collect{ |u| [u.car_name, u.id] }, selected: @booking.car), prompt: "Выберите автомобиль" %>
             <% end %>
           </div>
           <div class="form-group col-sm-6">
