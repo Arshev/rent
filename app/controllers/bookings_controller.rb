@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     if params[:car_id]
       @car = Car.find(params[:car_id])
     else
-      @cars = Car.all
+      @cars = Car.all.order(:id)
       gon.cars_info = @cars
     end
   end
