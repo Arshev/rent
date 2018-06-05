@@ -6,28 +6,32 @@
       </div>
 
       <div class="container">
-        <div class="divTable blueTable sticky">
-          <div class="divTableHeading">
-            <div class="divTableRow">
-              <div class="divTableHead">Марка,<br>модель автомобиля</div>
-              <div class="divTableHead">Кузов</div>
-              <div class="divTableHead">Почасовая<br>оплата<br>(&gt;1сут.)</div>
-              <div class="divTableHead">1-3<br>суток</div>
-              <div class="divTableHead">4-7<br>суток</div>
-              <div class="divTableHead">8-14<br>суток</div>
-              <div class="divTableHead">15-30<br>суток</div>
-              <div class="divTableHead">&gt; 30<br>суток</div>
-              <div class="divTableHead">Залог</div>
-              <div class="divTableHead">Заказать</div>
+        <div class="sticky">
+          <div class="divTable blueTable">
+              <div class="divTableHeading">
+                <div class="divTableRow">
+                  <div class="divTableHead col-md-2 col-lg-2 col-sm-2 col-xs-2 cell-image" id="float-none">Марка,<br>модель автомобиля</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price hidden-xs hidden-sm" id="float-none">Кузов</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">1-3<br>суток</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">4-7<br>суток</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">8-14<br>суток</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">15-30<br>суток</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price hidden-xs hidden-sm" id="float-none">&gt; 30<br>суток</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 hour-price hidden-xs hidden-sm" id="float-none">Почасовая<br>оплата<br>(&gt;1сут.)</div>
+                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">Залог</div>
+                  <div class="divTableHead col-md-2 col-lg-2 col-sm-2 col-xs-2 cell-buy hidden-xs" id="float-none">Заказать</div>
+                </div>
+              </div>
             </div>
-          </div>
+        </div>
+          <div class="prices-th text-center">Эконом</div>
+        <div class="divTable blueTable">
           <div class="divTableBody">
-            <div class="prices-th text-center">Эконом</div>
             <div class="divTableRow">
               <% @cars.each do |car| %>
                 <% if car.active %>
                   <% if car.car_class == 'Эконом' %>
-                	  	<div class="car-name divTableCell">
+                	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2 cell-image" id="float-none">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
@@ -42,40 +46,40 @@
                             <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner" %>
+                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price hidden-xs hidden-sm">
                           <%= car.car_type %>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price">
           							<span class="old-price"><sup><%= car.old_price_2 %></sup></span>
           							<div class="real-price"><%= car.price_2 %></div>
           						</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price">
               					<span class="old-price"><sup><%= car.old_price_3 %></sup></span>
               					<div class="real-price"><%= car.price_3 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price">
               					<span class="old-price"><sup><%= car.old_price_4 %></sup></span>
               					<div class="real-price"><%= car.price_4 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price hidden-xs hidden-sm">
             						<span class="old-price"><sup><%= car.old_price_5 %></sup></span>
             						<div class="real-price"><%= car.price_5 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hour-price hidden-xs hidden-sm">
             						<div class="real-price"><%= car.price_hour %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price">
             						<div class="real-price"><%= car.deposit %></div>
             					</div>
-              				<div class="end-column divTableCell" style="border-right:0px;">
+              				<div class="end-column divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2 hidden-xs" style="border-right:0px;">
                         <%= link_to car_path(car), class:"btn btn-primary" do %>
                           Заказать
                         <% end %>
@@ -84,12 +88,16 @@
                   <% end %>
                   <% end %>
             </div>
-            <div class="prices-th text-center">Средний</div>
+          </div>
+        </div>
+        <div class="prices-th text-center">Средний</div>
+        <div class="divTable blueTable">
+          <div class="divTableBody">
             <div class="divTableRow">
               <% @cars.each do |car| %>
                 <% if car.active %>
                   <% if car.car_class == 'Средний' %>
-                	  	<div class="car-name divTableCell">
+                	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
@@ -108,36 +116,36 @@
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
                           <%= car.car_type %>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
           							<span class="old-price"><sup><%= car.old_price_2 %></sup></span>
           							<div class="real-price"><%= car.price_2 %></div>
           						</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
               					<span class="old-price"><sup><%= car.old_price_3 %></sup></span>
               					<div class="real-price"><%= car.price_3 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
               					<span class="old-price"><sup><%= car.old_price_4 %></sup></span>
               					<div class="real-price"><%= car.price_4 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
             						<span class="old-price"><sup><%= car.old_price_5 %></sup></span>
             						<div class="real-price"><%= car.price_5 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hour-price hidden-xs hidden-sm">
             						<div class="real-price"><%= car.price_hour %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<div class="real-price"><%= car.deposit %></div>
             					</div>
-              				<div class="end-column divTableCell" style="border-right:0px;">
+              				<div class="end-column divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2 hidden-xs" style="border-right:0px;">
                         <%= link_to car_path(car), class:"btn btn-primary" do %>
                           Заказать
                         <% end %>
@@ -146,12 +154,16 @@
                   <% end %>
                   <% end %>
             </div>
-            <div class="prices-th text-center">Бизнес</div>
+          </div>
+        </div>
+        <div class="prices-th text-center">Бизнес</div>
+        <div class="divTable blueTable">
+          <div class="divTableBody">
             <div class="divTableRow">
               <% @cars.each do |car| %>
                 <% if car.active %>
                   <% if car.car_class == 'Бизнес' %>
-                	  	<div class="car-name divTableCell">
+                	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
@@ -170,36 +182,36 @@
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
                           <%= car.car_type %>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
           							<span class="old-price"><sup><%= car.old_price_2 %></sup></span>
           							<div class="real-price"><%= car.price_2 %></div>
           						</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
               					<span class="old-price"><sup><%= car.old_price_3 %></sup></span>
               					<div class="real-price"><%= car.price_3 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
               					<span class="old-price"><sup><%= car.old_price_4 %></sup></span>
               					<div class="real-price"><%= car.price_4 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
             						<span class="old-price"><sup><%= car.old_price_5 %></sup></span>
             						<div class="real-price"><%= car.price_5 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hour-price hidden-xs hidden-sm">
             						<div class="real-price"><%= car.price_hour %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<div class="real-price"><%= car.deposit %></div>
             					</div>
-              				<div class="end-column divTableCell" style="border-right:0px;">
+              				<div class="end-column divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2 hidden-xs" style="border-right:0px;">
                         <%= link_to car_path(car), class:"btn btn-primary" do %>
                           Заказать
                         <% end %>
@@ -208,12 +220,16 @@
                   <% end %>
                   <% end %>
             </div>
-            <div class="prices-th text-center">Коммерческий</div>
+          </div>
+        </div>
+        <div class="prices-th text-center">Коммерческий</div>
+        <div class="divTable blueTable">
+          <div class="divTableBody">
             <div class="divTableRow">
               <% @cars.each do |car| %>
                 <% if car.active %>
                   <% if car.car_class == 'Коммерческий' %>
-                	  	<div class="car-name divTableCell">
+                	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
@@ -232,36 +248,36 @@
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
                           <%= car.car_type %>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
             					</div>
-          					  <div class="divTableCell">
+          					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
           							<span class="old-price"><sup><%= car.old_price_2 %></sup></span>
           							<div class="real-price"><%= car.price_2 %></div>
           						</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
               					<span class="old-price"><sup><%= car.old_price_3 %></sup></span>
               					<div class="real-price"><%= car.price_3 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
               					<span class="old-price"><sup><%= car.old_price_4 %></sup></span>
               					<div class="real-price"><%= car.price_4 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
             						<span class="old-price"><sup><%= car.old_price_5 %></sup></span>
             						<div class="real-price"><%= car.price_5 %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hour-price hidden-xs hidden-sm">
             						<div class="real-price"><%= car.price_hour %></div>
             					</div>
-            					<div class="divTableCell">
+            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<div class="real-price"><%= car.deposit %></div>
             					</div>
-              				<div class="end-column divTableCell" style="border-right:0px;">
+              				<div class="end-column divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2 hidden-xs" style="border-right:0px;">
                         <%= link_to car_path(car), class:"btn btn-primary" do %>
                           Заказать
                         <% end %>
