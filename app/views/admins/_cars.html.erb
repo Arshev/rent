@@ -1,0 +1,36 @@
+<div class="content">
+  <!-- Small boxes (Stat box) -->
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-lg-6 m-b-3">
+        <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="user-img pull-left">
+                <%= link_to car_path(car) do %>
+                  <%= image_tag car.cover_photo(:thumb) %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="mail-contnet">
+                <h4 class="text-black m-b-0"><%= car.car_name  %></h4>
+                <% if car.active  %>
+                  <small>Активна</small>
+                <% end %>
+                <p>
+                  <%= link_to ' Изменить', listing_car_path(car) %><br>
+                  <%= link_to ' Изменить', listing_car_path(car) %><br>
+                  <%= link_to ' Изменить', listing_car_path(car) %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    <% end %>
+
+  </div>
+  <!-- Main row -->
+</div>
