@@ -37,7 +37,14 @@
           <title>Прокат автомобилей в Калининграде - Амиго</title>
           <meta name="description" content="Добро пожаловать в Автопрокат Амиго! Это лучший прокат автомобилей в Калининграде, главные достоинства которого — это дружественное отношение к клиенту, низкие цены и хорошие автомобили, застрахованные по КАСКО. Звоните, будем рады!">
       <% end %>
-      <%= include_gon %>
+      <% if current_page?(new_booking_path) %>
+        <%= include_gon %>
+      <% else %>
+        <script>
+          var gon = {};
+          gon.cars_info
+        </script>
+      <% end %>
       <%= csrf_meta_tags %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
