@@ -4,4 +4,7 @@ class AdminsController < ApplicationController
   def cars
     @cars = Car.all
   end
+  def text_main
+    @text = Text.first
+  end
 end

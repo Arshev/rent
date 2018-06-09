@@ -86,6 +86,7 @@
     </body>
   </html>
 <% elsif request.path.include?('admin') %>
+  <!-- Переделать на конкретные пути в админке -->
   <!DOCTYPE html>
   <html lang="ru">
     <head>
@@ -93,10 +94,7 @@
       <%= stylesheet_link_tag 'admins_panel', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'admins_panel', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= favicon_link_tag 'favicon.ico' %>
-
-      </head>
-
-    <body>
+    </head>
 
       <%= render 'layouts/messages' %>
       <%= yield %>

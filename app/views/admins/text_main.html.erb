@@ -1,0 +1,39 @@
+<%= render 'header' %>
+<%= render 'left_sidebar' %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header sty-one">
+      <h1>Текстовка на главной</h1>
+      <ol class="breadcrumb">
+        <li>
+          <%= link_to 'Главная', admin_path %>
+        </li>
+        <li><i class="fa fa-angle-right"></i> Текстовка на главной</li>
+      </ol>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="row">
+        <%= form_for @text do |f| %>
+            <fieldset class="form-group">
+              <label>Текст в самом верху</label>
+              <%= f.text_area :main_up_text, class:"form-control", id: "basicTextarea", rows: "5" %>
+            </fieldset>
+            <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%= render 'footer'  %>
+<!-- ./wrapper -->
+<div class="col-lg-4">
+  <fieldset class="form-group">
+    <label>Basic Textarea</label>
+    <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
+  </fieldset>
+</div>

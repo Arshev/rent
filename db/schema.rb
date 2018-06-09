@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313113828) do
+ActiveRecord::Schema.define(version: 2018_06_09_141031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -158,6 +158,12 @@ ActiveRecord::Schema.define(version: 20180313113828) do
 
   create_table "terms", force: :cascade do |t|
     t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.text "main_up_text", default: "Дорогой друг, добро пожаловать в автопрокат </span><span style=\"font-size:22px;\">Амиго!</span>"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
