@@ -18,11 +18,105 @@
     <div class="content">
       <div class="row">
         <%= form_for @text do |f| %>
-            <fieldset class="form-group">
-              <label>Текст в самом верху</label>
-              <%= f.text_area :main_up_text, class:"form-control", id: "basicTextarea", rows: "5" %>
-            </fieldset>
-            <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Текст на самом верху</h4>
+                  <%= f.text_area :main_up_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "3" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Главный заголовок и номер</h4>
+                  <%= f.text_area :main_h1_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Быстрая заявка</h4>
+                  <%= f.text_area :main_quick_booking_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Преимущества 1</h4>
+                  <%= f.text_area :main_substances_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Заголовок у списка авто</h4>
+                  <%= f.text_area :main_car_list_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Услуги</h4>
+                  <%= f.text_area :main_services_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Миссия</h4>
+                  <%= f.text_area :main_mission_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Преимущества 2</h4>
+                  <%= f.text_area :main_edge_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Подвал</h4>
+                  <%= f.text_area :footer_text, id: "summernote", class: "", style: "min-width: 800px;", rows: "5" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
@@ -31,14 +125,3 @@
   <!-- /.content-wrapper -->
   <%= render 'footer'  %>
 <!-- ./wrapper -->
-<div class="col-lg-4">
-  <fieldset class="form-group">
-    <label>Basic Textarea</label>
-    <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
-  </fieldset>
-</div>
-<script>
-  $(function() {
-    $('textarea#froala-editor').froalaEditor()
-  });
-</script>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_09_141031) do
+ActiveRecord::Schema.define(version: 2018_06_10_110544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,14 @@ ActiveRecord::Schema.define(version: 2018_06_09_141031) do
     t.text "main_up_text", default: "Дорогой друг, добро пожаловать в автопрокат </span><span style=\"font-size:22px;\">Амиго!</span>"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "main_h1_text", default: "empty"
+    t.text "main_quick_booking_text", default: "empty"
+    t.text "main_substances_text", default: "empty"
+    t.text "main_car_list_text", default: "empty"
+    t.text "main_services_text", default: "empty"
+    t.text "main_mission_text", default: "empty"
+    t.text "main_edge_text", default: "empty"
+    t.text "footer_text", default: "empty"
   end
 
   create_table "users", force: :cascade do |t|

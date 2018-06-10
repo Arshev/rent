@@ -23,12 +23,12 @@
       </li>
       <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Текстовка сайт</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
         <ul class="treeview-menu">
-          <% if current_page?(cars_admin_path) %>
+          <% if current_page?(text_main_admin_path) %>
             <li class="active">
           <% else %>
             <li>
           <% end %>
-            <%= link_to cars_admin_path do %>
+            <%= link_to text_main_admin_path do %>
               <i class="fa fa-angle-right"></i> Главная страница
             <% end %>
           </li>
