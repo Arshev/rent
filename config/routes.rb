@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get 'cars'
       get 'text_main'
+      get 'text_other'
     end
   end
 

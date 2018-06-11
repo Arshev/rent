@@ -7,4 +7,7 @@ class AdminsController < ApplicationController
   def text_main
     @text = Text.first
   end
+  def text_other
+    @text = Text.first
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_10_110544) do
+ActiveRecord::Schema.define(version: 2018_06_11_134517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,14 @@ ActiveRecord::Schema.define(version: 2018_06_10_110544) do
     t.text "main_mission_text", default: "empty"
     t.text "main_edge_text", default: "empty"
     t.text "footer_text", default: "empty"
+    t.text "prices_text", default: "empty"
+    t.text "prices_bottom_text", default: "empty"
+    t.text "contacts_text", default: "empty"
+    t.text "bookings_bottom_text", default: "empty"
+    t.text "reviews_text", default: "empty"
+    t.text "terms_text", default: "empty"
+    t.text "faqs_text", default: "empty"
+    t.text "about_text", default: "empty"
   end
 
   create_table "users", force: :cascade do |t|

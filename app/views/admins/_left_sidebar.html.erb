@@ -4,7 +4,7 @@
   <div class="sidebar">
     <!-- sidebar menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Автомобили</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+      <li class="treeview"> <a href=""> <i class="icon-home"></i> <span>Автомобили</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
         <ul class="treeview-menu">
           <% if current_page?(cars_admin_path) %>
             <li class="active">
@@ -21,7 +21,7 @@
           <li><a href="index-medical.html"><i class="fa fa-angle-right"></i> Medical</a></li>
         </ul>
       </li>
-      <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Текстовка сайт</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+      <li class="treeview"> <a href=""> <i class="icon-home"></i> <span>Текстовка сайт</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
         <ul class="treeview-menu">
           <% if current_page?(text_main_admin_path) %>
             <li class="active">
@@ -32,10 +32,14 @@
               <i class="fa fa-angle-right"></i> Главная страница
             <% end %>
           </li>
-          <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> CRM</a></li>
-          <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i> Analytics</a></li>
-          <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
-          <li><a href="index-medical.html"><i class="fa fa-angle-right"></i> Medical</a></li>
+          <% if current_page?(text_other_admin_path) %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+            <%= link_to text_other_admin_path do %>
+              <i class="fa fa-angle-right"></i> Остальные страницы
+            <% end %>
         </ul>
       </li>
       <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Заявки</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>

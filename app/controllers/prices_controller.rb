@@ -4,6 +4,9 @@ class PricesController < ApplicationController
   def index
     @cars = Car.all
     @price = Price.first
+    @prices_text = Text.first.prices_text
+    @prices_bottom_text = Text.first.prices_bottom_text
+    @footer_text = Text.first.footer_text
   end
 
   def edit

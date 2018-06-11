@@ -6,6 +6,7 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    @footer_text = Text.first.footer_text
   end
 
   def new

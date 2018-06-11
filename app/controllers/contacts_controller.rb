@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
   def index
+    @contacts_text = Text.first.contacts_text
+    @footer_text = Text.first.footer_text
   end
   def create
     @contact = Contact.create(contact_params)
