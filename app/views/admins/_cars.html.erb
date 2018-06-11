@@ -20,9 +20,7 @@
                   <small>Активна</small>
                 <% end %>
                 <p>
-                  <%= link_to ' Изменить', listing_car_path(car) %><br>
-                  <%= link_to ' Изменить', listing_car_path(car) %><br>
-                  <%= link_to ' Изменить', listing_car_path(car) %>
+                  <%= link_to ' Изменить', edit_car_admin_path(action: "edit_car", id: car) %>
                 </p>
               </div>
             </div>

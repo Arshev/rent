@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resource :admin, except: [:edit, :new, :create] do
     member do
       get 'cars'
+      get 'edit_car'
       get 'text_main'
       get 'text_other'
     end
