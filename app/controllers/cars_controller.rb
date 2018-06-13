@@ -16,9 +16,9 @@ class CarsController < ApplicationController
   def create
     @car = current_user.cars.build(car_params)
     if @car.save
-      redirect_to listing_car_path(@car), notice: "Сохранено"
+      redirect_to cars_admin_path, notice: "Сохранено"
     else
-      render :new, notice: "Что то пошло не так!"
+      redirect_back(fallback_location: request.referer, alert: "Что то не так!")
     end
   end
 
@@ -32,6 +32,7 @@ class CarsController < ApplicationController
 
   def show
     @photos = @car.photos
+    @footer_text = Text.first.footer_text
   end
 
   def listing
