@@ -19,9 +19,6 @@
               </div>
               <h4 class="vehicle-title">
                 <%= car.car_name %>
-                <% if current_user && current_user.is_admin %>
-                  <%= link_to ' Изменить', edit_car_admin_path(car) %>
-                <% end %>
               </h4>
             </div>
             <div class="media-right">
