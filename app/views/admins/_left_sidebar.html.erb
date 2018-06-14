@@ -4,7 +4,7 @@
   <div class="sidebar">
     <!-- sidebar menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <% if current_page?(cars_admin_path) %>
+      <% if current_page?(cars_admin_path) || current_page?(controller: 'admins', action: 'edit_car') %>
         <li class="treeview active">
       <% else %>
         <li class="treeview">
@@ -23,10 +23,6 @@
               <i class="fa fa-angle-right"></i> Список авто
             <% end %>
           </li>
-          <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> CRM</a></li>
-          <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i> Analytics</a></li>
-          <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
-          <li><a href="index-medical.html"><i class="fa fa-angle-right"></i> Medical</a></li>
         </ul>
       </li>
 
@@ -62,20 +58,13 @@
       </li>
       <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Заявки</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
         <ul class="treeview-menu">
-          <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Modern</a></li>
-          <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> CRM</a></li>
-          <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i> Analytics</a></li>
-          <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
-          <li><a href="index-medical.html"><i class="fa fa-angle-right"></i> Medical</a></li>
+          <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Заявки большие</a></li>
+          <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> Заявки маленькие</a></li>
         </ul>
       </li>
       <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Пользователи</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
         <ul class="treeview-menu">
-          <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Modern</a></li>
-          <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> CRM</a></li>
-          <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i> Analytics</a></li>
-          <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
-          <li><a href="index-medical.html"><i class="fa fa-angle-right"></i> Medical</a></li>
+          <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Все пользователи</a></li>
         </ul>
       </li>
     </ul>

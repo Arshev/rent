@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :is_authorised
   before_action :set_text, only: [:text_main, :text_other]
   before_action :set_car, only: [:edit_car, :upload_photos]
   before_action :set_photos, only: [:edit_car, :upload_photos]
@@ -30,5 +32,8 @@ class AdminsController < ApplicationController
     end
     def set_photos
       @photos = @car.photos
+    end
+    def is_authorised
+      redirect_to root_path, alert: "У вас нет прав на просмотр данной страницы!" unless current_user.is_admin?
     end
 end

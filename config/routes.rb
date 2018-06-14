@@ -18,14 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :cars, except: [:edit] do
-    member do
-      get 'listing'
-      get 'pricing'
-      get 'description'
-      get 'photo_upload'
-      get 'amenities'
-      get 'preload'
-    end
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]
   end
