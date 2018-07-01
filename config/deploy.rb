@@ -5,7 +5,7 @@ set :application, "rent"
 set :repo_url, "git@github.com:Arshev/rent.git"
 
 # Default branch is :master
-set :branch, 'TableToDiv'
+# set :branch, 'TableToDiv'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
@@ -26,7 +26,7 @@ set :deploy_user, 'deployer'
 append :linked_files, "config/database.yml", "config/secrets.yml.key", ".env"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", ".bundle"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
