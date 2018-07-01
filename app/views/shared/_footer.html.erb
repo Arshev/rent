@@ -1,10 +1,13 @@
-<footer class="row site-footer">
-  <div class="bottom-footer row m0">
-    <div class="container">
-      <div class="row">
-        <%= link_to 'Главная', root_path %> | <%= link_to 'Автомобили', cars_path %> | <%= link_to 'Цены', prices_path %> | <%= link_to 'О нас', abouts_path %><br>
-        г. Калининград, ул.А. Невского 36В, © 2010-2018. Автопрокат Амиго. Все права защищены.
+<% if !current_page?("/admin") %>
+  <footer class="row site-footer">
+    <div class="bottom-footer row m0">
+      <div class="container">
+        <div class="row">
+          <%= link_to 'Главная', root_path %> | <%= link_to 'Автомобили', cars_path %> | <%= link_to 'Цены', prices_path %> | <%= link_to 'О нас', abouts_path %><br>
+          <%= @footer_text.html_safe  %>
+          <!-- г. Калининград, ул.А. Невского 36В, © 2010-2018. Автопрокат Амиго. Все права защищены. -->
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+<% end %>

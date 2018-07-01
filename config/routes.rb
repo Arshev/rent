@@ -5,15 +5,19 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :users, only: [:show]
-  resources :cars, except: [:edit] do
+  resource :text
+  resource :admin, except: [:edit, :new, :create] do
     member do
-      get 'listing'
-      get 'pricing'
-      get 'description'
-      get 'photo_upload'
-      get 'amenities'
-      get 'preload'
+      get 'cars'
+      get 'new_car'
+      get 'upload_photos'
+      get 'edit_car'
+      get 'text_main'
+      get 'text_other'
     end
+  end
+
+  resources :cars, except: [:edit] do
     resources :photos, only: [:create, :destroy]
     resources :reservations, only: [:create]
   end

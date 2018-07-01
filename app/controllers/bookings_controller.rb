@@ -20,6 +20,8 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @bookings_bottom_text = Text.first.bookings_bottom_text
+    @footer_text = Text.first.footer_text
     @booking = Booking.new
     if params[:car_id]
       @car = Car.find(params[:car_id])

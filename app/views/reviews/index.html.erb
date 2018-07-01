@@ -2,7 +2,7 @@
   <div class="col-md-8">
     <div class="row m0 comments-area">
     	<h2 class="this-area-title">Отзывы</h2>
-      <h4 class="this-sub-title">Жалобы, пожелания и предложения</h4>
+      <h4 class="this-sub-title"><%= @reviews_text.html_safe %></h4>
     </div>
     <%= render 'single_review' %>
   </div>

@@ -1,0 +1,76 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar -->
+  <div class="sidebar">
+    <!-- sidebar menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <% if current_page?(cars_admin_path) || current_page?(controller: 'admins', action: 'edit_car') %>
+        <li class="treeview active">
+      <% else %>
+        <li class="treeview">
+      <% end %>
+         <a href="#"> <i class="icon-home"></i> <span>Автомобили</span>
+           <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i>
+           </span>
+         </a>
+        <ul class="treeview-menu">
+          <% if current_page?(cars_admin_path) %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+            <%= link_to cars_admin_path do %>
+              <i class="fa fa-angle-right"></i> Список авто
+            <% end %>
+            <%= link_to new_car_admin_path do %>
+              <i class="fa fa-angle-right"></i> Добавить новый авто
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+      <% if current_page?(text_main_admin_path) || current_page?(text_other_admin_path) %>
+        <li class="treeview active">
+      <% else %>
+        <li class="treeview">
+      <% end %>
+        <a href="#"> <i class="icon-home"></i>
+          <span>Текстовка сайт</span>
+          <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <% if current_page?(text_main_admin_path) %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+            <%= link_to text_main_admin_path do %>
+              <i class="fa fa-angle-right"></i> Главная страница
+            <% end %>
+          </li>
+          <% if current_page?(text_other_admin_path) %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+            <%= link_to text_other_admin_path do %>
+              <i class="fa fa-angle-right"></i> Остальные страницы
+            <% end %>
+        </ul>
+      </li>
+      <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Заявки</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Заявки большие</a></li>
+          <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> Заявки маленькие</a></li>
+        </ul>
+      </li>
+      <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Пользователи</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Все пользователи</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- /.sidebar -->
+</aside>

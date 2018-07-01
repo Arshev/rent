@@ -1,0 +1,232 @@
+<%= render 'header' %>
+<%= render 'left_sidebar' %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header sty-one">
+      <h1>Добавление автомобиля</h1>
+      <ol class="breadcrumb">
+        <li>
+          <%= link_to 'Главная', admin_path %>
+        </li>
+        <li><i class="fa fa-angle-right"></i> <%= link_to 'Автомобили', cars_admin_path %></li>
+        <li><i class="fa fa-angle-right"></i> Новая машина</li>
+      </ol>
+    </div>
+    <!-- :car_name, :year, :color, :transmission, :is_air, :engine_capacity, :is_electropackage, :car_class, :car_type, :price_1, :price_2, :price_3, :price_4, :price_5, :old_price_1, :old_price_2, :old_price_3, :old_price_4, :old_price_5, :price_hour, :price_main, :deposit, :description, :fuel, :number_doors, :active, :sort, :show_on_main -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="row">
+        <%= form_for @car do |f| %>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <h4 class="text-black">Цены</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">1 сутки</th>
+                        <th scope="col">4-7 суток</th>
+                        <th scope="col">8-14 суток</th>
+                        <th scope="col">15-30 суток</th>
+                        <th scope="col">> 30 суток</th>
+                        <th scope="col">За час</th>
+                        <th scope="col">Залог</th>
+                        <th scope="col">На главной</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= f.text_field :price_1, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :price_2, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :price_3, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :price_4, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :price_5, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :price_hour, placeholder: "150", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :deposit, placeholder: "3000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :price_main, placeholder: "от 1000 руб", class: "form-control", required: true %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="text-center">
+                  <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+                </div>
+                <hr>
+                <h4 class="text-black">Старые цены</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">1 сутки</th>
+                        <th scope="col">4-7 суток</th>
+                        <th scope="col">8-14 суток</th>
+                        <th scope="col">15-30 суток</th>
+                        <th scope="col">> 30 суток</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= f.text_field :old_price_1, class: "form-control" %></td>
+                        <td><%= f.text_field :old_price_2, class: "form-control" %></td>
+                        <td><%= f.text_field :old_price_3, class: "form-control" %></td>
+                        <td><%= f.text_field :old_price_4, class: "form-control" %></td>
+                        <td><%= f.text_field :old_price_5, class: "form-control" %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="text-center">
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+              <br>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Название авто</h4>
+                  <%= f.text_field :car_name, id: "summernote", class: "", style: "min-width: 800px;", rows: "1" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Год</h4>
+                  <%= f.text_field :year, id: "summernote", class: "", style: "min-width: 800px;", rows: "1" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Цвет</h4>
+                  <%= f.text_field :color, id: "summernote", class: "", style: "min-width: 800px;", rows: "1" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Цвет</h4>
+                  <%= f.text_field :color, id: "summernote", class: "", style: "min-width: 800px;", rows: "1" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <h4 class="text-black">Кузов </h4>
+                    </div>
+                    <%= f.select :car_type, [["Седан", "Седан"], ["Хэтчбек", "Хэтчбек"], ["Универсал", "Универсал"], ["Купе", "Купе"], ["Кроссовер", "Кроссовер"]], {}, {class:"form-control", id: "car_type"} %>
+                  </div>
+                </div>
+
+                <div class="">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <h4 class="text-black">Класс </h4>
+                    </div>
+                    <%= f.select :car_class, [["Эконом", "Эконом"], ["Средний", "Средний"], ["Бизнес", "Бизнес"], ["Коммерческий", "Коммерческий"]], {}, {class:"form-control", id: "car_class"} %>
+                  </div>
+                </div>
+
+                <div class="">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <h4 class="text-black">Коробка</h4>
+                    </div>
+                    <%= f.select :transmission, [["Автомат", "Автомат"], ["Механика", "Механика"], ["Вариатор", "Вариатор"], ["Робот", "Робот"]], {}, {class:"form-control", id: "transmission"} %>
+                  </div>
+                </div>
+
+                <div class="">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <h4 class="text-black">Двери</h4>
+                    </div>
+                    <%= f.select :number_doors, [["2", 2], ["3", 3], ["4", 4], ["5", 5]], {}, {class:"form-control", id: "number_doors"} %>
+                  </div>
+                </div>
+                <div class="">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <h4 class="text-black">Топливо</h4>
+                    </div>
+                    <%= f.select :fuel, [["Бензин", "Бензин"], ["Дизель", "Дизель"]], {}, {class:"form-control", id: "fuel"} %>
+                  </div>
+                </div>
+                <div>
+                  <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4 form-group">
+                    <h4 class="text-black">Объём двигателя </h4>
+                    <%= f.text_field :engine_capacity, placeholder: "Объём двигателя?", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_air %> Есть кондиционер?
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_electropackage %> Есть электропакет?
+                  </div>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="col-md-12 form-group">
+                  <label>Порядковый номер (для сортировки)</label>
+                  <%= f.text_field :sort, placeholder: "Номер", class: "form-control" %>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label>Показывать на главной?</label>
+                  <%= f.check_box :show_on_main %>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label>Описание</label>
+                  <%= f.text_area :description, rows: 10, placeholder: "Описание авто", class: "form-control" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%= render 'footer'  %>
+<!-- ./wrapper -->

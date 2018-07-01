@@ -92,6 +92,9 @@
   .prices-th {
     background-color: rgba(245, 137, 15, 0.5);
     color: black;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
   }
   .contact-label {
     color: #f77d0a;
@@ -176,3 +179,99 @@
     background: #f77d0a;
     color: #fff;
   }
+
+  /* Table Prices */
+
+  div.blueTable {
+  border: 1px solid #1C6EA4;
+  background-color: rgba(135, 245, 245, 0.1);
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+  vertical-align: middle;
+}
+.divTable.blueTable .divTableBody .divTableCell {
+  font-size: 16px;
+}
+.divTable.blueTable .divTableRow:nth-child(even) {
+  background: #D0E4F5;
+}
+.divTable.blueTable .divTableHeading {
+  background: rgb(43, 46, 74); /* Old Browsers */
+  background: -webkit-linear-gradient(top,rgb(43, 46, 74),rgb(13,42,121)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,rgb(43, 46, 74),rgb(13,42,121)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,rgb(43, 46, 74),rgb(13,42,121)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgb(43, 46, 74), rgb(13,42,121)); /*Standard*/
+  border-bottom: 2px solid #444444;
+}
+.divTable.blueTable .divTableHeading .divTableHead {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #D0E4F5;
+}
+.divTable.blueTable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.blueTable .tableFootStyle {
+  font-size: 14px;
+}
+.blueTable .tableFootStyle .links {
+	 text-align: right;
+}
+.blueTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.blueTable.outerTableFooter {
+  border-top: none;
+}
+.blueTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px;
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+.sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 0;
+  z-index: 5;
+}
+.divTableCell {
+  float: none;
+}
+#float-none {
+  float: none;
+}
+.cell-image {
+  min-width: 155px;
+}
+.cell-price {
+  min-width: 56px;
+}
+.hour-price {
+  min-width: 95px;
+}
+.cell-buy {
+  min-width: 140px;
+}

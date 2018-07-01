@@ -4,7 +4,7 @@
     <section class="row top-bar">
       <h2 class="hd-sec">Heading</h2>
     	<div class="container">
-    		<div class="welcome-texts"><span class="welcome-text">Дорогой друг, добро пожаловать в автопрокат </span><span style="font-size:22px;">Амиго!</span></div>
+    		<div class="welcome-texts"><%= @main_up_text.html_safe %></div>
     		<ul class="social-lists-wSearch nav nav-pills">
     			<!-- <li><a href="#"><i class="ion-social-facebook"></i></a></li> -->
     		</ul>
@@ -71,6 +71,8 @@
   			</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
   	</nav>
+<% elsif request.path.include?('admin') %>
+
 <% else %>
   <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px">
     <div class="container-fluid">

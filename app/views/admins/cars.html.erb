@@ -1,0 +1,27 @@
+<%= render 'header' %>
+<%= render 'left_sidebar' %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header sty-one">
+      <h1>Список автомобилей</h1>
+      <ol class="breadcrumb">
+        <li>
+          <%= link_to "Главная", admin_path %>
+        </li>
+        <li><i class="fa fa-angle-right"></i> Список автомобилей</li>
+      </ol>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="row">
+        <%= render "cars"  %>
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%= render 'footer'  %>
+<!-- ./wrapper -->

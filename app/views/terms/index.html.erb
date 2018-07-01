@@ -15,7 +15,8 @@
       <div class="row wr-blog-res">
         <div class="col-md-9 col-sm-12 blog-section">
           <section class="row terms">
-            <div class="container">
+						<%= @terms_text.html_safe %>
+            <!-- <div class="container">
               <div class="col-md-6">
                 <a name="common"></a>
                 <h3>Основные:</h3>
@@ -83,9 +84,9 @@
                     на особых условиях, по согласованию с арендодателем
                   </li>
                 </ul>
-								<p style="font-weight:bold;">Посмотреть текст договора можно <%= link_to 'здесь', asset_path('/docs/dogovor.pdf') %>, акт приема автомобиля и штрафные санкции <%= link_to 'здесь', asset_path('/docs/akt.pdf') %>.</p>
               </div>
-            </div>
+            </div> -->
+						<p style="font-weight:bold;">Посмотреть текст договора можно <%= link_to 'здесь', asset_path('/docs/dogovor.pdf') %>, акт приема автомобиля и штрафные санкции <%= link_to 'здесь', asset_path('/docs/akt.pdf') %>.</p>
           </section>
         </div>
       </div>

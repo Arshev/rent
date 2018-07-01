@@ -1,0 +1,56 @@
+<%= render 'header' %>
+<%= render 'left_sidebar' %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header sty-one">
+      <h1>Добавление автомобиля</h1>
+      <ol class="breadcrumb">
+        <li>
+          <%= link_to 'Главная', admin_path %>
+        </li>
+        <li><i class="fa fa-angle-right"></i> <%= link_to 'Автомобили', cars_admin_path %></li>
+        <li><i class="fa fa-angle-right"></i> Новая машина</li>
+      </ol>
+    </div>
+    <!-- :car_name, :year, :color, :transmission, :is_air, :engine_capacity, :is_electropackage, :car_class, :car_type, :price_1, :price_2, :price_3, :price_4, :price_5, :old_price_1, :old_price_2, :old_price_3, :old_price_4, :old_price_5, :price_hour, :price_main, :deposit, :description, :fuel, :number_doors, :active, :sort, :show_on_main -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="row">
+          <div class="card m-t-3">
+            <div class="card-body">
+              <!-- PHOTOS UPLOAD GOES HERE -->
+              <div id="photos">
+                <% if @photos.count > 0 %>
+                    <% @photos.each do |photo| %>
+                      <%= image_tag photo.image.url(:medium), class: "m-t-1" %>
+                        <%= link_to car_photo_path(photo.car_id, photo), remote: true, method: :delete, data: {confirm: "Уверен?"} do %>
+                          <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+                        <% end %>
+                    <% end %>
+                <% end %>
+              </div>
+              <br>
+              <%= form_for @car, url: car_photos_path(@car), method: 'post', html: {multipart: true} do |f| %>
+                <h4 class="text-black text-center">Фото </h4>
+                <div class="form-group text-center" >
+                  <span class="btn btn-default btn-file text-babu">
+                    <i class="fa fa-cloud-upload" aria-hidden="true"></i> Выберите фото
+                    <%= file_field_tag "image[]", type: :file, multiple: true %>
+                  </span>
+                </div>
+                <div class="text-center m-b-3">
+                  <%= f.submit "Загрузить фото", class: "btn btn-rounded btn-outline-danger" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%= render 'footer'  %>
+<!-- ./wrapper -->

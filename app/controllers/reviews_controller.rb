@@ -11,6 +11,8 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all.limit(10)
+    @reviews_text = Text.first.reviews_text
+    @footer_text = Text.first.footer_text
   end
 
   def destroy
