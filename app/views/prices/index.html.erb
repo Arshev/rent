@@ -25,12 +25,13 @@
             </div>
         </div>
           <div class="prices-th text-center">Эконом</div>
-        <div class="divTable blueTable">
-          <div class="divTableBody">
-            <div class="divTableRow">
-              <% @cars.each do |car| %>
-                <% if car.active %>
-                  <% if car.car_class == 'Эконом' %>
+          <% @cars.each do |car| %>
+            <% if car.active %>
+              <% if car.car_class == 'Эконом' %>
+                <div class="divTable blueTable">
+                  <div class="divTableBody">
+                    <div class="divTableRow">
+
                 	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2 cell-image" id="float-none">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
@@ -84,19 +85,20 @@
                           Заказать
                         <% end %>
                       </div>
+                    </div>
+                  </div>
+                </div>
                   <% end %>
                   <% end %>
                   <% end %>
-            </div>
-          </div>
-        </div>
+
         <div class="prices-th text-center">Средний</div>
-        <div class="divTable blueTable">
-          <div class="divTableBody">
-            <div class="divTableRow">
-              <% @cars.each do |car| %>
-                <% if car.active %>
-                  <% if car.car_class == 'Средний' %>
+        <% @cars.each do |car| %>
+          <% if car.active %>
+            <% if car.car_class == 'Средний' %>
+              <div class="divTable blueTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
                 	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
@@ -150,19 +152,20 @@
                           Заказать
                         <% end %>
                       </div>
+                    </div>
+                  </div>
+                </div>
                   <% end %>
                   <% end %>
                   <% end %>
-            </div>
-          </div>
-        </div>
+
         <div class="prices-th text-center">Бизнес</div>
-        <div class="divTable blueTable">
-          <div class="divTableBody">
-            <div class="divTableRow">
-              <% @cars.each do |car| %>
-                <% if car.active %>
-                  <% if car.car_class == 'Бизнес' %>
+        <% @cars.each do |car| %>
+          <% if car.active %>
+            <% if car.car_class == 'Бизнес' %>
+              <div class="divTable blueTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
                 	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
@@ -216,19 +219,20 @@
                           Заказать
                         <% end %>
                       </div>
+                    </div>
+                  </div>
+                </div>
                   <% end %>
                   <% end %>
                   <% end %>
-            </div>
-          </div>
-        </div>
+
         <div class="prices-th text-center">Коммерческий</div>
-        <div class="divTable blueTable">
-          <div class="divTableBody">
-            <div class="divTableRow">
-              <% @cars.each do |car| %>
-                <% if car.active %>
-                  <% if car.car_class == 'Коммерческий' %>
+        <% @cars.each do |car| %>
+          <% if car.active %>
+            <% if car.car_class == 'Коммерческий' %>
+              <div class="divTable blueTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
                 	  	<div class="car-name divTableCell col-md-2 col-lg-2 col-sm-2 col-xs-2">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
@@ -282,12 +286,13 @@
                           Заказать
                         <% end %>
                       </div>
+                    </div>
+                  </div>
+                </div>
                   <% end %>
                   <% end %>
                   <% end %>
-            </div>
-            </div>
-          </div>
+
       </div>
       <p style="font-weight:bold;" class="text-center">Посмотреть текст договора можно <%= link_to 'здесь', asset_path('/docs/dogovor.pdf') %>, акт приема автомобиля и штрафные санкции <%= link_to 'здесь', asset_path('/docs/akt.pdf') %>.</p>
     </div>
