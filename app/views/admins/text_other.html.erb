@@ -23,7 +23,8 @@
               <div class="card-body">
                 <div class="click2edit m-b-3">
                   <h4>Цены действительны до</h4>
-                  <%= f.text_area :prices_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
+                  <%= f.text_area :prices_text, id: "summernote", style: "min-width: 800px;", rows: "2" %>
+                  <%= tinymce %>
                 </div>
                 <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
               </div>
@@ -34,7 +35,7 @@
               <div class="card-body">
                 <div class="click2edit m-b-3">
                   <h4>Контакты</h4>
-                  <%= f.text_area :contacts_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
+                  <%= f.text_area :contacts_text, class: "tinymce", style: "min-width: 800px;", rows: "7" %>
                 </div>
                 <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
               </div>
@@ -45,7 +46,40 @@
               <div class="card-body">
                 <div class="click2edit m-b-3">
                   <h4>Текст внизу страницы заявки</h4>
-                  <%= f.text_area :bookings_bottom_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
+                  <%= f.text_area :bookings_bottom_text, class: "tinymce", style: "min-width: 800px;", rows: "10" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Условия</h4>
+                  <%= f.text_area :terms_text, class: "tinymce", style: "min-width: 800px;", rows: "20" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Faqs</h4>
+                  <%= f.text_area :faqs_text, class: "tinymce", style: "min-width: 800px;", rows: "30" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>О нас</h4>
+                  <%= f.text_area :about_text, class: "tinymce", style: "min-width: 800px;", rows: "10" %>
                 </div>
                 <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
               </div>
@@ -57,39 +91,6 @@
                 <div class="click2edit m-b-3">
                   <h4>Отзывы, заголовок</h4>
                   <%= f.text_area :reviews_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
-                </div>
-                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="card m-t-3">
-              <div class="card-body">
-                <div class="click2edit m-b-3">
-                  <h4>Условия</h4>
-                  <%= f.text_area :terms_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
-                </div>
-                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="card m-t-3">
-              <div class="card-body">
-                <div class="click2edit m-b-3">
-                  <h4>Faqs</h4>
-                  <%= f.text_area :faqs_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
-                </div>
-                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="card m-t-3">
-              <div class="card-body">
-                <div class="click2edit m-b-3">
-                  <h4>О нас</h4>
-                  <%= f.text_area :about_text, id: "summernote", style: "min-width: 800px;", rows: "3" %>
                 </div>
                 <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
               </div>
