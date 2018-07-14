@@ -28,7 +28,7 @@ class Booking < ApplicationRecord
     else
       @car_name = self.car
     end
-    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{@car_name} тел: #{self.phone} с #{self.start_date.strftime("%d-%m-%Y")} до #{self.end_date.strftime("%d-%m-%Y")}", recipients: ['79022504797'])
+    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{@car_name} тел: #{self.phone} с #{self.start_date.strftime("%d-%m-%Y")} до #{self.end_date.strftime("%d-%m-%Y")}", recipients: ['79217101615'])
     response = message.deliver
   end
 end
