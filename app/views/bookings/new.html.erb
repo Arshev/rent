@@ -33,19 +33,19 @@
             <%= f.text_field :phone, placeholder: "Введите Телефон", class: "form-control", required: true %>
           </div>
           <div class="form-group col-sm-6">
-            <h5 class="this-label">Дата начала</h5>
+            <h5 class="this-label">Дата начала <span>*</span></h5>
             <%= f.text_field :start_date, placeholder: "Дата начала", id:"reservation_start_date", class: "datepicker form-control" %>
           </div>
           <div class="form-group col-sm-6">
-            <h5 class="this-label">Дата окончания</h5>
+            <h5 class="this-label">Дата окончания <span>*</span></h5>
             <%= f.text_field :end_date, placeholder: "Дата окончания", id:"reservation_end_date", class: "datepicker form-control", disabled: "true" %>
           </div>
           <div class="form-group col-sm-6">
-            <h5 class="this-label">Место получения автомобиля</h5>
+            <h5 class="this-label">Место получения автомобиля <span>*</span></h5>
             <%= f.select(:location_start, options_for_select([['Офис (бесплатно)', 'Офис'], ['Аэропорт - 400 руб', 'Аэропорт'], ['Светлогорск - 1000 руб', 'Светлогорск'], ['Зеленоградск - 800 руб', 'Зеленоградск'], ['Другой адрес в Калининграде  - 300 руб', 'Другой адрес в Калининграде']]), {prompt: "Выберите место"}, {required: true}) %>
           </div>
           <div class="form-group col-sm-6">
-            <h5 class="this-label">Место возврата автомобиля</h5>
+            <h5 class="this-label">Место возврата автомобиля <span>*</span></h5>
             <%= f.select(:location_end, options_for_select([['Офис (бесплатно)', 'Офис'], ['Аэропорт - 400 руб', 'Аэропорт'], ['Светлогорск - 1000 руб', 'Светлогорск'], ['Зеленоградск - 800 руб', 'Зеленоградск'], ['Другой адрес в Калининграде - 300 руб', 'Другой адрес в Калининграде']]), {prompt: "Выберите место"}, {required: true}) %>
           </div>
           <div class="form-group col-sm-12">
@@ -53,7 +53,7 @@
             <span style="display: inline;"><%= f.check_box :baby_chair %> Детское кресло <%= f.check_box :navigator %> Навигатор</span>
           </div>
           <div class="form-group col-sm-12">
-            <h5 class="this-label">Подтвердите согласие</h5>
+            <h5 class="this-label">Подтвердите согласие <span>*</span></h5>
             <%= f.check_box :accept, {required: true} %> Даю согласие на обработку персональных данных, согласно <a href="http://base.garant.ru/12148567/" rel="nofollow">152-ФЗ</a>
           </div>
           <div class="form-group col-sm-12">
