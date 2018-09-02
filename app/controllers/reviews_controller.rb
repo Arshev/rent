@@ -10,9 +10,11 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all.limit(10)
+    @reviews = Review.all.limit(10) # Pagination!!!
     @reviews_text = Text.first.reviews_text
     @footer_text = Text.first.footer_text
+    @reviews_title = Text.first.reviews_title
+    @reviews_description = Text.first.reviews_description
   end
 
   def destroy

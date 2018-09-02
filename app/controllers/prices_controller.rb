@@ -7,6 +7,8 @@ class PricesController < ApplicationController
     @prices_text = Text.first.prices_text
     @prices_bottom_text = Text.first.prices_bottom_text
     @footer_text = Text.first.footer_text
+    @prices_title = Text.first.prices_title
+    @prices_description = Text.first.prices_description
   end
 
   def edit

@@ -16,9 +16,8 @@ class TextsController < ApplicationController
     @terms_text = Text.first.terms_text
     @faqs_text = Text.first.faqs_text
     @about_text = Text.first.about_text
-
-
   end
+
   def update
     if Text.update(text_params)
       flash[:notice] = "Сохранено"
@@ -29,6 +28,19 @@ class TextsController < ApplicationController
   end
 private
   def text_params
-    params.require(:text).permit(:main_up_text, :main_h1_text, :main_quick_booking_text, :main_substances_text, :main_car_list_text, :main_services_text, :main_mission_text, :main_edge_text, :footer_text, :prices_text, :prices_bottom_text, :contacts_text, :bookings_bottom_text, :reviews_text, :terms_text, :faqs_text, :about_text)
+    params.require(:text).permit(:main_up_text, :main_h1_text, 
+      :main_quick_booking_text, :main_substances_text, 
+      :main_car_list_text, :main_services_text, 
+      :main_mission_text, :main_edge_text, 
+      :footer_text, :prices_text, :prices_bottom_text, 
+      :contacts_text, :bookings_bottom_text, 
+      :reviews_text, :terms_text, :faqs_text, 
+      :about_text, :home_description, :home_title, 
+      :bookings_title, :bookings_description,
+      :cars_title, :cars_description, :prices_title, 
+      :prices_description, :contacts_title, :contacts_description,
+      :reviews_title, :reviews_description,
+      :terms_title, :terms_description, :faqs_title, :faqs_description,
+      :abouts_title, :abouts_description)
   end
 end

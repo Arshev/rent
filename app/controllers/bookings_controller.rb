@@ -22,6 +22,8 @@ class BookingsController < ApplicationController
   def new
     @bookings_bottom_text = Text.first.bookings_bottom_text
     @footer_text = Text.first.footer_text
+    @bookings_title = Text.first.bookings_title
+    @bookings_description = Text.first.bookings_description
     @booking = Booking.new
     if params[:car_id]
       @car = Car.find(params[:car_id])

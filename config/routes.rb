@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'edit_car'
       get 'text_main'
       get 'text_other'
+      get 'text_metatags'
     end
   end
 
