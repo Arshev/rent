@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_134517) do
+ActiveRecord::Schema.define(version: 2018_09_02_161831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -182,6 +182,24 @@ ActiveRecord::Schema.define(version: 2018_06_11_134517) do
     t.text "terms_text", default: "empty"
     t.text "faqs_text", default: "empty"
     t.text "about_text", default: "empty"
+    t.text "home_title", default: "empty"
+    t.text "home_description", default: "empty"
+    t.text "cars_title", default: "empty"
+    t.text "cars_description", default: "empty"
+    t.text "prices_title", default: "empty"
+    t.text "prices_description", default: "empty"
+    t.text "contacts_title", default: "empty"
+    t.text "contacts_description", default: "empty"
+    t.text "bookings_title", default: "empty"
+    t.text "bookings_description", default: "empty"
+    t.text "reviews_title", default: "empty"
+    t.text "reviews_description", default: "empty"
+    t.text "terms_title", default: "empty"
+    t.text "terms_description", default: "empty"
+    t.text "faqs_title", default: "empty"
+    t.text "faqs_description", default: "empty"
+    t.text "abouts_title", default: "empty"
+    t.text "abouts_description", default: "empty"
   end
 
   create_table "users", force: :cascade do |t|

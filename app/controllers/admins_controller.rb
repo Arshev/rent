@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
   before_action :authenticate_user!
   before_action :is_authorised
-  before_action :set_text, only: [:text_main, :text_other]
+  before_action :set_text, only: [:text_main, :text_other, :text_metatags]
   before_action :set_car, only: [:edit_car, :upload_photos]
   before_action :set_photos, only: [:edit_car, :upload_photos]
 
@@ -20,6 +20,8 @@ class AdminsController < ApplicationController
   def text_main
   end
   def text_other
+  end
+  def text_metatags
   end
 
   private

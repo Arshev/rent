@@ -82,3 +82,4 @@ gem 'whenever', require: false
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'mainsms_api'
+gem 'meta-tags'

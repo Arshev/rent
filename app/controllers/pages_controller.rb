@@ -12,5 +12,7 @@ class PagesController < ApplicationController
     @main_mission_text = Text.first.main_mission_text
     @main_edge_text = Text.first.main_edge_text
     @footer_text = Text.first.footer_text
+    @home_title = Text.first.home_title
+    @home_description = Text.first.home_description
   end
 end
