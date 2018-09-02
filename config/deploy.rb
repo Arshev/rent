@@ -5,7 +5,7 @@ set :application, "rent"
 set :repo_url, "git@github.com:Arshev/rent.git"
 
 # Default branch is :master
-# set :branch, 'TableToDiv'
+set :branch, 'Ekaterinburg'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
