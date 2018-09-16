@@ -20,6 +20,8 @@
 /node_modules
 /yarn-error.log
 
+сервер
+
 .byebug_history
 
 # Ignore encrypted secrets key file.
