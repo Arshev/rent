@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
-    <h2 class="text-center">Log in</h2>
+    <h2 class="text-center"><%= t('.sign_in') %></h2>
     <br/>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
@@ -8,23 +8,23 @@
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Пароль", class: "form-control" %>
       </div>
 
       <div>
         <% if devise_mapping.rememberable? %>
-          <%= f.check_box :remember_me %> Remember Me
+          <%= f.check_box :remember_me %> Запомнить меня
         <% end %>
         <span class="pull-right">
-          <%= link_to "Forgot Password", new_user_password_path %>
+          <%= link_to "Забыл пароль?", new_user_password_path %>
         </span>
         <br/><br/>
         <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-normal btn-block" %>
+          <%= f.submit t('.sign_in'), class: "btn btn-normal btn-block" %>
         </div>
       </div>
     <% end %>
     <hr/>
-    <%= link_to "Sign in with Facebook", class:"btn btn-facebook btn-block" %>
+    <%= render "devise/shared/links" %>
   </div>
 </div>

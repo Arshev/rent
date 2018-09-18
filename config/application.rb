@@ -15,6 +15,7 @@ module Rent
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|woff2|ttf)$/
+    config.i18n.default_locale = :ru
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
