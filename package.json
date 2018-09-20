@@ -1,5 +1,9 @@
 {
   "name": "rent",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-loader": "14.2.2",
+    "vue-template-compiler": "^2.5.17"
+  }
 }
