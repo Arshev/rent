@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.string "middlename"
     t.string "phone"
     t.string "email"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.string "price_main"
     t.integer "deposit"
     t.text "description"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fuel"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer "car_id"
+    t.bigint "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_file_name"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "car_id"
+    t.bigint "car_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "days"
@@ -231,4 +231,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bookings", "users"
+  add_foreign_key "cars", "users"
+  add_foreign_key "photos", "cars"
+  add_foreign_key "reservations", "cars"
 end
