@@ -7,6 +7,10 @@
 
 // import Vue from 'vue'
 // import App from '../app.vue'
+// import Vuetify from 'vuetify'
+
+
+// Vue.use(Vuetify)
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   const el = document.body.appendChild(document.createElement('hello'))
@@ -54,18 +58,18 @@
 //
 // Then uncomment the code block below:
 //
-import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
-import App from '../app.vue'
-
-Vue.use(TurbolinksAdapter)
-
-document.addEventListener('turbolinks:load', () => {
-  const app = new Vue({
-    el: '#hello',
-    data: {
-      message: "Can you say hello?"
-    },
-    components: { App }
-  })
-})
+// import TurbolinksAdapter from 'vue-turbolinks'
+// import Vue from 'vue/dist/vue.esm'
+// import App from '../app.vue'
+//
+// Vue.use(TurbolinksAdapter)
+//
+// document.addEventListener('turbolinks:load', () => {
+//   const app = new Vue({
+//     el: '#hello',
+//     data: {
+//       message: "Can you say hello?"
+//     },
+//     components: { App }
+//   })
+// })
