@@ -44,6 +44,7 @@ export default {
   data: function() {
     return {
       cars: [],
+      carNamesArr: [],
       carNames: [],
       valid: false,
       name: "",
@@ -57,11 +58,14 @@ export default {
   created() {
     axios.get("http://localhost:5000/api/v1/cars.json").then(response => {
       this.cars = response.data;
-      const carNames = []
+      const carNamesArr = []
       this.cars.forEach(function(car) {
-        carNames.push(car.car_name)
+        const carId = car.id
+        const carName = car.car_name
+        carNamesArr.push({'id': carId, 'car_name': carName })
       });
-      this.carNames = carNames;
+      this.carNamesArr = carNamesArr
+      this.carNames = carNamesArr.map(obj => obj.car_name)
     });
   },
   methods: {
