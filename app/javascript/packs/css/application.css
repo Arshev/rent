@@ -1,1 +1,5 @@
-@import "vuetify/dist/vuetify.min.css"
+/* @import "vuetify/dist/vuetify.min.css" */
+/* @import "element-ui/lib/theme-chalk/index.css" */
+@import 'flatpickr/dist/flatpickr.css';
+@import 'flatpickr/dist/themes/airbnb.css';
+@import 'flatpickr/dist/plugins/confirmDate/confirmDate.css';

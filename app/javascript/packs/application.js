@@ -10,12 +10,13 @@
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
 
-import Vuetify from 'vuetify'
+
+// import Vuetify from 'vuetify'
 
 import App from '../app.vue'
 
 
-Vue.use(Vuetify, TurbolinksAdapter)
+Vue.use(TurbolinksAdapter)
 
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
@@ -23,6 +24,8 @@ document.addEventListener('turbolinks:load', () => {
     data: {
       message: "Can you say hello?"
     },
-    components: { App }
+    components: { 
+      App
+     }
   })
 })
