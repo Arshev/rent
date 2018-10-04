@@ -9,6 +9,9 @@
 
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
+import Vuelidate from 'vuelidate'
+import VueTheMask from 'vue-the-mask'
+
 
 
 // import Vuetify from 'vuetify'
@@ -17,6 +20,8 @@ import App from '../app.vue'
 
 
 Vue.use(TurbolinksAdapter)
+Vue.use(Vuelidate);
+Vue.use(VueTheMask)
 
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
