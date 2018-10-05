@@ -39,7 +39,7 @@
           <h5 class="this-label">Телефон <span style="color: tomato;">*</span>
             <span style="color: tomato;" v-if="!$v.phoneClient.minLength"> - неправильный телефон</span>
           </h5>
-          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+#(###) ###-####'" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
+          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+#(###)###-####'" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Дата и время начала аренды<span style="color: tomato;">*</span></h5>
@@ -103,6 +103,10 @@
         
       </div>
     </div>
+    <modal
+        v-show="isModalVisible"
+        @close="closeModal"
+      />
   </div>
 </template>
 
@@ -113,6 +117,7 @@ import { Russian } from "flatpickr/dist/l10n/ru"
 import ConfirmDatePlugin from 'flatpickr/dist/plugins/confirmDate/confirmDate';
 import { required, minLength, maxLength, email, phone } from 'vuelidate/lib/validators'
 import {TheMask} from 'vue-the-mask'
+import modal from './packs/components/modal.vue';
 
 
 flatpickr.localize(Russian);
@@ -148,6 +153,7 @@ export default {
           dateFormat: 'm-d-Y H:i',
           minDate: "today",
           time_24hr: true,
+          disableMobile: "true",
           plugins: [new ConfirmDatePlugin({confirmText: 'Ok'})],
           onChange: function(dateObj,selectedDates, dateStr, instance) {
             this.dateStart = dateObj[0]
@@ -163,6 +169,7 @@ export default {
           dateFormat: 'm-d-Y H:i',
           minDate: "today",
           time_24hr: true,
+          disableMobile: "true",
           plugins: [new ConfirmDatePlugin({confirmText: 'Ok'})],
           onChange: function(dateObj,selectedDates, dateStr, instance) {
             this.dateEnd = dateObj[0]
@@ -189,7 +196,8 @@ export default {
       phoneError: false,
       dateStartError: false,
       dateEndError: false,
-      personDataError: false
+      personDataError: false,
+      isModalVisible: false
 
     };
   },
@@ -243,8 +251,6 @@ export default {
           this.carNameWithId = currentCar[0].car_name
         }
       }
-      
-      
     });
   },
   methods: {
@@ -284,6 +290,7 @@ export default {
       }
 
       if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false&& this.personDataError === false) {
+        let self=this;
         axios.post('http://localhost:5000/api/v1/booking.json', {
           start_date: this.dateStart,
           end_date: this.dateEnd,
@@ -300,11 +307,22 @@ export default {
           price: this.price,
           total: this.total
         })
+        .then(function (response) {
+          self.showModal()
+        })
         .catch(function (error) {
+          self.showModal()
           console.log(error);
         });
       }
         
+    },
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+      window.location.href = "/"
     }
   },
   watch: {
@@ -502,7 +520,8 @@ export default {
   },
   components: { 
       flatPickr,
-      TheMask
+      TheMask,
+      modal
   }
 };
 </script>
