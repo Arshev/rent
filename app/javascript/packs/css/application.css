@@ -3,3 +3,15 @@
 @import 'flatpickr/dist/flatpickr.css';
 @import 'flatpickr/dist/themes/airbnb.css';
 @import 'flatpickr/dist/plugins/confirmDate/confirmDate.css';
+
+li.errors {
+    color: tomato;
+    font-weight: bold;
+    list-style-type: none;
+    margin-top: 5px;
+}
+.error-input {
+    background-color: #fce4e4;
+    border: 1px solid #cc0033;
+    outline: none;
+  }

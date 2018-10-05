@@ -6,13 +6,13 @@
           <h5 class="this-label">Выбранный автомобиль </h5>
           <template v-if="carId === ''">
             <select v-model="carName">
-              <option disabled value="">Выберите автомобиль</option>
-              <option v-for="name in carNames" :key="name" >{{ name }}</option>
+              <option disabled value="" >Выберите автомобиль</option>
+              <option v-for="name in carNames" :key="name.index" >{{ name }}</option>
             </select>
           </template>
           <template v-else>
-            <select disabled>
-              <option selected :value="carNameWithId">{{carNameWithId}}</option>
+            <select disabled >
+              <option selected :value="carNameWithId" >{{carNameWithId}}</option>
             </select>
           </template>
         </div>
@@ -21,46 +21,45 @@
             <span style="color: tomato;" v-if="!$v.nameClient.minLength"> - должно содержать минимум {{$v.nameClient.$params.minLength.min}} буквы</span>
             <span style="color: tomato;" v-if="!$v.nameClient.maxLength"> - должно содержать максимум {{$v.nameClient.$params.maxLength.max}} букв</span>
           </h5>
-          <input v-model.trim.lazy="$v.nameClient.$model" placeholder="Введите имя" class="form-control" required>
+          <input v-model.trim.lazy="$v.nameClient.$model" placeholder="Введите имя" class="form-control" v-bind:class="{ 'error-input': nameError }" required>
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Фамилия <span style="color: tomato;">*</span> 
             <span style="color: tomato;" v-if="!$v.lastnameClient.minLength"> - должна содержать минимум {{$v.lastnameClient.$params.minLength.min}} буквы</span>
           </h5>
-          <input v-model.trim.lazy="$v.lastnameClient.$model" placeholder="Введите фамилию" class="form-control" required>
+          <input v-model.trim.lazy="$v.lastnameClient.$model" placeholder="Введите фамилию" class="form-control" v-bind:class="{ 'error-input': lastnameError }" >
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Email <span style="color: tomato;">*</span>
            <span style="color: tomato;" v-if="!$v.emailClient.email"> - неправильный Email</span>
           </h5>
-          <input v-model.trim.lazy="$v.emailClient.$model" placeholder="Введите email" class="form-control" required >
+          <input v-model.trim.lazy="$v.emailClient.$model" placeholder="Введите email" class="form-control" v-bind:class="{ 'error-input': emailError }" >
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Телефон <span style="color: tomato;">*</span>
             <span style="color: tomato;" v-if="!$v.phoneClient.minLength"> - неправильный телефон</span>
-            <span style="color: tomato;" v-if="!$v.phoneClient.maxLength"> - неправильный телефон</span>
           </h5>
-          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+# (###) ###-####'" placeholder="Введите телефон" class="form-control" required>
+          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+# (###) ###-####'" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Дата и время начала аренды<span style="color: tomato;">*</span></h5>
-          <flat-pickr v-model="dateStart" :config="configStart" placeholder="Дата и время начала аренды" id="startDate" required></flat-pickr>
+          <flat-pickr v-model="dateStart" :config="configStart" placeholder="Дата и время начала аренды" id="startDate" v-bind:class="{ 'error-input': dateStartError }"></flat-pickr>
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Дата окончания <span style="color: tomato;">*</span></h5>
           <flat-pickr v-model="dateEnd" :config="configEnd" placeholder="Дата и время окончания аренды" required></flat-pickr>
         </div>
         <div class="form-group col-sm-6">
-          <h5 class="this-label">Место получения автомобиля <span style="color: tomato;">*</span></h5>
+          <h5 class="this-label">Место получения автомобиля</h5>
           <select v-model="locationStart">
-            <option value="Офис">Офис</option>
+            <option value="Офис">Офис (бесплатно)</option>
             <option v-for="location in locations" :key="location.index" >{{ location }}</option>
           </select>
         </div>
         <div class="form-group col-sm-6">
-          <h5 class="this-label">Место возврата автомобиля <span style="color: tomato;">*</span></h5>
+          <h5 class="this-label">Место возврата автомобиля</h5>
           <select v-model="locationEnd">
-            <option value="Офис">Офис</option>
+            <option value="Офис">Офис (бесплатно)</option>
             <option v-for="location in locations" :key="location.index" >{{ location }}</option>
           </select>
         </div>
@@ -73,7 +72,7 @@
         </div>
         <div class="form-group col-sm-12">
           <h5 class="this-label">Подтвердите согласие <span>*</span></h5>
-          <input type="checkbox" id="checkbox" required>
+          <input type="checkbox" id="checkbox" value="true" v-model="personData">
           <label for="checkbox">Даю согласие на обработку персональных данных, согласно <a href="http://base.garant.ru/12148567/" rel="nofollow">152-ФЗ</a></label>
         </div>
       </div>
@@ -96,6 +95,10 @@
             <li style="color: red;">Итого <span id="total_price" v-if="price != null ">{{ total }} <small>руб</small></span></li>
             <li>Залог <span id="deposit_price" v-if="deposit > 0">{{ deposit }} <small>руб</small></span></li>
           </ul>
+          <button class="btn btn-primary btn-block" @click="sendBooking()">ОТПРАВИТЬ ЗАЯВКУ</button>
+          <ul id="errors">
+            <li v-for="error in errors" :key="error.index" class="errors">{{ error }}</li>
+          </ul>
         </div>
         
       </div>
@@ -117,8 +120,6 @@ flatpickr.localize(Russian);
 export default {
   data: function() {
     return {
-      name: '',
-      age: 0,
       cars: [],
       carsArr: [],
       carNames: [],
@@ -153,6 +154,8 @@ export default {
           }  
         },
       dateEnd: null,
+      personData: false,
+      errors: [],
       configEnd: {
           altFormat: 'j M H:i',
           enableTime: true,
@@ -178,7 +181,15 @@ export default {
       locationEndPrice: 0,
       price: null,
       deposit: 0,
-      total: 0
+      total: 0,
+      carError: false,
+      nameError: false,
+      lastnameError: false,
+      emailError: false,
+      phoneError: false,
+      dateStartError: false,
+      dateEndError: false,
+      personDataError: false
 
     };
   },
@@ -237,9 +248,63 @@ export default {
     });
   },
   methods: {
-    
+    sendBooking () {
+      if (this.carName === '') {
+        this.errors.push(' - Выберите автомобиль')
+        this.carError = true
+      }
+      if (this.nameClient === '') {
+        this.errors.push(' - Заполните имя')
+        this.nameError = true
+      }
+      if (this.lastnameClient === '') {
+        this.errors.push(' - Заполните фамилию')
+        this.lastnameError = true
+      }
+      if (this.emailClient === '' || !this.$v.emailClient.email) {
+        this.errors.push(' - Заполните корректный Email')
+        this.emailError = true
+      }
+      if (this.phoneClient === '' || !this.$v.phoneClient.minLength) {
+        this.errors.push(' - Заполните корректный телефон')
+        this.phoneError = true
+      }
+      if (this.dateStart === null) {
+        this.errors.push(' - Выберите дату начала аренды')
+        this.dateStartError = true
+      }
+      if (this.dateEnd === null) {
+        this.errors.push(' - Выберите дату окончания аренды')
+        this.dateEndError = true
+      }
+      if (this.personData === false) {
+        this.errors.push(' - Подтверите согласие с обработкой персональных данных')
+        this.personDataError = true
+      }
+        
+    }
   },
   watch: {
+    nameClient () {
+      this.errors = []
+      this.nameError = false
+    },
+    lastnameClient () {
+      this.errors = []
+      this.lastnameError = false
+    },
+    emailClient () {
+      this.errors = []
+      this.emailError = false
+    },
+    phoneClient () {
+      this.errors = []
+      this.phoneError = false
+    },
+    personData () {
+      this.errors = []
+      this.personDataError = false
+    },
     dateEnd () {
       let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
 
@@ -276,6 +341,8 @@ export default {
           this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
       }
+      this.errors = []
+      this.dateEndError = false
     },
     dateStart () {
       let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
@@ -313,6 +380,8 @@ export default {
           this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
       }
+      this.errors = []
+      this.dateStartError = false
     },
     locationStart () {
       switch (this.locationStart) {
@@ -371,6 +440,9 @@ export default {
       this.price_4 = obj.price_4
       this.price_5 = obj.price_5
       this.deposit = obj.deposit
+
+      this.errors = []
+      this.carError = false
     },
     carNameWithId () {
       let obj = this.carsArr.find(o => o.car_name === this.carNameWithId);
@@ -412,6 +484,6 @@ export default {
 };
 </script>
 
-<style scoped>
-  
+<style>
+
 </style>
