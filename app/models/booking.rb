@@ -23,12 +23,7 @@ class Booking < ApplicationRecord
   end
 
   def send_sms
-    if self.car.length < 3
-      @car_name = Car.where("id = '#{self.car}'").first.car_name
-    else
-      @car_name = self.car
-    end
-    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{@car_name} тел: #{self.phone} с #{self.start_date.strftime("%d-%m-%Y")} до #{self.end_date.strftime("%d-%m-%Y")}", recipients: ['79217101615'])
+    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{self.car} тел: #{self.phone} с #{self.start_date} до #{self.end_date}", recipients: ['79022504797'])
     response = message.deliver
   end
 end

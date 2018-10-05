@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_02_161831) do
+ActiveRecord::Schema.define(version: 2018_10_05_111835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.boolean "baby_chair"
     t.boolean "navigator"
     t.boolean "accept"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string "start_date"
+    t.string "end_date"
     t.string "location_start"
     t.string "location_end"
     t.string "firstname"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.string "middlename"
     t.string "phone"
     t.string "email"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.string "prava_content_type"
     t.integer "prava_file_size"
     t.datetime "prava_updated_at"
+    t.integer "days"
+    t.integer "price"
+    t.integer "total"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -66,7 +69,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.string "price_main"
     t.integer "deposit"
     t.text "description"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fuel"
@@ -101,7 +104,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.bigint "car_id"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_file_name"
@@ -135,7 +138,7 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.bigint "car_id"
+    t.integer "car_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "days"
@@ -231,8 +234,4 @@ ActiveRecord::Schema.define(version: 2018_09_02_161831) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bookings", "users"
-  add_foreign_key "cars", "users"
-  add_foreign_key "photos", "cars"
-  add_foreign_key "reservations", "cars"
 end

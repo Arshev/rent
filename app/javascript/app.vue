@@ -39,7 +39,7 @@
           <h5 class="this-label">Телефон <span style="color: tomato;">*</span>
             <span style="color: tomato;" v-if="!$v.phoneClient.minLength"> - неправильный телефон</span>
           </h5>
-          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+# (###) ###-####'" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
+          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+#(###) ###-####'" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Дата и время начала аренды<span style="color: tomato;">*</span></h5>
@@ -249,6 +249,7 @@ export default {
   },
   methods: {
     sendBooking () {
+      
       if (this.carName === '') {
         this.errors.push(' - Выберите автомобиль')
         this.carError = true
@@ -280,6 +281,28 @@ export default {
       if (this.personData === false) {
         this.errors.push(' - Подтверите согласие с обработкой персональных данных')
         this.personDataError = true
+      }
+
+      if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false&& this.personDataError === false) {
+        axios.post('http://localhost:5000/api/v1/booking.json', {
+          start_date: this.dateStart,
+          end_date: this.dateEnd,
+          location_start: this.locationStart,
+          location_end: this.locationEnd,
+          firstname: this.nameClient,
+          lastname: this.lastnameClient,
+          baby_chair: this.babyChair,
+          navigator: this.navigator,
+          phone: this.phoneClient,
+          email: this.emailClient,
+          car: this.carName,
+          days: this.days,
+          price: this.price,
+          total: this.total
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       }
         
     }
