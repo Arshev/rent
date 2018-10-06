@@ -1,9 +1,12 @@
 class Booking < ApplicationRecord
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  has_attached_file :prava, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :prava, content_type: /\Aimage\/.*\z/
+  # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  # has_attached_file :prava, styles: { medium: "300x300>", thumb: "100x100>" }
+  # validates_attachment_content_type :prava, content_type: /\Aimage\/.*\z/
+
+  has_many_attached :documents
+
   default_scope {order('created_at DESC')}
 
   def cover_avatar(size)
