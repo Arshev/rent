@@ -3,7 +3,7 @@ class Api::V1::BookingController < ApiController
         @booking = Booking.new(booking_params)
         if @booking.save!
             
-            # @booking.send_sms
+            @booking.send_sms
             BookingMailer.with(booking: @booking).new_booking_email.deliver_later
             render json: @booking, adapter: :json, status: :created
         else

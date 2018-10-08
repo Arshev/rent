@@ -42,7 +42,7 @@ class Booking < ApplicationRecord
   end
 
   def send_sms
-    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{self.car} тел: #{self.phone} с #{self.start_date} до #{self.end_date}", recipients: ['79022504797'])
+    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{self.car} тел: #{self.phone} с #{self.start_date} до #{self.end_date}", recipients: ['79217101615'])
     response = message.deliver
   end
 
