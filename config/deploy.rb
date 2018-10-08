@@ -45,15 +45,15 @@ set :passenger_restart_with_touch, true
 #Для Whenever устанавливает параметры для неймспейса в файле крона в зависимости от названия и рабочей среды приложения
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
-# before "deploy:assets:precompile", "deploy:yarn_install"
+before "deploy:assets:precompile", "deploy:yarn_install"
 
-# namespace :deploy do
-#   desc 'Run rake yarn:install'
-#   task :yarn_install do
-#     on roles(:web) do
-#       within release_path do
-#         execute("cd #{release_path} && yarn install")
-#       end
-#     end
-#   end
-# end
+namespace :deploy do
+  desc 'Run rake yarn:install'
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && yarn install")
+      end
+    end
+  end
+end
