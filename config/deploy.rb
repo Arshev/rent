@@ -53,10 +53,19 @@ namespace :deploy do
     on roles(:web) do
       within release_path do
         execute("cd #{release_path} && yarn install")
-        execute("cd #{release_path}/rent && rails webpacker:install")
       end
     end
   end
+end
+namespace :deploy do
+    desc 'Run rake npm install'
+    task :npm_install do
+      on roles(:web) do
+        within release_path do
+          execute("cd #{release_path} && npm install")
+        end
+      end
+    end
 end
 
 # namespace :deploy do
