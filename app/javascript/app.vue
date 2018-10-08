@@ -95,10 +95,6 @@
             <li style="color: red;">Итого <span id="total_price" v-if="price != null ">{{ total }} <small>руб</small></span></li>
             <li>Залог <span id="deposit_price" v-if="deposit > 0">{{ deposit }} <small>руб</small></span></li>
           </ul>
-          <div id="uploading">
-            <input id="upload" name="booking[documents][]" multiple="true" type="file" data-direct-upload-url="/rails/active_storage/direct_uploads" direct_upload="true" />
-            <button @click="upload()"></button>
-          </div>
           
           <button class="btn btn-primary btn-block" @click="sendBooking()">ОТПРАВИТЬ ЗАЯВКУ</button>
           <ul id="errors">
@@ -108,6 +104,18 @@
         
       </div>
     </div>
+    <div class="form-group col-sm-12">
+          <details>
+            <summary class="summary-booking"><span style="font-size: 120%;font-weight: bold; color:#f77d0a;">Чтобы оформление документов было быстрее, загрузите фото или сканы документов</span></summary>
+            
+              <label>Страница паспорта с фотографией
+                <input type="file" id="file" ref="file" v-on:change="handleFilesUpload()"/>
+              </label>
+              <label>Лицевая сторона водительского удостоверения
+                <input type="file" id="file" ref="file" v-on:change="handleFilesUpload()"/>
+              </label>
+          </details>
+        </div>
     <modal
         v-show="isModalVisible"
         @close="closeModal"
@@ -123,9 +131,6 @@ import ConfirmDatePlugin from 'flatpickr/dist/plugins/confirmDate/confirmDate';
 import { required, minLength, maxLength, email, phone } from 'vuelidate/lib/validators'
 import {TheMask} from 'vue-the-mask'
 import modal from './packs/components/modal.vue';
-import * as ActiveStorage from "activestorage"
-import { DirectUpload } from "activestorage"
-ActiveStorage.start()
 
 
 flatpickr.localize(Russian);
@@ -205,8 +210,9 @@ export default {
       dateStartError: false,
       dateEndError: false,
       personDataError: false,
-      isModalVisible: false
-
+      isModalVisible: false,
+      files: '',
+      file: ''
     };
   },
   validations: {
@@ -298,57 +304,78 @@ export default {
       }
 
       if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false&& this.personDataError === false) {
-        let self=this;
-        axios.post('http://localhost:5000/api/v1/booking.json', {
-          start_date: this.dateStart,
-          end_date: this.dateEnd,
-          location_start: this.locationStart,
-          location_end: this.locationEnd,
-          firstname: this.nameClient,
-          lastname: this.lastnameClient,
-          baby_chair: this.babyChair,
-          navigator: this.navigator,
-          phone: this.phoneClient,
-          email: this.emailClient,
-          car: this.carName,
-          days: this.days,
-          price: this.price,
-          total: this.total
-        })
-        .then(function (response) {
-          self.showModal()
-        })
-        .catch(function (error) {
-          self.showModal()
-          console.log(error);
-        });
+        var self=this;
+        let formData = new FormData();
+        this.files = this.$refs.files.files;
+        for( var i = 0; i < this.files.length; i++ ){
+          const file = this.files[i];
+          console.log(file)
+
+          formData.append('files[' + i + ']', file);
+        }
+        axios({
+          method: 'post',
+          url: 'http://localhost:5000/api/v1/booking.json',
+          data: {
+            booking: {
+              start_date: this.dateStart,
+              end_date: this.dateEnd,
+              location_start: this.locationStart,
+              location_end: this.locationEnd,
+              firstname: this.nameClient,
+              lastname: this.lastnameClient,
+              baby_chair: this.babyChair,
+              navigator: this.navigator,
+              phone: this.phoneClient,
+              email: this.emailClient,
+              car: this.carName,
+              days: this.days,
+              price: this.price,
+              total: this.total
+            },
+            formData: 'self.formData'
+          },
+          config: { headers: {'Content-Type': 'multipart/form-data' }}
+          })
+          .then(function (response) {
+            console.log(response)
+            self.showModal()
+          })
+          .catch(function (error) {
+            self.showModal()
+            console.log(error);
+          });
+        // axios.post('http://localhost:5000/api/v1/booking.json', 
+        // {
+        //   booking: {
+        //     start_date: this.dateStart,
+        //     end_date: this.dateEnd,
+        //     location_start: this.locationStart,
+        //     location_end: this.locationEnd,
+        //     firstname: this.nameClient,
+        //     lastname: this.lastnameClient,
+        //     baby_chair: this.babyChair,
+        //     navigator: this.navigator,
+        //     phone: this.phoneClient,
+        //     email: this.emailClient,
+        //     car: this.carName,
+        //     days: this.days,
+        //     price: this.price,
+        //     total: this.total
+        //   },
+        //   formData
+          
+        // }
+        // )
+        // .then(function (response) {
+        //   console.log(response)
+        //   self.showModal()
+        // })
+        // .catch(function (error) {
+        //   self.showModal()
+        //   console.log(error);
+        // });
       }
-       
-       const input = document.querySelector('input[type=file]')
-
-      const uploadFile = (file) => {
-        // форма требует file_field direct_upload: true, который предоставляет data-direct-upload-url
-        const url = input.dataset.directUploadUrl
-        const upload = new DirectUpload(file, url)
-
-        upload.create((error, blob) => {
-          if (error) {
-            // Обрабатываем ошибку
-          } else {
-            // Добавьте соответствующим образом названное скрытое поле в форму со значением blob.signed_id, чтобы идентификаторы blob были переданы в обычном потоке загрузки
-            const hiddenField = document.createElement('input')
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("value", blob.signed_id);
-            console.log(blob.signed_id)
-            hiddenField.name = input.name
-            document.querySelector('#uploading').appendChild(hiddenField)
-          }
-        })
-      }
-
-      Array.from(input.files).forEach(file => uploadFile(file))
-
-
     },
     showModal() {
       this.isModalVisible = true;
@@ -357,30 +384,89 @@ export default {
       this.isModalVisible = false;
       // window.location.href = "/"
     },
-    upload() {
-      const input = document.querySelector('input[type=file]')
+    submitFiles(){
+        /*
+          Initialize the form data
+        */
+        var self=this;
+        this.file = this.$refs.file.files[0];
+        let formData = new FormData();
+        formData.append('booking[picture]', this.file);
 
-      const uploadFile = (file) => {
-        // форма требует file_field direct_upload: true, который предоставляет data-direct-upload-url
-        const url = input.dataset.directUploadUrl
-        const upload = new DirectUpload(file, url)
+        formData.append('booking[start_date]', this.dateStart);
+        formData.append('booking[end_date]', this.dateEnd);
+        formData.append('booking[location_start]', this.locationStart);
+        formData.append('booking[location_end]', this.locationEnd);
+        formData.append('booking[firstname]', this.nameClient);
+        formData.append('booking[lastname]', this.lastnameClient);
+        formData.append('booking[baby_chair]', this.babyChair);
+        formData.append('booking[navigator]', this.navigator);
+        formData.append('booking[phone]', this.phoneClient);
+        formData.append('booking[email]', this.emailClient);
+        formData.append('booking[car]', this.carName);
+        formData.append('booking[days]', this.days);
+        formData.append('booking[price]', this.price);
+        formData.append('booking[total]', this.total);
 
-        upload.create((error, blob) => {
-          if (error) {
-            // Обрабатываем ошибку
-          } else {
-            // Добавьте соответствующим образом названное скрытое поле в форму со значением blob.signed_id, чтобы идентификаторы blob были переданы в обычном потоке загрузки
-            const hiddenField = document.createElement('input')
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("value", blob.signed_id);
-            hiddenField.name = input.name
-            document.querySelector('#upload').appendChild(hiddenField)
-          }
+        axios.post('http://localhost:5000/api/v1/booking.json',
+          formData,
+                {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+              }
+        )
+        .then(function (response) {
+          console.log(response)
+          self.showModal()
         })
-      }
+        .catch(function (error) {
+          console.log(error);
+        });
 
-      Array.from(input.files).forEach(file => uploadFile(file))
-    }
+        /*
+          Make the request to the POST /multiple-files URL
+        */
+
+        // axios({
+        //   method: 'post',
+        //   url: 'http://localhost:5000/api/v1/booking.json',
+        //   data: {
+        //     booking: {
+        //       start_date: this.dateStart,
+        //       end_date: this.dateEnd,
+        //       location_start: this.locationStart,
+        //       location_end: this.locationEnd,
+        //       firstname: this.nameClient,
+        //       lastname: this.lastnameClient,
+        //       baby_chair: this.babyChair,
+        //       navigator: this.navigator,
+        //       phone: this.phoneClient,
+        //       email: this.emailClient,
+        //       car: this.carName,
+        //       days: this.days,
+        //       price: this.price,
+        //       total: this.total,
+        //       picture: formData
+        //     },
+            
+        //   },
+        //   config: { headers: {'Content-Type': 'multipart/form-data' }}
+        //   })
+        // .then(function(){
+        //   console.log('SUCCESS!!');
+        // })
+        // .catch(function(){
+        //   console.log('FAILURE!!');
+        // });
+      },
+
+      /*
+        Handles a change on the file upload
+      */
+      handleFilesUpload(){
+        this.file = this.$refs.file.file;
+      }
   },
   watch: {
     nameClient () {
@@ -578,9 +664,7 @@ export default {
   components: { 
       flatPickr,
       TheMask,
-      modal,
-      ActiveStorage,
-      DirectUpload
+      modal
   }
 };
 </script>

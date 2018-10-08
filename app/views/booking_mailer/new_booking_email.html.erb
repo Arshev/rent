@@ -24,8 +24,6 @@
       <% end %>
     </p>
     <p>Итого без залога: <%= @booking.total %>руб</p>
-    <% @booking.documents.each do |document| %>
-      <%= link_to 'download', rails_blob_path(document, disposition: "attachment") %>
-    <% end %>
+    <%= link_to "Download", @booking.picture.url %>
   </body>
 </html>

@@ -1,11 +1,17 @@
 class Booking < ApplicationRecord
 
+  # before_validation :parse_image
+  # attr_accessor :image_base
+
+  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  do_not_validate_attachment_file_type :picture
+
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   # has_attached_file :prava, styles: { medium: "300x300>", thumb: "100x100>" }
   # validates_attachment_content_type :prava, content_type: /\Aimage\/.*\z/
 
-  has_many_attached :documents
+  # has_many_attached :documents
 
   default_scope {order('created_at DESC')}
 
@@ -29,4 +35,11 @@ class Booking < ApplicationRecord
     message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{self.car} тел: #{self.phone} с #{self.start_date} до #{self.end_date}", recipients: ['79022504797'])
     response = message.deliver
   end
+
+  private
+    def parse_image
+      image = Paperclip.io_adapters.for(image_base)
+      image.original_filename = "file.jpg"
+      self.picture = image
+    end
 end
