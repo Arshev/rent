@@ -236,7 +236,7 @@ export default {
     }
   },
   created() {
-    axios.get("http://amigorent.ru/api/v1/cars.json").then(response => {
+    axios.get("http://localhost:5000/api/v1/cars.json").then(response => {
       this.cars = response.data;
       const carsArr = []
       this.cars.forEach(function(car) {
@@ -301,16 +301,24 @@ export default {
         this.errors.push(' - Подтверите согласие с обработкой персональных данных')
         this.personDataError = true
       }
+      if (this.days === 'Минимум 2-е суток') {
+        this.errors.push(' - Минимальный срок аренды 2-е суток')
+        this.personDataError = true
+      }
 
-      if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false&& this.personDataError === false) {
+      if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false && this.personDataError === false && this.days != 'Минимум 2-е суток') {
         
         var self=this;
-        this.file = this.$refs.file.files[0];
-        this.file2 = this.$refs.file2.files[0];
+        // this.file = this.$refs.file.files[0];
+        // this.file2 = this.$refs.file2.files[0];
         let formData = new FormData();
 
+        
         formData.append('booking[picture]', this.file);
-        formData.append('booking[prava]', this.file2);
+        if (this.file2 != '') {
+          formData.append('booking[prava]', this.file2);
+        }
+        
 
         formData.append('booking[start_date]', this.dateStart);
         formData.append('booking[end_date]', this.dateEnd);
@@ -327,7 +335,7 @@ export default {
         formData.append('booking[price]', this.price);
         formData.append('booking[total]', this.total);
 
-        axios.post('http://amigorent.ru/api/v1/booking.json',
+        axios.post('http://localhost:5000/api/v1/booking.json',
           formData,
                 {
                 headers: {
@@ -368,7 +376,12 @@ export default {
     },
     handleFilesUpload(){
       this.file = this.$refs.file.files[0];
-      this.file2 = this.$refs.file2.files[0];
+      console.log(this.$refs.file.files[0])
+      if (this.$refs.file2.files[0] != undefined) {
+        this.file2 = this.$refs.file2.files[0];
+      }
+
+      console.log(this.$refs.file2.files[0])
     }
   },
   watch: {

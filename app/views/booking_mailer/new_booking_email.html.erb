@@ -24,11 +24,11 @@
       <% end %>
     </p>
     <p>Итого без залога: <%= @booking.total %>руб</p>
-    <% if @booking.picture.exist?%>
-        <%= link_to "Паспорт", @booking.picture.url %>
+    <% if @booking.picture.exists?%>
+        <%= link_to "Паспорт", @booking.picture_url %>
     <% end %>
-    <% if @booking.prava.exist?%>
-        <%= link_to "Права", @booking.prava.url %>
+    <% if @booking.prava.exists?%>
+        <%= link_to "Права", @booking.prava_url %>
     <% end %>
     
   </body>
