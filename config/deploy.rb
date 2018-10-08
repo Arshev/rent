@@ -52,7 +52,8 @@ namespace :deploy do
           within release_path do
             with rails_env: fetch(:production) do
               execute :yarn, "install"
-              execute :rake , "webpacker:install"
+              execute :npm, "install"
+            #   execute :rails , "webpacker:install"
             end
           end
         end
