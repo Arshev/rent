@@ -1,5 +1,7 @@
 class Booking < ApplicationRecord
 
+  include ActionView::Helpers::AssetUrlHelper
+
   # before_validation :parse_image
   # attr_accessor :image_base
 
@@ -15,8 +17,12 @@ class Booking < ApplicationRecord
 
   default_scope {order('created_at DESC')}
 
-  def url_cover(url)
-    Rails.root + url
+  def picture_url
+    "http://amigorent.ru" + self.picture.url
+  end
+
+  def prava_url
+    "http://amigorent.ru" + self.prava.url
   end
 
   def cover_avatar(size)
