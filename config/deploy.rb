@@ -52,7 +52,7 @@ namespace :deploy do
           within release_path do
             with rails_env: fetch(:production) do
               execute :yarn, "install"
-              execute :rake , "webpacker:binstubs"
+              execute :rake , "webpacker:install"
             end
           end
         end
