@@ -4,16 +4,20 @@ class Booking < ApplicationRecord
   # attr_accessor :image_base
 
   has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-  do_not_validate_attachment_file_type :picture
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  # has_attached_file :prava, styles: { medium: "300x300>", thumb: "100x100>" }
-  # validates_attachment_content_type :prava, content_type: /\Aimage\/.*\z/
+  has_attached_file :prava, styles: { medium: "300x300>" }
+  validates_attachment_content_type :prava, content_type: /\Aimage\/.*\z/
 
   # has_many_attached :documents
 
   default_scope {order('created_at DESC')}
+
+  def url_cover(url)
+    Rails.root + url
+  end
 
   def cover_avatar(size)
     if self.avatar

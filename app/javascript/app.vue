@@ -101,21 +101,19 @@
             <li v-for="error in errors" :key="error.index" class="errors">{{ error }}</li>
           </ul>
         </div>
-        
       </div>
     </div>
     <div class="form-group col-sm-12">
-          <details>
-            <summary class="summary-booking"><span style="font-size: 120%;font-weight: bold; color:#f77d0a;">Чтобы оформление документов было быстрее, загрузите фото или сканы документов</span></summary>
-            
-              <label>Страница паспорта с фотографией
-                <input type="file" id="file" ref="file" v-on:change="handleFilesUpload()"/>
-              </label>
-              <label>Лицевая сторона водительского удостоверения
-                <input type="file" id="file" ref="file" v-on:change="handleFilesUpload()"/>
-              </label>
-          </details>
-        </div>
+      <details>
+        <summary class="summary-booking"><span style="font-size: 120%;font-weight: bold; color:#f77d0a; border: none;">Чтобы оформление документов было быстрее, загрузите фото или сканы документов</span></summary>
+        <label style="margin-top: 5px;">Страница паспорта с фотографией
+          <input type="file" id="file" ref="file" v-on:change="handleFilesUpload()" style="border: none; margin-top: 5px;"/>
+        </label>
+        <label style="margin-top: 5px;">Лицевая страница водительского удостоверения
+          <input type="file" id="file2" ref="file2" v-on:change="handleFilesUpload()" style="border: none; margin-top: 5px;"/>
+        </label>
+      </details>
+    </div>
     <modal
         v-show="isModalVisible"
         @close="closeModal"
@@ -212,7 +210,8 @@ export default {
       personDataError: false,
       isModalVisible: false,
       files: '',
-      file: ''
+      file: '',
+      file2: ''
     };
   },
   validations: {
@@ -304,94 +303,14 @@ export default {
       }
 
       if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false&& this.personDataError === false) {
-        var self=this;
-        let formData = new FormData();
-        this.files = this.$refs.files.files;
-        for( var i = 0; i < this.files.length; i++ ){
-          const file = this.files[i];
-          console.log(file)
-
-          formData.append('files[' + i + ']', file);
-        }
-        axios({
-          method: 'post',
-          url: 'http://localhost:5000/api/v1/booking.json',
-          data: {
-            booking: {
-              start_date: this.dateStart,
-              end_date: this.dateEnd,
-              location_start: this.locationStart,
-              location_end: this.locationEnd,
-              firstname: this.nameClient,
-              lastname: this.lastnameClient,
-              baby_chair: this.babyChair,
-              navigator: this.navigator,
-              phone: this.phoneClient,
-              email: this.emailClient,
-              car: this.carName,
-              days: this.days,
-              price: this.price,
-              total: this.total
-            },
-            formData: 'self.formData'
-          },
-          config: { headers: {'Content-Type': 'multipart/form-data' }}
-          })
-          .then(function (response) {
-            console.log(response)
-            self.showModal()
-          })
-          .catch(function (error) {
-            self.showModal()
-            console.log(error);
-          });
-        // axios.post('http://localhost:5000/api/v1/booking.json', 
-        // {
-        //   booking: {
-        //     start_date: this.dateStart,
-        //     end_date: this.dateEnd,
-        //     location_start: this.locationStart,
-        //     location_end: this.locationEnd,
-        //     firstname: this.nameClient,
-        //     lastname: this.lastnameClient,
-        //     baby_chair: this.babyChair,
-        //     navigator: this.navigator,
-        //     phone: this.phoneClient,
-        //     email: this.emailClient,
-        //     car: this.carName,
-        //     days: this.days,
-        //     price: this.price,
-        //     total: this.total
-        //   },
-        //   formData
-          
-        // }
-        // )
-        // .then(function (response) {
-        //   console.log(response)
-        //   self.showModal()
-        // })
-        // .catch(function (error) {
-        //   self.showModal()
-        //   console.log(error);
-        // });
-      }
-    },
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
-      // window.location.href = "/"
-    },
-    submitFiles(){
-        /*
-          Initialize the form data
-        */
+        
         var self=this;
         this.file = this.$refs.file.files[0];
+        this.file2 = this.$refs.file2.files[0];
         let formData = new FormData();
+
         formData.append('booking[picture]', this.file);
+        formData.append('booking[prava]', this.file2);
 
         formData.append('booking[start_date]', this.dateStart);
         formData.append('booking[end_date]', this.dateEnd);
@@ -417,56 +336,40 @@ export default {
               }
         )
         .then(function (response) {
-          console.log(response)
+
+          self.dateStart = null
+          self.dateEnd = null
+          self.locationStart = 'Офис'
+          self.locationEnd = 'Офис'
+          self.nameClient = ''
+          self.lastnameClient = ''
+          self.babyChair = false
+          self.navigator = false
+          self.phoneClient = ''
+          self.emailClient = ''
+          self.days = 0
+          self.price = 0
+          self.deposit = 0
+          self.total = 0
+
           self.showModal()
         })
         .catch(function (error) {
           console.log(error);
         });
-
-        /*
-          Make the request to the POST /multiple-files URL
-        */
-
-        // axios({
-        //   method: 'post',
-        //   url: 'http://localhost:5000/api/v1/booking.json',
-        //   data: {
-        //     booking: {
-        //       start_date: this.dateStart,
-        //       end_date: this.dateEnd,
-        //       location_start: this.locationStart,
-        //       location_end: this.locationEnd,
-        //       firstname: this.nameClient,
-        //       lastname: this.lastnameClient,
-        //       baby_chair: this.babyChair,
-        //       navigator: this.navigator,
-        //       phone: this.phoneClient,
-        //       email: this.emailClient,
-        //       car: this.carName,
-        //       days: this.days,
-        //       price: this.price,
-        //       total: this.total,
-        //       picture: formData
-        //     },
-            
-        //   },
-        //   config: { headers: {'Content-Type': 'multipart/form-data' }}
-        //   })
-        // .then(function(){
-        //   console.log('SUCCESS!!');
-        // })
-        // .catch(function(){
-        //   console.log('FAILURE!!');
-        // });
-      },
-
-      /*
-        Handles a change on the file upload
-      */
-      handleFilesUpload(){
-        this.file = this.$refs.file.file;
+      
       }
+    },
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    handleFilesUpload(){
+      this.file = this.$refs.file.files[0];
+      this.file2 = this.$refs.file2.files[0];
+    }
   },
   watch: {
     nameClient () {
