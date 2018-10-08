@@ -53,7 +53,25 @@ namespace :deploy do
     on roles(:web) do
       within release_path do
         execute("cd #{release_path} && yarn install")
+        execute("cd #{release_path} && rails webpacker:install")
       end
     end
   end
 end
+
+# namespace :deploy do
+#     namespace :assets do
+#       task :install_webpack do
+#         on roles(:web) do
+#           within release_path do
+#             with rails_env: fetch(:production) do
+#               execute :yarn, "install"
+#               execute :rake , "webpacker:binstubs"
+#             end
+#           end
+#         end
+#       end
+  
+#       before :precompile, 'assets:install_webpack'
+#     end
+#   end
