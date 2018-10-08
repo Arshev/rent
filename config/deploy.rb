@@ -45,19 +45,36 @@ set :passenger_restart_with_touch, true
 #Для Whenever устанавливает параметры для неймспейса в файле крона в зависимости от названия и рабочей среды приложения
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
-before "deploy:assets:precompile", "deploy:yarn_install"
-
 namespace :deploy do
-  desc 'Run rake yarn:install'
-  task :yarn_install do
-    on roles(:web) do
-      within release_path do
-        execute("cd #{release_path} && yarn install")
-        execute("cd #{release_path} && npm install")
+    namespace :assets do
+      task :install_webpack do
+        on roles(:app) do
+          within release_path do
+            with rails_env: fetch(:production) do
+              execute :yarn, "install"
+              execute :rake , "webpacker:binstubs"
+            end
+          end
+        end
       end
+  
+      before :precompile, 'assets:install_webpack'
     end
   end
-end
+
+# before "deploy:assets:precompile", "deploy:yarn_install"
+
+# namespace :deploy do
+#   desc 'Run rake yarn:install'
+#   task :yarn_install do
+#     on roles(:web) do
+#       within release_path do
+#         execute("cd #{release_path} && yarn install")
+#         execute("cd #{release_path} && npm install")
+#       end
+#     end
+#   end
+# end
 
 # namespace :deploy do
 #     namespace :assets do
