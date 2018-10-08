@@ -52,8 +52,9 @@ namespace :deploy do
           within release_path do
             with rails_env: fetch(:production) do
               execute :yarn, "install"
-            #   execute :npm, "install"
-              execute :rails , "webpacker:install"
+              execute :npm, "install"
+              execute :rails , "webpacker:verify_install"
+              execute :rails , "app:update:bin"
             end
           end
         end
