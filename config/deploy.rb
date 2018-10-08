@@ -53,8 +53,8 @@ namespace :deploy do
             with rails_env: fetch(:production) do
               execute :yarn, "install"
               execute :npm, "install"
-              execute :rails , "webpacker:verify_install"
-              execute :rails , "app:update:bin"
+            #   execute :rails , "webpacker:verify_install"
+            #   execute :rails , "app:update:bin"
             end
           end
         end
