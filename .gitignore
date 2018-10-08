@@ -20,6 +20,9 @@
 /node_modules
 /yarn-error.log
 
+/public/system
+/public/Users
+
 .byebug_history
 
 # Ignore encrypted secrets key file.
@@ -28,3 +31,8 @@ config/secrets.yml.key
 # Database.yml
 config/database.yml
 config/database.yml.sample
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

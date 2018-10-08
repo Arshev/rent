@@ -26,7 +26,7 @@ set :deploy_user, 'deployer'
 append :linked_files, "config/database.yml", "config/secrets.yml.key", ".env"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", ".bundle", "shared/bundle"
+append :linked_dirs, "node_modules", "bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", ".bundle", "shared/bundle"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -44,3 +44,16 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 set :passenger_restart_with_touch, true
 #Для Whenever устанавливает параметры для неймспейса в файле крона в зависимости от названия и рабочей среды приложения
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
+# before "deploy:assets:precompile", "deploy:yarn_install"
+
+# namespace :deploy do
+#   desc 'Run rake yarn:install'
+#   task :yarn_install do
+#     on roles(:web) do
+#       within release_path do
+#         execute("cd #{release_path} && yarn install")
+#       end
+#     end
+#   end
+# end

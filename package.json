@@ -1,5 +1,33 @@
 {
   "name": "rent",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "activestorage": "^5.2.1",
+    "axios": "^0.18.0",
+    "element-ui": "^2.4.8",
+    "momentjs": "^2.0.0",
+    "vue": "^2.5.17",
+    "vue-flatpickr-component": "^8.0.0",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.17",
+    "vue-the-mask": "^0.11.1",
+    "vue-turbolinks": "^2.0.3",
+    "vuelidate": "^0.7.4",
+    "vuetify": "^1.2.5",
+    "webpack-dev-server": "2.11.2"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }

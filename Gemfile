@@ -83,3 +83,8 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'mainsms_api'
 gem 'meta-tags'
+gem 'active_model_serializers', '~> 0.10.7'
+gem 'webpacker', '~> 3.5'
+gem 'foreman'
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
+gem 'rack-cors', require: 'rack/cors'

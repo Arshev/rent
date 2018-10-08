@@ -1,10 +1,23 @@
 class Booking < ApplicationRecord
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  has_attached_file :prava, styles: { medium: "300x300>", thumb: "100x100>" }
+  # before_validation :parse_image
+  # attr_accessor :image_base
+
+  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+
+  # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  has_attached_file :prava, styles: { medium: "300x300>" }
   validates_attachment_content_type :prava, content_type: /\Aimage\/.*\z/
+
+  # has_many_attached :documents
+
   default_scope {order('created_at DESC')}
+
+  def url_cover(url)
+    Rails.root + url
+  end
 
   def cover_avatar(size)
     if self.avatar
@@ -23,12 +36,14 @@ class Booking < ApplicationRecord
   end
 
   def send_sms
-    if self.car.length < 3
-      @car_name = Car.where("id = '#{self.car}'").first.car_name
-    else
-      @car_name = self.car
-    end
-    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{@car_name} тел: #{self.phone} с #{self.start_date.strftime("%d-%m-%Y")} до #{self.end_date.strftime("%d-%m-%Y")}", recipients: ['79217101615'])
+    message = MainsmsApi::Message.new(message: "#{self.firstname} авто: #{self.car} тел: #{self.phone} с #{self.start_date} до #{self.end_date}", recipients: ['79022504797'])
     response = message.deliver
   end
+
+  private
+    def parse_image
+      image = Paperclip.io_adapters.for(image_base)
+      image.original_filename = "file.jpg"
+      self.picture = image
+    end
 end
