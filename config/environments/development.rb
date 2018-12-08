@@ -1,4 +1,6 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's package.json
+  config.webpacker.check_yarn_integrity = true
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -26,6 +28,12 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Active Storage
+  config.active_storage.service = :local
+
+  # Locale
+  config.i18n.available_locales = :ru
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -47,7 +55,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+  config.action_controller.default_url_options = { host: 'localhost', port: 5000 }
 
   config.action_mailer.delivery_method = :smtp
   # Settings for MailGun

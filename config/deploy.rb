@@ -26,7 +26,7 @@ set :deploy_user, 'deployer'
 append :linked_files, "config/database.yml", "config/secrets.yml.key", ".env"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", ".bundle", "shared/bundle"
+append :linked_dirs, "node_modules", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", ".bundle", "shared/bundle", "shared/bin"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -44,3 +44,53 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 set :passenger_restart_with_touch, true
 #Для Whenever устанавливает параметры для неймспейса в файле крона в зависимости от названия и рабочей среды приложения
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
+namespace :deploy do
+    namespace :assets do
+      task :install_webpack do
+        on roles(:app) do
+          within release_path do
+            with rails_env: fetch(:production) do
+              execute :yarn, "install"
+              execute :npm, "install"
+            #   execute :rails , "webpacker:verify_install"
+            #   execute :rails , "app:update:bin"
+            end
+          end
+        end
+      end
+  
+      before :precompile, 'assets:install_webpack'
+    end
+  end
+
+# before "deploy:assets:precompile", "deploy:yarn_install"
+
+# namespace :deploy do
+#   desc 'Run rake yarn:install'
+#   task :yarn_install do
+#     on roles(:web) do
+#       within release_path do
+#         execute("cd #{release_path} && yarn install")
+#         execute("cd #{release_path} && npm install")
+#       end
+#     end
+#   end
+# end
+
+# namespace :deploy do
+#     namespace :assets do
+#       task :install_webpack do
+#         on roles(:web) do
+#           within release_path do
+#             with rails_env: fetch(:production) do
+#               execute :yarn, "install"
+#               execute :rake , "webpacker:binstubs"
+#             end
+#           end
+#         end
+#       end
+  
+#       before :precompile, 'assets:install_webpack'
+#     end
+#   end

@@ -5,17 +5,14 @@
   </head>
   <body>
     <h1>Ура! Пришла новая заявка на бронирование!</h1>
-    <p>Имя: <%= @booking.firstname %> <%= @booking.middlename %> <%= @booking.lastname %></p>
+    <p>Имя: <%= @booking.firstname %> <%= @booking.lastname %></p>
     <p>Телефон: <%= @booking.phone %></p>
     <p>Email: <%= @booking.email %></p>
-    <% if @booking.car.length < 3 %>
-      <p>Автомобиль: <%= Car.where("id = '#{@booking.car}'").first.car_name %></p>
-    <% else %>
-      <p>Автомобиль: <%= @booking.car %></p>
-    <% end %>
-
-    <p>Начало аренды: <%= @booking.start_date.strftime("%d-%m-%Y") %></p>
-    <p>Конец аренды: <%= @booking.end_date.strftime("%d-%m-%Y") %></p>
+    <p>Автомобиль: <%= @booking.car %></p>
+    <p>Начало аренды: <%= @booking.start_date %></p>
+    <p>Конец аренды: <%= @booking.end_date %></p>
+    <p>Суток: <%= @booking.days %></p>
+    <p>Цена: <%= @booking.price %> руб</p>
     <p>Где брать: <%= @booking.location_start %></p>
     <p>Где отдавать: <%= @booking.location_end %></p>
     <p>Доп оборудование:
@@ -26,5 +23,13 @@
         Навигатор
       <% end %>
     </p>
+    <p>Итого без залога: <%= @booking.total %>руб</p>
+    <% if @booking.picture.exists?%>
+        <%= link_to "Паспорт", @booking.picture_url %>
+    <% end %>
+    <% if @booking.prava.exists?%>
+        <%= link_to "Права", @booking.prava_url %>
+    <% end %>
+    
   </body>
 </html>
