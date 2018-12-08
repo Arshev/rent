@@ -28,3 +28,8 @@ config/secrets.yml.key
 # Database.yml
 config/database.yml
 config/database.yml.sample
+
+# Pictures
+public/Users/*
+public/system/bookings/*
+public/system/pictures/*
