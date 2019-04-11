@@ -73,7 +73,7 @@
         <div class="form-group col-sm-12">
           <h5 class="this-label">Подтвердите согласие <span>*</span></h5>
           <input type="checkbox" id="checkbox" value="true" v-model="personData">
-          <label for="checkbox">Даю согласие на обработку персональных данных, согласно <a href="http://base.garant.ru/12148567/" rel="nofollow">152-ФЗ</a></label>
+          <label for="checkbox">Даю согласие на обработку персональных данных, согласно <a href="https://base.garant.ru/12148567/" rel="nofollow">152-ФЗ</a></label>
         </div>
       </div>
     </div>
@@ -236,7 +236,7 @@ export default {
     }
   },
   created() {
-    axios.get("http://amigorent.ru/api/v1/cars.json").then(response => {
+    axios.get("https://amigorent.ru/api/v1/cars.json").then(response => {
       this.cars = response.data;
       const carsArr = []
       this.cars.forEach(function(car) {
@@ -335,7 +335,7 @@ export default {
         formData.append('booking[price]', this.price);
         formData.append('booking[total]', this.total);
 
-        axios.post('http://amigorent.ru/api/v1/booking.json',
+        axios.post('https://amigorent.ru/api/v1/booking.json',
           formData,
                 {
                 headers: {
