@@ -56,7 +56,8 @@ group :development do
   # Use Capistrano for deployment
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-bundler", "~> 1.3.0", require: false
-  gem "capistrano-rvm", "~> 0.1.2", require: false
+  # gem "capistrano-rvm", "~> 0.1.2", require: false
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4', require: false
   gem "capistrano-rails", "~> 1.3.1", require: false
   gem 'capistrano-passenger', "~> 0.2.0", require: false
   gem 'capistrano-rails-console', "~> 2.2.1", require: false
