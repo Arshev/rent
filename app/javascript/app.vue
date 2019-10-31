@@ -90,6 +90,7 @@
           <ul class="nav other-infos-car">
             <li>Цена (за сутки) <span id="car_price"  v-if="price != null ">{{ price }} <small>руб</small></span></li>
             <li>Всего суток<span id="car_days" >{{ days }}</span></li>
+            <li id="start_delivery" v-if="(additional_hours * price_hour) > 0" >Дополнительные часы <span id="delivery_price">{{ additional_hours * price_hour }} <small>руб</small></span></li>
             <li id="start_delivery" v-if="(locationStartPrice + locationEndPrice) > 0" >Доставка <span id="delivery_price">{{ locationStartPrice + locationEndPrice }} <small>руб</small></span></li>
             <li id="extra_options" v-if="(babyChairPrice + navigatorPrice) > 0">Дополнительные опции <span id="extra_price">{{ babyChairPrice + navigatorPrice }} руб</span></li>
             <li style="color: red;">Итого <span id="total_price" v-if="price != null ">{{ total }} <small>руб</small></span></li>
@@ -150,6 +151,7 @@ export default {
       price_3: '',
       price_4: '',
       price_5: '',
+      price_hour: '',
       babyChair: false,
       navigator: false,
       babyChairPrice: 0,
@@ -247,7 +249,7 @@ export default {
       this.cars.forEach(function(car) {
         const carId = car.id
         const carName = car.car_name
-        carsArr.push({'id': carId, 'car_name': carName, 'price_1': car.price_1, 'price_2': car.price_2, 'price_3': car.price_3, 'price_4': car.price_4, 'price_5': car.price_5, 'deposit': car.deposit })
+        carsArr.push({'id': carId, 'car_name': carName, 'price_1': car.price_1, 'price_2': car.price_2, 'price_3': car.price_3, 'price_4': car.price_4, 'price_5': car.price_5, 'price_hour': car.price_hour,'deposit': car.deposit })
       });
       this.carsArr = carsArr
       this.carNames = carsArr.map(obj => obj.car_name)
@@ -411,13 +413,13 @@ export default {
       this.personDataError = false
     },
     dateEnd () {
-      let start_date = moment(this.dateStart, "YYYY-MM-DD H:mm")
-      let end_date = moment(this.dateEnd, "YYYY-MM-DD H:mm")
+      let start_date = moment(this.dateStart, "MM-DD-YYYY H:mm")
+      let end_date = moment(this.dateEnd, "MM-DD-YYYY H:mm")
       
       let hours = moment.duration(end_date.diff(start_date)).asHours()
       
-      let start_date_days = moment(this.start_date, "YYYY-MM-DD")
-      let end_date_days = moment(this.end_date, "YYYY-MM-DD")
+      let start_date_days = moment(this.dateStart, "MM-DD-YYYY")
+      let end_date_days = moment(this.dateEnd, "MM-DD-YYYY")
       this.additional_hours = 0
       if (hours > (moment.duration(end_date_days.diff(start_date_days)).asDays() * 24)) {
           this.hours = hours
@@ -437,40 +439,40 @@ export default {
         if (diff >=2 && diff <= 3) {
           this.days = diff
           this.price = this.price_1
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 3 && diff <= 7) {
           this.days = diff
           this.price = this.price_2
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 7 && diff <= 14) {
           this.days = diff
           this.price = this.price_3
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 14 && diff <= 30) {
           this.days = diff
           this.price = this.price_4
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 30 ) {
           this.days = diff
           this.price = this.price_5
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
       }
       this.errors = []
       this.dateEndError = false
     },
     dateStart () {
-      let start_date = moment(this.dateStart, "YYYY-MM-DD H:mm")
-      let end_date = moment(this.dateEnd, "YYYY-MM-DD H:mm")
+      let start_date = moment(this.dateStart, "MM-DD-YYYY H:mm")
+      let end_date = moment(this.dateEnd, "MM-DD-YYYY H:mm")
       
       let hours = moment.duration(end_date.diff(start_date)).asHours()
       
-      let start_date_days = moment(this.start_date, "YYYY-MM-DD")
-      let end_date_days = moment(this.end_date, "YYYY-MM-DD")
+      let start_date_days = moment(this.dateStart, "MM-DD-YYYY")
+      let end_date_days = moment(this.dateEnd, "MM-DD-YYYY")
       this.additional_hours = 0
       if (hours > (moment.duration(end_date_days.diff(start_date_days)).asDays() * 24)) {
           this.hours = hours
@@ -478,6 +480,7 @@ export default {
           this.additional_hours = Math.trunc(additionalHours)
       }
       let diff = moment.duration(end_date_days.diff(start_date_days)).asDays();
+      
       //let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
 
       if (!isNaN(diff)) {
@@ -490,27 +493,27 @@ export default {
         if (diff >=2 && diff <= 3) {
           this.days = diff
           this.price = this.price_1
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 3 && diff <= 7) {
           this.days = diff
           this.price = this.price_2
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 7 && diff <= 14) {
           this.days = diff
           this.price = this.price_3
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 14 && diff <= 30) {
           this.days = diff
           this.price = this.price_4
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
         if (diff > 30 ) {
           this.days = diff
           this.price = this.price_5
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
         }
       }
       this.errors = []
@@ -520,23 +523,23 @@ export default {
       switch (this.locationStart) {
         case 'Офис':
           this.locationStartPrice = 0
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Аэропорт':
           this.locationStartPrice = 400
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Зеленоградск':
           this.locationStartPrice = 800
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Светлогорск':
           this.locationStartPrice = 1000
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Другой адрес в Калининграде':
           this.locationStartPrice = 300
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
       }
     },
@@ -544,23 +547,23 @@ export default {
       switch (this.locationEnd) {
         case 'Офис':
           this.locationEndPrice = 0
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Аэропорт':
           this.locationEndPrice = 400
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Зеленоградск':
           this.locationEndPrice = 800
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Светлогорск':
           this.locationEndPrice = 1000
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
         case 'Другой адрес в Калининграде':
           this.locationEndPrice = 300
-          this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
           break;
       }
     },
@@ -572,6 +575,7 @@ export default {
       this.price_3 = obj.price_3
       this.price_4 = obj.price_4
       this.price_5 = obj.price_5
+      this.price_hour = obj.price_hour
       this.deposit = obj.deposit
 
       this.errors = []
@@ -591,19 +595,19 @@ export default {
     babyChair () {
       if (this.babyChair === true) {
         this.babyChairPrice = 500
-        this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+        this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
       } else {
         this.babyChairPrice = 0
-        this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+        this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
       }
     },
     navigator () {
       if (this.navigator === true) {
         this.navigatorPrice = 500
-        this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+        this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
       } else {
         this.navigatorPrice = 0
-        this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+        this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
       }
     }
   },
