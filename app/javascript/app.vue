@@ -174,6 +174,8 @@ export default {
           }  
         },
       dateEnd: null,
+      additional_hours: 0,
+      hours: 0,
       personData: false,
       errors: [],
       configEnd: {
@@ -409,7 +411,21 @@ export default {
       this.personDataError = false
     },
     dateEnd () {
-      let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
+      let start_date = moment(this.dateStart, "YYYY-MM-DD H:mm")
+      let end_date = moment(this.dateEnd, "YYYY-MM-DD H:mm")
+      
+      let hours = moment.duration(end_date.diff(start_date)).asHours()
+      
+      let start_date_days = moment(this.start_date, "YYYY-MM-DD")
+      let end_date_days = moment(this.end_date, "YYYY-MM-DD")
+      this.additional_hours = 0
+      if (hours > (moment.duration(end_date_days.diff(start_date_days)).asDays() * 24)) {
+          this.hours = hours
+          let additionalHours = (hours % 24)
+          this.additional_hours = Math.trunc(additionalHours)
+      }
+      let diff = moment.duration(end_date_days.diff(start_date_days)).asDays();
+      //let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
 
       if (!isNaN(diff)) {
         if (diff >= 2) {
@@ -448,7 +464,21 @@ export default {
       this.dateEndError = false
     },
     dateStart () {
-      let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
+      let start_date = moment(this.dateStart, "YYYY-MM-DD H:mm")
+      let end_date = moment(this.dateEnd, "YYYY-MM-DD H:mm")
+      
+      let hours = moment.duration(end_date.diff(start_date)).asHours()
+      
+      let start_date_days = moment(this.start_date, "YYYY-MM-DD")
+      let end_date_days = moment(this.end_date, "YYYY-MM-DD")
+      this.additional_hours = 0
+      if (hours > (moment.duration(end_date_days.diff(start_date_days)).asDays() * 24)) {
+          this.hours = hours
+          let additionalHours = (hours % 24)
+          this.additional_hours = Math.trunc(additionalHours)
+      }
+      let diff = moment.duration(end_date_days.diff(start_date_days)).asDays();
+      //let diff =  Math.floor(( Date.parse(this.dateEnd) - Date.parse(this.dateStart) ) / 86400000)
 
       if (!isNaN(diff)) {
         if (diff >= 2) {
