@@ -47,7 +47,7 @@ set :rails_env, :staging
    keys: %w(/Users/erosanin/.ssh/id_rsa),
    forward_agent: true,
    auth_methods: %w(publickey password),
-   port: 4321
+   port: 221
  }
 #
 # The server-based syntax can be used to override options:
