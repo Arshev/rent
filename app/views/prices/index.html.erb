@@ -43,6 +43,11 @@
                             <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
+                          <% if car.car_type == "Хэтчбек" %>
+                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                          <% elsif car.car_type == "Седан" %>
+                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                          <% end %>
                           <% if car.transmission == "Механика" %>
                             <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
                           <% else %>
