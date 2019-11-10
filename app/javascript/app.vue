@@ -90,7 +90,7 @@
           <ul class="nav other-infos-car">
             <li>Цена (за сутки) <span id="car_price"  v-if="price != null ">{{ price }} <small>руб</small></span></li>
             <li>Всего суток<span id="car_days" >{{ days }}</span></li>
-            <li id="start_delivery" v-if="(additional_hours * price_hour) > 0" >Дополнительные часы <span id="delivery_price">{{ additional_hours * price_hour }} <small>руб</small></span></li>
+            <li id="start_delivery" v-if="(additional_hours * price_hour) > 0 && this.additional_hours * this.price_hour < this.price" >Дополнительные часы <span id="delivery_price">{{ additional_hours * price_hour }} <small>руб</small></span></li>
             <li id="start_delivery" v-if="(locationStartPrice + locationEndPrice) > 0" >Доставка <span id="delivery_price">{{ locationStartPrice + locationEndPrice }} <small>руб</small></span></li>
             <li id="extra_options" v-if="(babyChairPrice + navigatorPrice) > 0">Дополнительные опции <span id="extra_price">{{ babyChairPrice + navigatorPrice }} руб</span></li>
             <li style="color: red;">Итого <span id="total_price" v-if="price != null ">{{ total }} <small>руб</small></span></li>
@@ -437,29 +437,59 @@ export default {
           this.days = 'Минимум 2-е суток'
         }
         if (diff >=2 && diff <= 3) {
-          this.days = diff
-          this.price = this.price_1
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_1
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_1
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 3 && diff <= 7) {
-          this.days = diff
-          this.price = this.price_2
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_2
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_2
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 7 && diff <= 14) {
-          this.days = diff
-          this.price = this.price_3
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_3
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_3
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 14 && diff <= 30) {
-          this.days = diff
-          this.price = this.price_4
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+         if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_4
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_4
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 30 ) {
-          this.days = diff
-          this.price = this.price_5
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_5
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_5
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
       }
       this.errors = []
@@ -491,29 +521,59 @@ export default {
           this.days = 'Минимум 2-е суток'
         }
         if (diff >=2 && diff <= 3) {
-          this.days = diff
-          this.price = this.price_1
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_1
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_1
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 3 && diff <= 7) {
-          this.days = diff
-          this.price = this.price_2
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_2
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_2
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 7 && diff <= 14) {
-          this.days = diff
-          this.price = this.price_3
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_3
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_3
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 14 && diff <= 30) {
-          this.days = diff
-          this.price = this.price_4
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+         if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_4
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_4
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
         if (diff > 30 ) {
-          this.days = diff
-          this.price = this.price_5
-          this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          if (this.additional_hours > 0 && this.additional_hours * this.price_hour >= this.price) {
+            this.days = diff + 1
+            this.price = this.price_5
+            this.total = (this.days * this.price) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          } else {
+            this.days = diff
+            this.price = this.price_5
+            this.total = (this.days * this.price) + (this.additional_hours * this.price_hour) + this.babyChairPrice + this.navigatorPrice + this.locationStartPrice + this.locationEndPrice
+          }
         }
       }
       this.errors = []
