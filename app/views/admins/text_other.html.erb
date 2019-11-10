@@ -33,6 +33,107 @@
           <div class="col-md-12">
             <div class="card m-t-3">
               <div class="card-body">
+                <h4 class="text-black">Доставки/возвтраты рабочее время</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Время рабочее</th>
+                        <th scope="col">Город</th>
+                        <th scope="col">Аэропорт</th>
+                        <th scope="col">Светлогорск</th>
+                        <th scope="col">Зеленоградск</th>
+                        <th scope="col">Коса</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= f.text_field :dop_table_worktime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_city_price_worktime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_aero_price_worktime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_svetlogorsk_price_worktime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_zelenogradsk_price_worktime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_kosa_price_worktime, placeholder: "1000", class: "form-control", required: true %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <h4 class="text-black">Доставки/возвтраты нерабочее время</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Время нерабочее</th>
+                        <th scope="col">Город н/р</th>
+                        <th scope="col">Аэропорт н/р</th>
+                        <th scope="col">Светлогорск н/р</th>
+                        <th scope="col">Зеленоградск н/р</th>
+                        <th scope="col">Коса н/р</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= f.text_field :dop_table_endtime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_city_price_endtime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_aero_price_endtime, placeholder: "150", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_svetlogorsk_price_endtime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_zelenogradsk_price_endtime, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_kosa_price_endtime, placeholder: "150", class: "form-control", required: true %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <h4 class="text-black">Цены на доп. оборудование</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Детское кресло/бустер за сутки</th>
+                        <th scope="col">Детское кресло/бустер за весь срок</th>
+                        <th scope="col">Навигатор</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= f.text_field :dop_table_kreslo_dayprice, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_kreslo_allprice, placeholder: "1000", class: "form-control", required: true %></td>
+                        <td><%= f.text_field :dop_table_navigator_dayprice, placeholder: "150", class: "form-control", required: true %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
+                <div class="click2edit m-b-3">
+                  <h4>Текст под таблицей цен и доп</h4>
+                  <%= f.text_area :dop_table_downtext, class: "tinymce", style: "min-width: 800px;", rows: "7" %>
+                </div>
+                <%= f.submit "Сохранить", class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card m-t-3">
+              <div class="card-body">
                 <div class="click2edit m-b-3">
                   <h4>Контакты</h4>
                   <%= f.text_area :contacts_text, class: "tinymce", style: "min-width: 800px;", rows: "7" %>

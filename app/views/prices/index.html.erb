@@ -352,18 +352,18 @@
                 </tr>
                 <tr>
                   <td rowspan="2" width="177" style="text-align: center;" class="prices-th-dop-table">
-                <b><u>Пункт доставки/возврата</u></b>
+                    <b>Пункт доставки/возврата</b>
                   </td>
                   <td colspan="2" width="400" style="text-align: center;" class="prices-th-dop-table">
-                <b><u>Цена, руб.</u></b>
+                    <b>Цена, руб.</b>
                   </td>
                 </tr>
                 <tr>
                   <td height="50" width="55" style="text-align: center;" class="class-title">
-                <i>09.00-19.00</i>
+                <i><%= @dop_table_worktime %></i>
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title">
-                <i>19.00-9.00</i>
+                <i><%= @dop_table_endtime %></i>
                   </td>
                 </tr>
               </thead>
@@ -373,10 +373,10 @@
                     Калининград (до окружной)
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    200
+                    <%= @dop_table_city_price_worktime %>
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    400
+                    <%= @dop_table_city_price_endtime %>
                   </td>
                 </tr>
                 <tr>
@@ -384,10 +384,10 @@
                     Аэропорт "Храброво"
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    400
+                    <%= @dop_table_aero_price_worktime %>
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    700
+                    <%= @dop_table_aero_price_endtime %>
                   </td>
                 </tr>
                 <tr>
@@ -395,10 +395,10 @@
                     Светлогорск
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    1000
+                    <%= @dop_table_svetlogorsk_price_worktime %>
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    1500
+                    <%= @dop_table_svetlogorsk_price_endtime %>
                   </td>
                 </tr>
                 <tr>
@@ -406,10 +406,10 @@
                     Зеленоградск
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    1000
+                    <%= @dop_table_zelenogradsk_price_worktime %>
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    1300
+                    <%= @dop_table_zelenogradsk_price_endtime %>
                   </td>
                 </tr>
                 <tr>
@@ -417,10 +417,10 @@
                     Куршская коса
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    от 1000 + 350 (пропуск)
+                    <%= @dop_table_kosa_price_worktime %>
                   </td>
                   <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                    от 1500 + 350 (пропуск)
+                    <%= @dop_table_kosa_price_endtime %>
                   </td>
                 </tr>
               </tbody>
@@ -436,25 +436,25 @@
                 
               </tr>
               <tr>
-                <td width="177" style="text-align: center;" class="">
-                  &nbsp;
+                <td width="177" style="text-align: center;" class="prices-th-dop-table">
+                  <b>Оборудование</b>
                 </td>
                 <td width="100" style="text-align: center;" class="prices-th-dop-table">
-            <i>За сутки</i>
+                  <i>За сутки, руб</i>
                 </td>
                 <td width="100" style="text-align: center;" class="prices-th-dop-table">
-            <i>За весь срок до 15 суток</i>
+                  <i>За весь срок до 15 суток, руб</i>
                 </td>
               </tr>
               <tr>
                 <td rowspan="2" width="177" style="text-align: center;" class="class-title dop-table">
-            <b>Детское кресло/бустер</b>
+                  <b>Детское кресло/бустер</b>
                 </td>
                 <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                  300 руб/100 руб
+                  <%= @dop_table_kreslo_dayprice %>
                 </td>
                 <td height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                  500 руб/300 руб
+                  <%= @dop_table_kreslo_allprice %>
                 </td>
               </tr>
               </thead>
@@ -464,11 +464,12 @@
             <b>GPS навигатор</b>
                 </td>
                 <td colspan="2" height="50" width="55" style="text-align: center;" class="class-title dop-table">
-                  500 руб
+                  <%= @dop_table_navigator_dayprice %>
                 </td>
               </tr>
               </tbody>
             </table>
+            <p><%= @dop_table_downtext.html_safe %></p>
           </div>
       </div>
       <p style="font-weight:bold;" class="text-center">Посмотреть текст договора можно <%= link_to 'здесь', asset_path('/docs/dogovor.pdf') %>, акт приема автомобиля и штрафные санкции <%= link_to 'здесь', asset_path('/docs/akt.pdf') %>.</p>

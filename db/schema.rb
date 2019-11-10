@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_07_145540) do
+ActiveRecord::Schema.define(version: 2019_11_10_151928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -243,6 +243,22 @@ ActiveRecord::Schema.define(version: 2018_10_07_145540) do
     t.text "faqs_description", default: "empty"
     t.text "abouts_title", default: "empty"
     t.text "abouts_description", default: "empty"
+    t.text "dop_table_worktime", default: "empty"
+    t.text "dop_table_endtime", default: "empty"
+    t.text "dop_table_city_price_worktime", default: "empty"
+    t.text "dop_table_city_price_endtime", default: "empty"
+    t.text "dop_table_aero_price_worktime", default: "empty"
+    t.text "dop_table_aero_price_endtime", default: "empty"
+    t.text "dop_table_svetlogorsk_price_worktime", default: "empty"
+    t.text "dop_table_svetlogorsk_price_endtime", default: "empty"
+    t.text "dop_table_zelenogradsk_price_worktime", default: "empty"
+    t.text "dop_table_zelenogradsk_price_endtime", default: "empty"
+    t.text "dop_table_kosa_price_worktime", default: "empty"
+    t.text "dop_table_kosa_price_endtime", default: "empty"
+    t.text "dop_table_kreslo_dayprice", default: "empty"
+    t.text "dop_table_kreslo_allprice", default: "empty"
+    t.text "dop_table_navigator_dayprice", default: "empty"
+    t.text "dop_table_downtext", default: "empty"
   end
 
   create_table "users", force: :cascade do |t|

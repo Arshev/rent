@@ -41,6 +41,13 @@ private
       :prices_description, :contacts_title, :contacts_description,
       :reviews_title, :reviews_description,
       :terms_title, :terms_description, :faqs_title, :faqs_description,
-      :abouts_title, :abouts_description)
+      :abouts_title, :abouts_description, :dop_table_worktime,
+      :dop_table_endtime, :dop_table_city_price_worktime, :dop_table_city_price_endtime,
+      :dop_table_aero_price_worktime, :dop_table_aero_price_endtime,
+      :dop_table_svetlogorsk_price_worktime, :dop_table_svetlogorsk_price_endtime,
+      :dop_table_zelenogradsk_price_worktime, :dop_table_zelenogradsk_price_endtime,
+      :dop_table_kosa_price_worktime, :dop_table_kosa_price_endtime,
+      :dop_table_kreslo_dayprice, :dop_table_kreslo_allprice,
+      :dop_table_navigator_dayprice, :dop_table_downtext)
   end
 end
