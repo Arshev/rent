@@ -90,3 +90,6 @@ gem 'webpacker', '~> 3.5'
 gem 'foreman'
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 gem 'rack-cors', require: 'rack/cors'
+
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
