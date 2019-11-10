@@ -13,7 +13,6 @@
               <div class="divTableHeading">
                 <div class="divTableRow">
                   <div class="divTableHead col-md-2 col-lg-2 col-sm-2 col-xs-2 cell-image" id="float-none">Марка,<br>модель автомобиля</div>
-                  <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price hidden-xs hidden-sm" id="float-none">Кузов</div>
                   <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">1-3<br>суток</div>
                   <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">4-7<br>суток</div>
                   <div class="divTableHead col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price" id="float-none">8-14<br>суток</div>
@@ -45,8 +44,18 @@
                 				<div class="transmission">
                           <% if car.car_type == "Хэтчбек" %>
                             <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
-                          <% else car.car_type == "Седан" %>
+                          <% end %>
+                          <% if car.car_type == "Седан" %>
                             <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Универсал" %>
+                            <%= image_tag ('universal.png'), class:"universal" %>
+                          <% end %>
+                          <% if car.car_type == "Кроссовер" %>
+                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                          <% end %>
+                          <% if car.car_type == "Купе" %>
+                            <%= image_tag ('coupe.png'), class:"coupe" %>
                           <% end %>
                           <% if car.transmission == "Механика" %>
                             <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
@@ -58,9 +67,6 @@
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price hidden-xs hidden-sm">
-                          <%= car.car_type %>
-            					</div>
           					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 cell-price">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
@@ -115,19 +121,31 @@
                             <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
+                          <% if car.car_type == "Хэтчбек" %>
+                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Седан" %>
+                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Универсал" %>
+                            <%= image_tag ('universal.png'), class:"universal" %>
+                          <% end %>
+                          <% if car.car_type == "Кроссовер" %>
+                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                          <% end %>
+                          <% if car.car_type == "Купе" %>
+                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                          <% end %>
                           <% if car.transmission == "Механика" %>
                             <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
                           <% else %>
                             <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner" %>
+                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
-                          <%= car.car_type %>
-            					</div>
           					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
@@ -182,19 +200,31 @@
                             <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
+                          <% if car.car_type == "Хэтчбек" %>
+                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Седан" %>
+                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Универсал" %>
+                            <%= image_tag ('universal.png'), class:"universal" %>
+                          <% end %>
+                          <% if car.car_type == "Кроссовер" %>
+                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                          <% end %>
+                          <% if car.car_type == "Купе" %>
+                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                          <% end %>
                           <% if car.transmission == "Механика" %>
                             <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
                           <% else %>
                             <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner" %>
+                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
-                          <%= car.car_type %>
-            					</div>
           					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
@@ -249,19 +279,31 @@
                             <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
+                          <% if car.car_type == "Хэтчбек" %>
+                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Седан" %>
+                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                          <% end %>
+                          <% if car.car_type == "Универсал" %>
+                            <%= image_tag ('universal.png'), class:"universal" %>
+                          <% end %>
+                          <% if car.car_type == "Кроссовер" %>
+                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                          <% end %>
+                          <% if car.car_type == "Купе" %>
+                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                          <% end %>
                           <% if car.transmission == "Механика" %>
                             <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
                           <% else %>
                             <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner" %>
+                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
-            					<div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1 hidden-xs hidden-sm">
-                          <%= car.car_type %>
-            					</div>
           					  <div class="divTableCell col-md-1 col-lg-1 col-sm-1 col-xs-1">
             						<span class="old-price"><sup><%= car.old_price_1 %></sup></span>
             						<div class="real-price"><%= car.price_1 %></div>
