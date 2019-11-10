@@ -293,6 +293,18 @@
 .cell-buy {
   min-width: 140px;
 }
+.dop-table {
+  background-color: rgba(135, 245, 245, 0.1);
+}
+.class-title {
+  border: 1px solid #AAAAAA;
+}
+.prices-th-dop-table {
+  background-color: rgba(245, 137, 15, 0.5);
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
 
 @media screen and (max-width: 480px) {
   .divTable.blueTable .divTableHeading .divTableHead {

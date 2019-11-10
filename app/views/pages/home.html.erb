@@ -6,10 +6,6 @@
 
    		<div class="this-texts container">
 				<%= @main_h1_text.html_safe %>
-   			<!-- <h1 class="this-cursive">Прокат автомобилей <span>в Калининграде</span></h1>
-				<h2 class="this-h1">С нами ты всегда у руля!</h2>
-				<br>
-  			<h2 class="this-foot" style="color:#1ccc8b;"><a href="tel:521615" style="color:#1ccc8b;">52-16-15</a></h2> -->
 				<%= link_to 'Цены на автомобили', prices_path, class: 'btn btn-primary' %>
    		</div>
 
@@ -19,8 +15,6 @@
 		<div class="container">
 			<%= form_for @quick_booking, html: {class:"row m0 find-quick-form text-center"} do |f| %>
 				<%= @main_quick_booking_text.html_safe %>
-				<!-- <h2 class="this-title">Быстрая заявка</h2>
-				<p class="this-p">Если вам срочно нужен автомобиль заполните эту форму!</p> -->
 
 				<ul class="nav nav-pills cartypes">
 					<li><%= f.check_box :is_sedan %> <label>Седан</label></li>
@@ -63,64 +57,12 @@
  	<!--Features-->
  	<section class="row features">
 		<%= @main_substances_text.html_safe  %>
- 		<!-- <div class="container">
- 			<div class="col-md-4 feature">
- 				<div class="media">
- 					<div class="media-left"><span><img src="/images/icons/features/1.png" alt="" style="max-width:50px;"></span></div>
- 					<div class="media-body">
- 						<h4 class="this-title">СТРАХОВКА КАСКО</h4>
-					<p>Все авто застрахованы, минимальная ответственность клиента даже при происшествиях по его вине.</p>
- 					</div>
- 				</div>
- 				<div class="media">
- 					<div class="media-left"><span><img src="/images/icons/features/2.png" alt="" style="max-width:50px;"></span></div>
- 					<div class="media-body">
- 						<h4 class="this-title">ГАРАНТИЯ ЛУЧШЕЙ ЦЕНЫ</h4>
-						<p>Если вы найдете цену дешевле, с аналогичными условиями аренды — мы снизим цену для Вас!</p>
- 					</div>
- 				</div>
- 			</div>
- 			<div class="col-md-4 feature">
- 				<div class="media">
- 					<div class="media-left"><span><img src="/images/icons/features/3.png" alt="" style="max-width:50px;"></span></div>
- 					<div class="media-body">
- 						<h4 class="this-title">НЕОГРАНИЧЕННЫЙ ПРОБЕГ</h4>
-						<p>Ограничение суточного пробега и штраф за несоблюдение нашими условиями не предусмотрен.</p>
- 					</div>
- 				</div>
- 				<div class="media">
- 					<div class="media-left"><span><img src="/images/icons/features/4.png" alt="" style="max-width:50px;"></span></div>
- 					<div class="media-body">
- 						<h4 class="this-title">ПОДДЕРЖКА 24/7</h4>
-						<p>Круглосуточная поддержка клиента по всем вопросам, связанным с арендой автомобиля.</p>
- 					</div>
- 				</div>
- 			</div>
- 			<div class="col-md-4 feature">
- 				<div class="media">
- 					<div class="media-left"><span><img src="/images/icons/features/5.png" alt="" style="max-width:50px;"></span></div>
- 					<div class="media-body">
- 						<h4 class="this-title">НЕМЕДЛЕННЫЙ ВОЗВРАТ ЗАЛОГА</h4>
-					<p>Возвращаем залоговую сумму на месте возврата, сразу же после осмотра и приема автомобиля.</p>
- 					</div>
- 				</div>
- 				<div class="media">
- 					<div class="media-left"><span><img src="/images/icons/features/6.png" alt="" style="max-width:50px;"></span></div>
- 					<div class="media-body">
- 						<h4 class="this-title">ДРУЖЕСТВЕННОЕ ОТНОШЕНИЕ</h4>
-					<p>Мы ценим своих клиентов и не придираемся к мелким недостаткам при приеме автомобиля.</p>
- 					</div>
- 				</div>
- 			</div>
- 		</div> -->
  	</section>
  	<!--Fleet-->
  	<section class="row" style="background-color: #2b2e4a;">
  		<div class="container" style="background-color: #2b2e4a; margin-top: 40px;">
  			<div class="row section-title text-center white">
 				<%= @main_car_list_text.html_safe  %>
- 				<!-- <h6 class="this-top">БОЛЬШОЙ ВЫБОР</h6>
- 				<h2 class="h1 this-main">Найдём авто для каждого!</h2> -->
  			</div>
 			<div class="row">
 				<%= render 'cars/single_car_main' %>
@@ -132,14 +74,12 @@
  	</section>
 
 <%= render 'reviews/reviews_on_main' %>
+<div class="text-center">
+	<iframe src="https://yandex.ru/sprav/widget/rating-badge/12804442716" width="150" height="50" frameborder="0"></iframe>
+</div>
 <section class="row service-detail-tabs">
 		<div class="container">
 			<%= @main_services_text.html_safe  %>
-		<!-- <div class="row section-title text-center white">
-			<h6 class="this-top">НАШИ УСЛУГИ</h6>
-			<h2 class="h1 this-main">Что мы предлагаем?</h2>
-			<p>Автопрокат Амиго предоставляет услуги по аренде автомобилей различных классов без водителя и с водителем в Калининграде и области. Мы осуществляем доставку авто прямо к клиенту.</p>
-		</div> -->
 		</div>
 		<div class="row m0 sdtab-contents">
 			<div class="container">
@@ -157,95 +97,9 @@
   		<div class="container">
   			<div class="row mis-be ipad-width">
 					<%= @main_mission_text.html_safe  %>
-  				<!-- <div class="col-md-6 col-sm-12 col-xs-12 mission-it">
-  					<h3 class="this-title">Наша миссия</h3>
-  					<p class="this-para">Построение бизнеса нового поколения, основанного на принципе: «К клиенту — с душой!» Стать прокатом автомобилей мирового уровня, лучшим в России. Миссия компании Амиго — развитие рынка доступной, удобной и качественной аренды автомобилей.</p>
-
-  					<ul class="nav mission-nav">
-  						<li>Клиент наш друг!</li>
-  						<li>Всегда стараемся справедливо урегулировать все спорные моменты.</li>
-  						<li>Содержим парк машин в хорошем состоянии.</li>
-  						<li>Договор без подводных камней.</li>
-  						<li>Большие скидки при долгосрочной аренде.</li>
-  						<li>Многолетний опыт работы.</li>
-  					</ul>
-  				</div> -->
   				<div class="col-md-6 col-sm-12 col-xs-12 benefit-it">
   					<h3 class="this-title pl">Наши приемущества</h3>
 						<%= @main_edge_text.html_safe  %>
-
-					<!-- <div class="panel-group benefit-accordion" role="tablist" aria-multiselectable="true">
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="heading1">
-								<h4 class="panel-title">
-									<a role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-										Самые выгодные условия по КАСКО
-									</a>
-								</h4>
-							</div>
-							<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
-								<div class="panel-body">
-									Договором аренды предусмотрена самая низкая в Калининграде франшиза по страховке.
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="heading2">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-										Круглосуточная поддержка 24/7
-									</a>
-								</h4>
-							</div>
-							<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-								<div class="panel-body">
-									В любой ситуации, касаемой автомобиля, мы готовы помочь 24 часа в сутки.
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="heading3">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-										Низкие залоги
-									</a>
-								</h4>
-							</div>
-							<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-								<div class="panel-body">
-									Низкие залоговые суммы, начинаются от 3000 рублей.
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="heading4">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
-										Есть почасовая оплата
-									</a>
-								</h4>
-							</div>
-							<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
-								<div class="panel-body">
-									Мы не берем стоимость аренды за сутки при опоздании или аренде на неполные сутки. На большинство автомобилей плата за час составляет 150 рублей.
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="heading5">
-								<h4 class="panel-title">
-									<a class="collapsed" role="button" data-toggle="collapse" data-parent=".benefit-accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
-										Справедливая топливная политика
-									</a>
-								</h4>
-							</div>
-							<div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
-								<div class="panel-body">
-									Выдаем автомобиль с полным баком, при недостаче топлива, оплата по цене заправок без штрафов.
-								</div>
-							</div>
-						</div>
-					</div> -->
   				</div>
   			</div>
   		</div>
