@@ -285,10 +285,58 @@
 }
 .cell-price {
   min-width: 56px;
+  max-width: 70px;
 }
 .hour-price {
   min-width: 95px;
 }
 .cell-buy {
   min-width: 140px;
+}
+
+@media screen and (max-width: 480px) {
+  .divTable.blueTable .divTableHeading .divTableHead {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #D0E4F5;
+  }
+  .car-list-prices {
+    max-width: 80px;
+    border-radius: 2px;
+  }
+  .cell-image {
+    max-width: 100px;
+    min-width: 100px;
+  }
+  .cell-price {
+    min-width: 45px;
+    max-width: 60px;
+  }
+  .manual-transmission,.automatic-transmission {
+    height: 20px;
+    margin-top: 1px;
+  }
+  .sedan-hatchback {
+    height: 35px;
+    margin-top: 3px;
+  }
+  .universal {
+    height: 20px;
+    margin-top: 3px;
+  }
+  .crossover {
+    height: 40px;
+    margin-top: 3px;
+  }
+  .coupe {
+    height: 40px;
+    margin-top: 3px;
+  }
+
+  .air-conditioner {
+    height: 20px;
+    margin-top: 3px;
+  }
 }
