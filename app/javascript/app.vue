@@ -106,11 +106,11 @@
     </div>
     <div class="form-group col-sm-12">
       <details>
-        <summary class="summary-booking"><span style="font-size: 120%;font-weight: bold; color:#f77d0a; border: none;">Чтобы оформление документов было быстрее, загрузите фото или сканы документов</span></summary>
-        <label style="margin-top: 5px;">Страница паспорта с фотографией
+        <summary class="summary-booking"><span style="font-size: 120%;font-weight: bold; color:#f77d0a; border: none;"><a>Чтобы оформление документов было быстрее, загрузите фото или сканы документов</a></span></summary>
+        <label style="margin-top: 5px;">Копия паспорта
           <input type="file" id="file" ref="file" v-on:change="handleFilesUpload()" style="border: none; margin-top: 5px;"/>
         </label>
-        <label style="margin-top: 5px;">Лицевая страница водительского удостоверения
+        <label style="margin-top: 5px;">Копия водительского удостоверения
           <input type="file" id="file2" ref="file2" v-on:change="handleFilesUpload()" style="border: none; margin-top: 5px;"/>
         </label>
       </details>

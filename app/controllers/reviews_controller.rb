@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all.limit(10) # Pagination!!!
+    @reviews = Review.all # Pagination!!!
     @reviews_text = Text.first.reviews_text
     @footer_text = Text.first.footer_text
     @reviews_title = Text.first.reviews_title
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    @reviews = Review.all.limit(10)
+    @reviews = Review.all
 
     respond_to :js
   end
