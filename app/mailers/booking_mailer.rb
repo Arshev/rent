@@ -3,6 +3,6 @@ class BookingMailer < ApplicationMailer
 
   def new_booking_email
     @booking = params[:booking]
-    mail(to: 'a.c01@yandex.ru', subject: 'Новая заявка на бронирование')
+    mail(to: 'amigorent@ya.ru', subject: 'Новая заявка на бронирование')
   end
 end

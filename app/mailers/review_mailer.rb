@@ -3,6 +3,6 @@ class ReviewMailer < ApplicationMailer
 
   def review_email
     @review = params[:review]
-    mail(to: 'a.c01@yandex.ru', subject: 'Новый отзыв')
+    mail(to: 'amigorent@ya.ru', subject: 'Новый отзыв')
   end
 end

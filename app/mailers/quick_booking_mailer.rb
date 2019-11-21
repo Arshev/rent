@@ -3,6 +3,6 @@ class QuickBookingMailer < ApplicationMailer
 
   def new_quick_booking_email
     @quick_booking = params[:quick_booking]
-    mail(to: 'a.c01@yandex.ru', subject: 'Новая быстрая заявка на бронирование')
+    mail(to: 'amigorent@ya.ru', subject: 'Новая быстрая заявка на бронирование')
   end
 end
