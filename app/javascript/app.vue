@@ -39,7 +39,7 @@
           <h5 class="this-label">Телефон <span style="color: tomato;">*</span>
             <span style="color: tomato;" v-if="!$v.phoneClient.minLength"> - неправильный телефон</span>
           </h5>
-          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" v-mask="'+#(###)###-####'" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
+          <input v-model.trim.lazy="$v.phoneClient.$model" type="tel" placeholder="Введите телефон" class="form-control" v-bind:class="{ 'error-input': phoneError }">
         </div>
         <div class="form-group col-sm-6">
           <h5 class="this-label">Дата и время начала аренды<span style="color: tomato;">*</span></h5>
@@ -128,7 +128,7 @@ import flatPickr from 'vue-flatpickr-component'
 import { Russian } from "flatpickr/dist/l10n/ru"
 import ConfirmDatePlugin from 'flatpickr/dist/plugins/confirmDate/confirmDate';
 import { required, minLength, maxLength, email, phone } from 'vuelidate/lib/validators'
-import {TheMask} from 'vue-the-mask'
+// import {TheMask} from 'vue-the-mask'
 import modal from './packs/components/modal.vue';
 import moment from 'moment'
     import 'moment/locale/ru'
@@ -676,7 +676,6 @@ export default {
   },
   components: { 
       flatPickr,
-      TheMask,
       modal
   }
 };
