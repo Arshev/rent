@@ -3,4 +3,5 @@ Disallow: /public/uploads/
 Disallow: /users/
 Disallow: /admin/
 Disallow: /public/system/
-Sitemap: http://amigorent.ru/public/system/sitemaps/sitemap.xml.gz
+Sitemap: https://amigorent.ru/public/system/sitemaps/sitemap.xml
+Host: https://amigorent.ru
