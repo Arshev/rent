@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   end
 
   resources :cars, except: [:edit] do
-    resources :photos, only: [:create, :destroy]
+    resources :photos, only: [:create, :destroy] do
+      member do
+        patch :toggle_main_photo
+      end
+    end
     resources :reservations, only: [:create]
   end
   resources :quick_bookings, only: [:create]

@@ -7,8 +7,9 @@ class Car < ApplicationRecord
   
 
   def cover_photo(size)
-    if self.photos.length > 0
-      self.photos[0].image.url(size)
+    if self.photos.where(main_photo: true).length > 0
+      self.photos.where(main_photo: true)[0].image.url(size)
+      # self.photos[0].image.url(size)
     else
       "blank.jpg"
     end

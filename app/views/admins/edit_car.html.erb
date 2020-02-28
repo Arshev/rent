@@ -226,6 +226,14 @@
                             <%= link_to car_photo_path(photo.car_id, photo), remote: true, method: :delete, data: {confirm: "Уверен?"} do %>
                               <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
                             <% end %>
+                            <%= link_to toggle_main_photo_car_photo_path(photo.car_id, photo), remote: true, method: :patch, data: {confirm: "Главное фото?"} do %>
+                              <% if photo.main_photo %>
+                                <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+                              <% else %>
+                                <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+                              <% end %>
+                              
+                            <% end %>
                         <% end %>
                     <% end %>
                   </div>
