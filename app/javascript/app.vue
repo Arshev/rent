@@ -70,11 +70,11 @@
           <input type="checkbox" id="checkbox" value=true v-model="navigator">
           <label for="checkbox">Навигатор</label>
         </div>
-        <!-- <div class="form-group col-sm-12">
+        <div class="form-group col-sm-12">
           <h5 class="this-label">Подтвердите согласие <span>*</span></h5>
           <input type="checkbox" id="checkbox" value="true" v-model="personData">
           <label for="checkbox">Даю согласие на обработку персональных данных, согласно <a href="https://base.garant.ru/12148567/" rel="nofollow">152-ФЗ</a></label>
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="col-sm-4">
@@ -214,7 +214,7 @@ export default {
       phoneError: false,
       dateStartError: false,
       dateEndError: false,
-      // personDataError: false,
+      personDataError: false,
       isModalVisible: false,
       files: '',
       file: '',
@@ -304,10 +304,10 @@ export default {
         this.errors.push(' - Выберите дату окончания аренды')
         this.dateEndError = true
       }
-      // if (this.personData === false) {
-      //   this.errors.push(' - Подтверите согласие с обработкой персональных данных')
-      //   this.personDataError = true
-      // }
+      if (this.personData === false) {
+        this.errors.push(' - Подтверите согласие с обработкой персональных данных')
+        this.personDataError = true
+      }
       if (this.days === 'Минимум 2-е суток') {
         this.errors.push(' - Минимальный срок аренды 2-е суток')
         // this.personDataError = true
