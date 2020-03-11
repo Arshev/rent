@@ -178,7 +178,7 @@ export default {
       dateEnd: null,
       additional_hours: 0,
       hours: 0,
-      // personData: false,
+      personData: false,
       errors: [],
       configEnd: {
           altFormat: 'j M H:i',
@@ -313,7 +313,7 @@ export default {
         // this.personDataError = true
       }
 
-      if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false && this.days != 'Минимум 2-е суток') {
+      if (this.carError === false && this.nameError === false && this.lastnameError === false && this.emailError === false && this.phoneError === false && this.dateStartError === false && this.dateEndError === false && this.days != 'Минимум 2-е суток' && this.personDataError === false) {
         
         var self=this;
         // this.file = this.$refs.file.files[0];
@@ -408,10 +408,10 @@ export default {
       this.errors = []
       this.phoneError = false
     },
-    // personData () {
-    //   this.errors = []
-    //   this.personDataError = false
-    // },
+    personData () {
+      this.errors = []
+      this.personDataError = false
+    },
     dateEnd () {
       let start_date = moment(this.dateStart, "MM-DD-YYYY H:mm")
       let end_date = moment(this.dateEnd, "MM-DD-YYYY H:mm")
