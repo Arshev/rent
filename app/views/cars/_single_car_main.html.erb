@@ -12,25 +12,25 @@
         <h4 class="vehicle-title text-center"><%= car.car_name %></h4>
         <div class="row vehicle-img text-center">
           <%= link_to car_path(car) do %>
-            <%= image_tag car.cover_photo(:main), class:"car-list-main" %>
+            <%= image_tag car.cover_photo(:main), alt: "#{car.car_name}", title: "#{car.car_name}", class:"car-list-main" %>
           <% end %>
         </div>
         <div class="row specification">
           <div>
             <table class="table text-center" >
               <tr>
-                <td  style="display:inline-block;"><img src="/images/icons/fleet2/transmission.png" style="width: 15px;" alt=""> <%= car.transmission %></td>
-                <td  style="display:inline-block;"><img src="/images/icons/fleet2/fuel.png" style="width: 15px;" alt=""> <%= car.fuel %></td>
-                <td style="display:inline-block;"><img src="/images/icons/fleet2/year.png" style="width: 15px;" alt=""> <%= car.year %></td>
+                <td  style="display:inline-block;"><img src="/images/icons/fleet2/transmission.png" style="width: 15px;" alt="Коробка передач" title="Коробка передач"> <%= car.transmission %></td>
+                <td  style="display:inline-block;"><img src="/images/icons/fleet2/fuel.png" style="width: 15px;" alt="Вид топлива" title="Вид топлива"> <%= car.fuel %></td>
+                <td style="display:inline-block;"><img src="/images/icons/fleet2/year.png" style="width: 15px;" alt="Год выпуска" title="Год выпуска авто"> <%= car.year %></td>
               </tr>
               <tr>
-                <td style="display:inline-block;"><img src="/images/icons/fleet2/car_type.png" style="width: 15px;" alt=""> <%= car.car_type %></td>
-                <td style="display:inline-block;"><img src="/images/icons/fleet2/capacity.png" style="width: 15px;" alt=""> <%= car.engine_capacity %></td>
+                <td style="display:inline-block;"><img src="/images/icons/fleet2/car_type.png" style="width: 15px;" alt="Тип кузова" title="Тип кузова автомобиля"> <%= car.car_type %></td>
+                <td style="display:inline-block;"><img src="/images/icons/fleet2/capacity.png" style="width: 15px;" alt="Объем двигателя" title="Объем двигателя"> <%= car.engine_capacity %></td>
                 <td style="display:inline-block;">
                   <% if car.is_air %>
-                    <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Есть
+                    <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt="Кондиционер" title="Есть кондиционер"> Есть
                   <% else %>
-                    <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt=""> Нет
+                    <img src="/images/icons/fleet2/snow.png" style="width: 15px;" alt="Кондиционер" title="Нет кондиционера"> Нет
                   <% end %>
                 </td>
               </tr>

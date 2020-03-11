@@ -22,7 +22,7 @@
                   <% @photos.each do |photo| %>
 
                       <li data-thumb="<%= photo.image.url(:thumb) %>">
-                        <%= image_tag photo.image.url() %>
+                        <%= image_tag photo.image.url(), alt: @car.car_name, title: @car.car_name %>
                        </li>
 
                   <% end %>
@@ -39,21 +39,21 @@
   				<p>Все данные об автомобиле.</p>
   			</div>
   			<ul class="focus-informations nav">
-          <li><span><img src="/images/icons/fleet2/transmission-white.png" style="width: 20px;" alt=""></span>  Коробка передач<span class="this-value"><%= @car.transmission %></span></li>
-          <li><span><img src="/images/icons/fleet2/car_type-white.png" style="width: 20px;" alt=""></span>  Цвет кузова <span class="this-value"><%= @car.color %></span></li>
-          <li><span><img src="/images/icons/fleet2/fuel-white.png" style="width: 20px;" alt=""></span>  Вид топлива <span class="this-value"><%= @car.fuel %></span></li>
-          <li><span><img src="/images/icons/fleet2/year-white.png" style="width: 20px;" alt=""></span>  Год выпуска <span class="this-value"><%= @car.year %></span></li>
-          <li><span><img src="/images/icons/fleet2/capacity-white.png" style="width: 20px;" alt=""></span>  Объём двигателя <span class="this-value"><%= @car.engine_capacity %></span></li>
-          <li><span><img src="/images/icons/fleet2/car-type-white.png" style="width: 20px;" alt=""></span>  Тип кузова <span class="this-value"><%= @car.car_type %></span></li>
-          <li><span><img src="/images/icons/fleet2/number-doors-white.png" style="width: 20px;" alt=""></span>  Кол-во дверей <span class="this-value"><%= @car.number_doors %></span></li>
+          <li><span><img src="/images/icons/fleet2/transmission-white.png" style="width: 20px;" alt="Коробка передач" title="Коробка передач"></span>  Коробка передач<span class="this-value"><%= @car.transmission %></span></li>
+          <li><span><img src="/images/icons/fleet2/car_type-white.png" style="width: 20px;" alt="Цвет кузова" title="Цвет кузова"></span>  Цвет кузова <span class="this-value"><%= @car.color %></span></li>
+          <li><span><img src="/images/icons/fleet2/fuel-white.png" style="width: 20px;" alt="Вид топлива" title="Вид топлива"></span>  Вид топлива <span class="this-value"><%= @car.fuel %></span></li>
+          <li><span><img src="/images/icons/fleet2/year-white.png" style="width: 20px;" alt="Год выпуска" title="Год выпуска авто"></span>  Год выпуска <span class="this-value"><%= @car.year %></span></li>
+          <li><span><img src="/images/icons/fleet2/capacity-white.png" style="width: 20px;" alt="Объем двигателя" title="Объем двигателя"></span>  Объём двигателя <span class="this-value"><%= @car.engine_capacity %></span></li>
+          <li><span><img src="/images/icons/fleet2/car-type-white.png" style="width: 20px;" alt="Тип кузова" title="Тип кузова автомобиля"></span>  Тип кузова <span class="this-value"><%= @car.car_type %></span></li>
+          <li><span><img src="/images/icons/fleet2/number-doors-white.png" style="width: 20px;" alt="Количество дверей" title="Количество дверей"></span>  Кол-во дверей <span class="this-value"><%= @car.number_doors %></span></li>
           <li>
             <% if @car.is_air %>
-              <span><img src="/images/icons/fleet2/snow-white.png" style="width: 20px;" alt=""></span> Кондиционер <span class="this-value">Есть</span>
+              <span><img src="/images/icons/fleet2/snow-white.png" style="width: 20px;" alt="Кондиционер" title="Есть кондиционер"></span> Кондиционер <span class="this-value">Есть</span>
             <% end %>
           </li>
           <li>
             <% if @car.is_electropackage %>
-              <span><img src="/images/icons/fleet2/electro-white.png" style="width: 20px;" alt=""></span> Электропакет <span class="this-value">Есть</span>
+              <span><img src="/images/icons/fleet2/electro-white.png" style="width: 20px;" alt="Электропакет" title="Есть электропакет, стеклоподъемники и тд"></span> Электропакет <span class="this-value">Есть</span>
             <% end %>
           </li>
         </ul>

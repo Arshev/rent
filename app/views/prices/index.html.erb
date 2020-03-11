@@ -39,31 +39,31 @@
                         <% end %>
                 	  		<div class="price-action"></div>
                           <%= link_to car_path(car) do %>
-                            <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
+                            <%= image_tag car.cover_photo(:prices), alt: "#{car.car_name}", title: "#{car.car_name}", class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
                           <% if car.car_type == "Хэтчбек" %>
-                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('hatchback.png'), alt: "Хэтчбек", title: "Тип кузова авто Хэтчбек", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Седан" %>
-                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('sedan.png'), alt: "Седан", title: "Тип кузова авто Седан", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Универсал" %>
-                            <%= image_tag ('universal.png'), class:"universal" %>
+                            <%= image_tag ('universal.png'), alt: "Универсал", title: "Тип кузова авто Универсал", class:"universal" %>
                           <% end %>
                           <% if car.car_type == "Кроссовер" %>
-                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                            <%= image_tag ('crossover.png'), alt: "Кросовер", title: "Тип кузова авто Кросовер", class:"crossover" %>
                           <% end %>
                           <% if car.car_type == "Купе" %>
-                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                            <%= image_tag ('coupe.png'), alt: "Купе", title: "Тип кузова авто Купе", class:"coupe" %>
                           <% end %>
                           <% if car.transmission == "Механика" %>
-                            <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
+                            <%= image_tag ('manual-transmission.png'), alt: "Механическая коробка передач", title: "Механическая коробка передач", class:"manual-transmission" %>
                           <% else %>
-                            <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
+                            <%= image_tag ('auto-transmission.png'), alt: "Автоматическая коробка передач", title: "Автоматическая коробка передач", class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
+                            <%= image_tag ('air-conditioner.png'), alt: "Кондиционер", title: "В автомобиле есть кондиционер", class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
@@ -112,37 +112,37 @@
               <div class="divTable blueTable">
                 <div class="divTableBody">
                   <div class="divTableRow">
-                	  	<div class="car-name divTableCell col-md-3 col-lg-3 col-sm-2 col-xs-2 cell-image">
+                	  	<div class="car-name divTableCell col-md-3 col-lg-3 col-sm-2 col-xs-2 cell-image" id="float-none">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
                 	  		<div class="price-action"></div>
                           <%= link_to car_path(car) do %>
-                            <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
+                            <%= image_tag car.cover_photo(:prices), alt: "#{car.car_name}", title: "#{car.car_name}", class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
                           <% if car.car_type == "Хэтчбек" %>
-                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('hatchback.png'), alt: "Хэтчбек", title: "Тип кузова авто Хэтчбек", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Седан" %>
-                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('sedan.png'), alt: "Седан", title: "Тип кузова авто Седан", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Универсал" %>
-                            <%= image_tag ('universal.png'), class:"universal" %>
+                            <%= image_tag ('universal.png'), alt: "Универсал", title: "Тип кузова авто Универсал", class:"universal" %>
                           <% end %>
                           <% if car.car_type == "Кроссовер" %>
-                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                            <%= image_tag ('crossover.png'), alt: "Кросовер", title: "Тип кузова авто Кросовер", class:"crossover" %>
                           <% end %>
                           <% if car.car_type == "Купе" %>
-                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                            <%= image_tag ('coupe.png'), alt: "Купе", title: "Тип кузова авто Купе", class:"coupe" %>
                           <% end %>
                           <% if car.transmission == "Механика" %>
-                            <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
+                            <%= image_tag ('manual-transmission.png'), alt: "Механическая коробка передач", title: "Механическая коробка передач", class:"manual-transmission" %>
                           <% else %>
-                            <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
+                            <%= image_tag ('auto-transmission.png'), alt: "Автоматическая коробка передач", title: "Автоматическая коробка передач", class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
+                            <%= image_tag ('air-conditioner.png'), alt: "Кондиционер", title: "В автомобиле есть кондиционер", class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
@@ -191,37 +191,37 @@
               <div class="divTable blueTable">
                 <div class="divTableBody">
                   <div class="divTableRow">
-                	  	<div class="car-name divTableCell col-md-3 col-lg-3 col-sm-2 col-xs-2 cell-image">
+                	  	<div class="car-name divTableCell col-md-3 col-lg-3 col-sm-2 col-xs-2 cell-image" id="float-none">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
                 	  		<div class="price-action"></div>
                           <%= link_to car_path(car) do %>
-                            <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
+                            <%= image_tag car.cover_photo(:prices), alt: "#{car.car_name}", title: "#{car.car_name}", class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
                           <% if car.car_type == "Хэтчбек" %>
-                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('hatchback.png'), alt: "Хэтчбек", title: "Тип кузова авто Хэтчбек", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Седан" %>
-                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('sedan.png'), alt: "Седан", title: "Тип кузова авто Седан", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Универсал" %>
-                            <%= image_tag ('universal.png'), class:"universal" %>
+                            <%= image_tag ('universal.png'), alt: "Универсал", title: "Тип кузова авто Универсал", class:"universal" %>
                           <% end %>
                           <% if car.car_type == "Кроссовер" %>
-                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                            <%= image_tag ('crossover.png'), alt: "Кросовер", title: "Тип кузова авто Кросовер", class:"crossover" %>
                           <% end %>
                           <% if car.car_type == "Купе" %>
-                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                            <%= image_tag ('coupe.png'), alt: "Купе", title: "Тип кузова авто Купе", class:"coupe" %>
                           <% end %>
                           <% if car.transmission == "Механика" %>
-                            <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
+                            <%= image_tag ('manual-transmission.png'), alt: "Механическая коробка передач", title: "Механическая коробка передач", class:"manual-transmission" %>
                           <% else %>
-                            <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
+                            <%= image_tag ('auto-transmission.png'), alt: "Автоматическая коробка передач", title: "Автоматическая коробка передач", class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
+                            <%= image_tag ('air-conditioner.png'), alt: "Кондиционер", title: "В автомобиле есть кондиционер", class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>
@@ -270,37 +270,37 @@
               <div class="divTable blueTable">
                 <div class="divTableBody">
                   <div class="divTableRow">
-                	  	<div class="car-name divTableCell col-md-3 col-lg-3 col-sm-2 col-xs-2 cell-image">
+                	  	<div class="car-name divTableCell col-md-3 col-lg-3 col-sm-2 col-xs-2 cell-image" id="float-none">
                         <%= link_to car_path(car) do %>
                           <%= car.car_name %>
                         <% end %>
                 	  		<div class="price-action"></div>
                           <%= link_to car_path(car) do %>
-                            <%= image_tag car.cover_photo(:prices), class:"car-list-prices" %>
+                            <%= image_tag car.cover_photo(:prices), alt: "#{car.car_name}", title: "#{car.car_name}", class:"car-list-prices" %>
                           <% end %>
                 				<div class="transmission">
                           <% if car.car_type == "Хэтчбек" %>
-                            <%= image_tag ('hatchback.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('hatchback.png'), alt: "Хэтчбек", title: "Тип кузова авто Хэтчбек", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Седан" %>
-                            <%= image_tag ('sedan.png'), class:"sedan-hatchback" %>
+                            <%= image_tag ('sedan.png'), alt: "Седан", title: "Тип кузова авто Седан", class:"sedan-hatchback" %>
                           <% end %>
                           <% if car.car_type == "Универсал" %>
-                            <%= image_tag ('universal.png'), class:"universal" %>
+                            <%= image_tag ('universal.png'), alt: "Универсал", title: "Тип кузова авто Универсал", class:"universal" %>
                           <% end %>
                           <% if car.car_type == "Кроссовер" %>
-                            <%= image_tag ('crossover.png'), class:"crossover" %>
+                            <%= image_tag ('crossover.png'), alt: "Кросовер", title: "Тип кузова авто Кросовер", class:"crossover" %>
                           <% end %>
                           <% if car.car_type == "Купе" %>
-                            <%= image_tag ('coupe.png'), class:"coupe" %>
+                            <%= image_tag ('coupe.png'), alt: "Купе", title: "Тип кузова авто Купе", class:"coupe" %>
                           <% end %>
                           <% if car.transmission == "Механика" %>
-                            <%= image_tag ('manual-transmission.png'), class:"manual-transmission" %>
+                            <%= image_tag ('manual-transmission.png'), alt: "Механическая коробка передач", title: "Механическая коробка передач", class:"manual-transmission" %>
                           <% else %>
-                            <%= image_tag ('auto-transmission.png'), class:"automatic-transmission" %>
+                            <%= image_tag ('auto-transmission.png'), alt: "Автоматическая коробка передач", title: "Автоматическая коробка передач", class:"automatic-transmission" %>
                           <% end %>
                           <% if car.is_air %>
-                            <%= image_tag ('air-conditioner.png'), class:"air-conditioner", style:"z-index:2;" %>
+                            <%= image_tag ('air-conditioner.png'), alt: "Кондиционер", title: "В автомобиле есть кондиционер", class:"air-conditioner", style:"z-index:2;" %>
                           <% end %>
                         </div>
                 			</div>

@@ -6,7 +6,7 @@
       <div class="col-md-5 col-sm-12 col-xs-12">
         <div class="media-left">
           <%= link_to car_path(car) do %>
-            <%= image_tag car.cover_photo(:list) %>
+            <%= image_tag car.cover_photo(:list), alt: "#{car.car_name}", title: "#{car.car_name}" %>
           <% end %>
         </div>
       </div>
@@ -32,14 +32,14 @@
           </div>
           <div class="row specification">
             <ul class="nav">
-              <li><span><img src="/images/icons/fleet2/transmission.png" style="width: 20px;" alt=""></span><%= car.transmission %></li>
-              <li><span><img src="/images/icons/fleet2/fuel.png" style="width: 20px;" alt=""></span><%= car.fuel %></li>
-              <li><span><img src="/images/icons/fleet2/year.png" style="width: 20px;" alt=""></span><%= car.year %></li>
-              <li><span><img src="/images/icons/fleet2/car_type.png" style="width: 20px;" alt=""></span><%= car.car_type %></li>
-              <li><span><img src="/images/icons/fleet2/capacity.png" style="width: 20px;" alt=""></span><%= car.engine_capacity %></li>
+              <li><span><img src="/images/icons/fleet2/transmission.png" style="width: 20px;" alt="Коробка передач" title="Коробка передач"></span><%= car.transmission %></li>
+              <li><span><img src="/images/icons/fleet2/fuel.png" style="width: 20px;" alt="Вид топлива" title="Вид топлива"></span><%= car.fuel %></li>
+              <li><span><img src="/images/icons/fleet2/year.png" style="width: 20px;" alt="Год выпуска" title="Год выпуска авто"></span><%= car.year %></li>
+              <li><span><img src="/images/icons/fleet2/car_type.png" style="width: 20px;" alt="Тип кузова" title="Тип кузова автомобиля"></span><%= car.car_type %></li>
+              <li><span><img src="/images/icons/fleet2/capacity.png" style="width: 20px;" alt="Объем двигателя" title="Объем двигателя"></span><%= car.engine_capacity %></li>
               <li>
                 <% if car.is_air %>
-                <span><img src="/images/icons/fleet2/snow.png" style="width: 20px;" alt=""></span> Кондиционер
+                <span><img src="/images/icons/fleet2/snow.png" style="width: 20px;" alt="Кондиционер" title="Есть кондиционер"></span> Кондиционер
                 <% end %>
               </li>
             </ul>
