@@ -29,7 +29,7 @@
 /*--------------------------------------------------------------------------------------------*/
 @font-face {
   font-family: 'notera';
-  src: url("../vendors/notera/notera_personaluseonly-webfont.woff2") format("woff2"), url("../vendors/notera/notera_personaluseonly-webfont.woff") format("woff");
+  /* src: url("../vendors/notera/notera_personaluseonly-webfont.woff2") format("woff2"), url("../vendors/notera/notera_personaluseonly-webfont.woff") format("woff"); */
   font-weight: normal;
   font-style: normal; }
 @font-face {
