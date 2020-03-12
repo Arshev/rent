@@ -14,12 +14,12 @@
       <% end %>
       <%= csrf_meta_tags %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <%# javascript_include_tag 'metrika', 'data-turbolinks-track': 'reload' %>
-      <%# if current_page?('/bookings/new/2') %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%# end %>
-      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%= stylesheet_pack_tag 'css/application', 'data-turbolinks-track': 'reload' %>
+      <% if current_page?(new_booking_path) %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_pack_tag 'css/application', 'data-turbolinks-track': 'reload' %>
+      <% end %>
       <%= favicon_link_tag 'favicon.ico' %>
       <%= javascript_include_tag GoogleAnalytics::JS_URL, async: true %>
       <meta name="yandex-verification" content="57d292ffbe46f129" />
