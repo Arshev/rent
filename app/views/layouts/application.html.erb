@@ -14,7 +14,9 @@
       <% end %>
       <%= csrf_meta_tags %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <% if current_page?('/bookings/new') %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <% end %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
       <%= stylesheet_pack_tag 'css/application', 'data-turbolinks-track': 'reload' %>
       <%= favicon_link_tag 'favicon.ico' %>
