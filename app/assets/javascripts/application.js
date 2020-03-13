@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require counters/metrika
 //= require bootstrap-sprockets
 //= require admin/bootstrap.min
 //= require admin/jquery.min
