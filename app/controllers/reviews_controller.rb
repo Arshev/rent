@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.create(review_params)
-    if @review.save
+    if verify_recaptcha(model: @review) && @review.save
       ReviewMailer.with(review: @review).review_email.deliver_later
       redirect_back(fallback_location: request.referer, notice: "Отзыв успешно создан! Он будет проверен на предмет рекламы и размещен.")
     else
