@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
-//= require metrika
 //= require admin/bootstrap.min
 //= require admin/jquery.min
 //= require admin/adminkit
