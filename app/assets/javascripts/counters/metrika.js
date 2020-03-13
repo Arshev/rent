@@ -10,12 +10,12 @@ $( document ).on('turbolinks:load', function() {
 //         webvisor:true
 //    });
 
-    (function(w,d,v3){
-    w.chaportConfig = {
-    appId : '5e6b639f70748130b6a7fd1e'
-    };
+    // (function(w,d,v3){
+    // w.chaportConfig = {
+    // appId : '5e6b639f70748130b6a7fd1e'
+    // };
 
-    if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+    // if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
 
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -27,19 +27,19 @@ $( document ).on('turbolinks:load', function() {
         accurateTrackBounce:true
     });
     
-    // (function() { 
-    //     var s = document['createElement']('script');
-    //     s.type = 'text/javascript'; 
-    //     s.async = true; 
-    //     s.charset = 'utf-8';	
-    //     s.src = '//cleversite.ru/cleversite/widget_new.php?supercode=1&referer_main='+encodeURIComponent(document.referrer)+'&clid=58945FfebN&siteNew=77074'; 
-    //     var ss = document['getElementsByTagName']('script')[0]; 
-    //     if(ss) {
-    //         ss.parentNode.insertBefore(s, ss);
-    //     } else {
-    //         document.documentElement.firstChild.appendChild(s);
-    //     };
-    // })(); 
+    (function() { 
+        var s = document['createElement']('script');
+        s.type = 'text/javascript'; 
+        s.async = true; 
+        s.charset = 'utf-8';	
+        s.src = '//cleversite.ru/cleversite/widget_new.php?supercode=1&referer_main='+encodeURIComponent(document.referrer)+'&clid=58945FfebN&siteNew=77074'; 
+        var ss = document['getElementsByTagName']('script')[0]; 
+        if(ss) {
+            ss.parentNode.insertBefore(s, ss);
+        } else {
+            document.documentElement.firstChild.appendChild(s);
+        };
+    })(); 
     // (function (d, w, c) {
     //     (w[c] = w[c] || []).push(function() {
     //         try {
