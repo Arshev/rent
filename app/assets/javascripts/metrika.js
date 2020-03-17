@@ -9,6 +9,11 @@
         accurateTrackBounce:true,
         webvisor:true
    });
+
+    window.replainSettings = { id: 'baa34fb0-306a-469e-912c-061f9c1f8df2' };
+    (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+    var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+    })('https://widget.replain.cc/dist/client.js');
     // (function (d, w, c) {
     //     (w[c] = w[c] || []).push(function() {
     //         try {
@@ -27,10 +32,10 @@
     //     s.type = "text/javascript";
     //     s.async = true;
     //     s.src = "https://mc.yandex.ru/metrika/watch.js";
-    (function(w,d,v3){
-        w.chaportConfig = {
-        appId : '5e6b639f70748130b6a7fd1e'};
-        if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)
-    })
-        (window, document);
+    // (function(w,d,v3){
+    //     w.chaportConfig = {
+    //     appId : '5e6b639f70748130b6a7fd1e'};
+    //     if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)
+    // })
+    //     (window, document);
 // })
