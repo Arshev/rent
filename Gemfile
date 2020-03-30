@@ -79,7 +79,7 @@ gem 'gon', '~>6.2.0'
 gem 'sucker_punch'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem "recaptcha", require: "recaptcha/rails"
-gem 'sitemap_generator', '~> 6.0.1'
+# gem 'sitemap_generator', '~> 6.0.1'
 gem 'whenever', require: false
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
