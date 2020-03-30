@@ -357,7 +357,7 @@ DEPENDENCIES
   recaptcha
   sass-rails (~> 5.0)
   selenium-webdriver
-  sitemap_generator
+  sitemap_generator (~> 6.1.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sucker_punch
