@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://amigorent.ru"
-SitemapGenerator::Sitemap.sitemaps_path = 'public/system/sitemaps'
+SitemapGenerator::Sitemap.sitemaps_path = 'shared/'
 SitemapGenerator::Sitemap.compress = false
 
 SitemapGenerator::Sitemap.create do

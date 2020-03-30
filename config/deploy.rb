@@ -23,7 +23,7 @@ set :deploy_user, 'deployer'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/secrets.yml.key", ".env"
+append :linked_files, "config/database.yml", "config/secrets.yml.key", ".env", "public/shared/sitemap.xml"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "node_modules", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", ".bundle", "shared/bundle", "shared/bin"
