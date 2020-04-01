@@ -3,5 +3,6 @@ Disallow: /public/uploads/
 Disallow: /users/
 Disallow: /admin/
 Disallow: /public/system/
+Disallow: /new?car_id=*
 Sitemap: https://amigorent.ru/shared/sitemap.xml
 Host: https://amigorent.ru
