@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "activestorage": "^5.2.3",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "element-ui": "^2.12.0",
     "moment": "^2.24.0",
     "momentjs": "^2.0.0",
